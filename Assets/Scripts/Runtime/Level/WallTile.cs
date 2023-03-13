@@ -21,9 +21,13 @@ namespace FollowYourDreams.Level {
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
         }
 
+        public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
+            tilemap.RefreshTile(position);
+        }
+
         Segment CalculateSegment(in Vector3Int position, ITilemap tilemap) {
-            var top = tilemap.GetTile(position + Vector3Int.up);
-            var bottom = tilemap.GetTile(position + Vector3Int.down);
+            var top = tilemap.GetTile(position + Vector3Int.forward);
+            var bottom = tilemap.GetTile(position + Vector3Int.back);
             if (top == this) {
                 return bottom == this
                     ? Segment.Middle
@@ -40,6 +44,7 @@ namespace FollowYourDreams.Level {
             if (sheet) {
                 sprites = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(UnityEditor.AssetDatabase.GetAssetPath(sheet))
                     .OfType<Sprite>()
+                    .OrderBy(sprite => sprite.name)
                     .ToArray();
             }
         }
