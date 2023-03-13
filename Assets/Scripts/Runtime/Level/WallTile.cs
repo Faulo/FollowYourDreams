@@ -23,6 +23,8 @@ namespace FollowYourDreams.Level {
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
             tilemap.RefreshTile(position);
+            tilemap.RefreshTile(position + Vector3Int.forward);
+            tilemap.RefreshTile(position + Vector3Int.back);
         }
 
         Segment CalculateSegment(in Vector3Int position, ITilemap tilemap) {
