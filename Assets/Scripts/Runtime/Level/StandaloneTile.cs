@@ -3,16 +3,25 @@ using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class StandaloneTile : TileBase {
+    class StandaloneTile : TileBase {
+        [Header("Base Tile")]
         [SerializeField]
-        Sprite sprite = default;
+        GameObject prefab = default;
         [SerializeField]
         Color tint = Color.white;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
-            tileData.sprite = sprite;
             tileData.color = tint;
-            tileData.flags = TileFlags.LockColor;
+            tileData.flags = TileFlags.LockColor | TileFlags.LockTransform;
+            tileData.colliderType = Tile.ColliderType.None;
+            tileData.gameObject = prefab;
+        }
+
+        public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
+            if (go) {
+                go.transform.localRotation = prefab.transform.localRotation;
+            }
+            return true;
         }
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {

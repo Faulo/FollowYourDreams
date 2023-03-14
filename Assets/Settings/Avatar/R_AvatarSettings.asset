@@ -97,6 +97,21 @@ MonoBehaviour:
   - {fileID: 1231197409, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: 1929822363, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -1706288322, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1597051682, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 2054159622, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1089938006, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1897249173, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -658279355, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1526217121, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -59841579, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -423024684, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1357198424, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1558603882, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1263137347, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1141508960, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1783584155, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1118059951, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 2034135622, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
@@ -106,7 +121,7 @@ MonoBehaviour:
       format: RGBA8888
       size:
         w: 160
-        h: 300
+        h: 576
       scale: 1
       frameTags:
       - name: Idle
@@ -133,10 +148,11 @@ MonoBehaviour:
         from: 13
         to: 14
         direction: 0
+      - name: Climb
+        from: 15
+        to: 17
+        direction: 0
       layers:
-      - name: Layer 1
-        opacity: 255
-        blendMode: normal
       - name: Flattened
         opacity: 255
         blendMode: normal
