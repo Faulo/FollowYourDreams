@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System;
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
@@ -11,6 +11,8 @@ namespace FollowYourDreams.Avatar {
         [Header("Animations")]
         [SerializeField]
         Texture2D sheet;
+        [SerializeField]
+        Sprite[] sprites = Array.Empty<Sprite>();
         [SerializeField]
         TextAsset json;
         [SerializeField]
@@ -26,7 +28,11 @@ namespace FollowYourDreams.Avatar {
         [ContextMenu(nameof(LoadSheet))]
         void LoadSheet() {
             LoadPrefab();
-            data = JsonConvert.DeserializeObject<AsepriteData>(json.text);
+
+            sprites = sheet.LoadSprites();
+
+            data = AsepriteData.FromJson(json.text);
+
         }
 #endif
     }
