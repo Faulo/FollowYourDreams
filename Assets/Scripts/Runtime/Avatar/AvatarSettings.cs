@@ -1,4 +1,3 @@
-using System;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -28,7 +27,6 @@ namespace FollowYourDreams.Avatar {
         void LoadSheet() {
             LoadPrefab();
             data = JsonConvert.DeserializeObject<AsepriteData>(json.text);
-            Debug.Log(data.frames["S_Avatar 0.aseprite"]);
         }
 #endif
     }

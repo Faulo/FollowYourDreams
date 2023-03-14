@@ -16,7 +16,12 @@ namespace FollowYourDreams.Avatar {
     }
     [Serializable]
     class AsepriteDataFrame {
+        public AsepriteDataRect frame = new();
+        public bool rotated;
+        public bool trimmed;
+        public AsepriteDataRect spriteSourceSize = new();
         public AsepriteDataSize sourceSize = new();
+        public int duration;
     }
     [Serializable]
     class AsepriteDataMeta {
@@ -35,6 +40,14 @@ namespace FollowYourDreams.Avatar {
         public int w;
         public int h;
         public override string ToString() => new Vector2Int(w, h).ToString();
+    }
+    [Serializable]
+    class AsepriteDataRect {
+        public int x;
+        public int y;
+        public int w;
+        public int h;
+        public override string ToString() => new RectInt(x, y, w, h).ToString();
     }
     [Serializable]
     class AsepriteDataLayer {
