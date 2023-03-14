@@ -7,10 +7,11 @@ namespace FollowYourDreams.Level {
     [CreateAssetMenu]
     sealed class WallTile : TileBase {
         enum Segment {
-            Top = 0,
-            Middle = 1,
-            Bottom = 2,
-            FreeFloating = 3,
+            Grounded = 0,
+            Floating = 1,
+            Top = 2,
+            Middle = 3,
+            Bottom = 4,
         }
         [SerializeField]
         Texture2D sheet = default;
@@ -37,7 +38,9 @@ namespace FollowYourDreams.Level {
             }
             return bottom == this
                 ? Segment.Top
-                : Segment.FreeFloating;
+                : bottom
+                    ? Segment.Grounded
+                    : Segment.Floating;
         }
 
 #if UNITY_EDITOR
