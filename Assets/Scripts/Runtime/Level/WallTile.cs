@@ -1,42 +1,30 @@
 using System;
+using MyBox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class WallTile : TileBase {
+    sealed class WallTile : StandaloneTile {
         enum Segment {
             Grounded = 0,
             Top = 1,
             Middle = 2,
             Bottom = 3,
         }
-        [SerializeField]
-        GameObject prefab = default;
+        [Header("Wall Tile")]
         [SerializeField]
         Texture2D sheet = default;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         Sprite[] sprites = Array.Empty<Sprite>();
-        [SerializeField]
-        Color tint = Color.white;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
+            base.GetTileData(position, tilemap, ref tileData);
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
-            tileData.color = tint;
-            tileData.flags = TileFlags.LockColor | TileFlags.LockTransform;
-            tileData.colliderType = Tile.ColliderType.None;
-            tileData.gameObject = prefab;
-        }
-
-        public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
-            if (go) {
-                go.transform.localRotation = prefab.transform.localRotation;
-            }
-            return true;
         }
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
-            tilemap.RefreshTile(position);
+            base.RefreshTile(position, tilemap);
             tilemap.RefreshTile(position + Vector3Int.forward);
             tilemap.RefreshTile(position + Vector3Int.back);
         }
