@@ -1,67 +1,102 @@
 { "frames": {
    "S_Avatar 0.aseprite": {
-    "frame": { "x": 0, "y": 0, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 0, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 3500
    },
    "S_Avatar 1.aseprite": {
-    "frame": { "x": 0, "y": 32, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 20, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 500
    },
    "S_Avatar 2.aseprite": {
-    "frame": { "x": 0, "y": 64, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 40, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
    },
    "S_Avatar 3.aseprite": {
-    "frame": { "x": 0, "y": 96, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 60, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
    },
    "S_Avatar 4.aseprite": {
-    "frame": { "x": 0, "y": 128, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 80, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
    },
    "S_Avatar 5.aseprite": {
-    "frame": { "x": 0, "y": 160, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 100, "w": 160, "h": 20 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
+   },
+   "S_Avatar 6.aseprite": {
+    "frame": { "x": 0, "y": 120, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 100
+   },
+   "S_Avatar 7.aseprite": {
+    "frame": { "x": 0, "y": 140, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
+   },
+   "S_Avatar 8.aseprite": {
+    "frame": { "x": 0, "y": 160, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 100
+   },
+   "S_Avatar 9.aseprite": {
+    "frame": { "x": 0, "y": 180, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 3500
    }
  },
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.2.40-x64",
   "image": "S_Avatar.png",
-  "format": "I8",
-  "size": { "w": 80, "h": 192 },
+  "format": "RGBA8888",
+  "size": { "w": 160, "h": 200 },
   "scale": "1",
   "frameTags": [
-   { "name": "idle", "from": 0, "to": 1, "direction": "forward" },
-   { "name": "walk", "from": 2, "to": 3, "direction": "forward" },
-   { "name": "jump", "from": 4, "to": 5, "direction": "forward" }
+   { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "Run", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "Walk", "from": 4, "to": 5, "direction": "pingpong" },
+   { "name": "Jump", "from": 6, "to": 8, "direction": "forward" },
+   { "name": "Push", "from": 9, "to": 9, "direction": "forward" }
   ],
   "layers": [
-   { "name": "avatar", "opacity": 255, "blendMode": "normal" }
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Flattened", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]
