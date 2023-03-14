@@ -58,6 +58,7 @@ MonoBehaviour:
   currentAnimation: 0
   intendedMove: {x: 0, y: 0}
   intendedDirection: 0
+  intendsToRun: 0
   intendsToJump: 0
 --- !u!95 &-1088564663788547598
 Animator:
@@ -118,8 +119,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -40739015
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -757028865, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,7 +132,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!143 &4332099688496705474
 CharacterController:
   m_ObjectHideFlags: 0

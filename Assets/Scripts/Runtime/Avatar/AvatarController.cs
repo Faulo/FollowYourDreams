@@ -17,7 +17,9 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         float currentRotation = 0;
         [SerializeField]
-        float currentSpeed = 0;
+        float currentHorizontalSpeed = 0;
+        [SerializeField]
+        float currentVerticalSpeed = 0;
         [SerializeField]
         AvatarDirection currentDirection = AvatarDirection.Down;
         [SerializeField]
@@ -67,7 +69,7 @@ namespace FollowYourDreams.Avatar {
         void ProcessInput() {
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
-            currentSpeed = Mathf.SmoothDampAngle(currentSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
+            currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
 
             intendedDirection.Set(intendedRotation);
             currentDirection = intendedDirection switch {
@@ -103,8 +105,13 @@ namespace FollowYourDreams.Avatar {
         }
 
         void ProcessCharacter() {
-            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed * Time.deltaTime;
+            currentVerticalSpeed += Physics.gravity.y * Time.deltaTime;
+            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentHorizontalSpeed * Time.deltaTime;
+            motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
+            if (attachedCharacter.isGrounded) {
+                currentVerticalSpeed = 0;
+            }
         }
 
         public void OnMove(InputValue value) {
