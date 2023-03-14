@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 namespace FollowYourDreams.Tests {
-    public class TestAseprite {
+    public sealed class TestAseprite {
         string data;
 
         [SetUp]
