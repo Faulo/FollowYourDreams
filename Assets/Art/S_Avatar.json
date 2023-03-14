@@ -102,6 +102,22 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
     "sourceSize": { "w": 160, "h": 20 },
     "duration": 300
+   },
+   "S_Avatar 13.aseprite": {
+    "frame": { "x": 0, "y": 260, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
+   },
+   "S_Avatar 14.aseprite": {
+    "frame": { "x": 0, "y": 280, "w": 160, "h": 20 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 20 },
+    "sourceSize": { "w": 160, "h": 20 },
+    "duration": 300
    }
  },
  "meta": {
@@ -109,14 +125,15 @@
   "version": "1.2.40-x64",
   "image": "S_Avatar.png",
   "format": "RGBA8888",
-  "size": { "w": 160, "h": 260 },
+  "size": { "w": 160, "h": 300 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
    { "name": "Run", "from": 2, "to": 5, "direction": "forward" },
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
    { "name": "Jump", "from": 8, "to": 10, "direction": "forward" },
-   { "name": "Push", "from": 11, "to": 12, "direction": "forward" }
+   { "name": "Push", "from": 11, "to": 12, "direction": "forward" },
+   { "name": "Grab/Interact", "from": 13, "to": 14, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
