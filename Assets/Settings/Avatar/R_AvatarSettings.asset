@@ -16,8 +16,9 @@ MonoBehaviour:
   prefab: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
   rotationSmoothing: 0.01
   speedSmoothing: 0.01
-  walkSpeed: 1
-  runSpeed: 2
+  walkSpeed: 2
+  runSpeed: 4
+  jumpSpeed: 4
   controller: {fileID: 9100000, guid: ae4acebab7e56af4fb42f3917f6b3747, type: 2}
   sheet: {fileID: 2800000, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   sprites:
@@ -81,6 +82,21 @@ MonoBehaviour:
   - {fileID: -1641216983, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: 1961051162, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -1529407266, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 225975688, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1566577536, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1863666800, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1201997977, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1834342482, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1210502477, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 355788746, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 847857771, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 191596782, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 2079705857, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1919069085, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1052401477, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1231197409, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1929822363, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1706288322, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
@@ -90,7 +106,7 @@ MonoBehaviour:
       format: RGBA8888
       size:
         w: 160
-        h: 240
+        h: 300
       scale: 1
       frameTags:
       - name: Idle
@@ -99,19 +115,23 @@ MonoBehaviour:
         direction: 0
       - name: Run
         from: 2
-        to: 4
-        direction: 1
+        to: 5
+        direction: 0
       - name: Walk
-        from: 5
-        to: 6
+        from: 6
+        to: 7
         direction: 1
       - name: Jump
-        from: 7
-        to: 9
+        from: 8
+        to: 10
         direction: 0
       - name: Push
-        from: 10
-        to: 11
+        from: 11
+        to: 12
+        direction: 0
+      - name: Interact
+        from: 13
+        to: 14
         direction: 0
       layers:
       - name: Layer 1

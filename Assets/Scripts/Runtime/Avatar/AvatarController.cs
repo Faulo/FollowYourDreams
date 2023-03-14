@@ -71,6 +71,13 @@ namespace FollowYourDreams.Avatar {
 
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
 
+            if (intendsToJump) {
+                intendsToJump = false;
+                if (attachedCharacter.isGrounded) {
+                    currentVerticalSpeed += settings.jumpSpeed;
+                }
+            }
+
             intendedDirection.Set(intendedRotation);
             currentDirection = intendedDirection switch {
                 Direction.Up => AvatarDirection.Up,
@@ -120,6 +127,10 @@ namespace FollowYourDreams.Avatar {
 
         public void OnRun(InputValue value) {
             intendsToRun = value.isPressed;
+        }
+
+        public void OnJump(InputValue value) {
+            intendsToJump = value.isPressed;
         }
     }
 }
