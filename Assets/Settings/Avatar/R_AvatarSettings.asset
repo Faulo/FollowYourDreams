@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
   prefab: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
+  rotationSmoothing: 0.1
   controller: {fileID: 9100000, guid: ae4acebab7e56af4fb42f3917f6b3747, type: 2}
   sheet: {fileID: 2800000, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   sprites:
@@ -47,32 +48,63 @@ MonoBehaviour:
   - {fileID: 153468935, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -251152597, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -1013716426, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -2018266473, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -868944588, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -30772644, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1307349045, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -166920471, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1388650573, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1500294258, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 146305746, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -934436854, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -112004388, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -824039200, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1190612579, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 541474715, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 566292893, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 205579508, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1913615775, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1877533757, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -553978710, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -460845404, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1051414397, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
       app: https://www.aseprite.org/
       version: 1.2.40-x64
       image: S_Avatar.png
-      format: I8
+      format: RGBA8888
       size:
-        w: 80
-        h: 192
+        w: 160
+        h: 200
       scale: 1
       frameTags:
-      - name: idle
+      - name: Idle
         from: 0
         to: 1
         direction: forward
-      - name: walk
+      - name: Run
         from: 2
         to: 3
         direction: forward
-      - name: jump
+      - name: Walk
         from: 4
         to: 5
+        direction: pingpong
+      - name: Jump
+        from: 6
+        to: 8
+        direction: forward
+      - name: Push
+        from: 9
+        to: 9
         direction: forward
       layers:
-      - name: avatar
+      - name: Layer 1
+        opacity: 255
+        blendMode: normal
+      - name: Flattened
         opacity: 255
         blendMode: normal
   animatorPrefab: {fileID: -1088564663788547598, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
