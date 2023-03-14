@@ -14,15 +14,20 @@ namespace FollowYourDreams.Avatar {
         GameObject prefab;
 
 #if UNITY_EDITOR
+        const int DIRECTION_COUNT = 5;
+        const float TIME_MULTIPLIER = 0.001f;
         [Header("Animations")]
         [SerializeField]
         AnimatorController controller;
         [SerializeField]
         Texture2D sheet;
         [SerializeField]
-        int directionCount = 5;
-        [SerializeField]
         Sprite[] sprites = Array.Empty<Sprite>();
+
+        Sprite GetSprite(int index, AvatarDirection direction) {
+            return sprites[(index * DIRECTION_COUNT) + (int)direction];
+        }
+
         [SerializeField]
         TextAsset json;
         [SerializeField]
@@ -77,12 +82,16 @@ namespace FollowYourDreams.Avatar {
                     int time = 0;
                     for (int i = anim.from; i <= anim.to; i++) {
                         keyframes.Add(new() {
-                            time = time * 0.001f,
-                            value = sprites[(i * directionCount) + (int)direction]
+                            time = time * TIME_MULTIPLIER,
+                            value = GetSprite(i, direction)
                         });
-
                         time += data[i].duration;
                     }
+                    keyframes.Add(new() {
+                        time = time * TIME_MULTIPLIER,
+                        value = GetSprite(anim.from, direction)
+                    });
+
                     AnimationUtility.SetObjectReferenceCurve(
                         animClip,
                         EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"),
