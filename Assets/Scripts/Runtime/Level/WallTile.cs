@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,18 +6,22 @@ namespace FollowYourDreams.Level {
     [CreateAssetMenu]
     sealed class WallTile : TileBase {
         enum Segment {
-            Top = 0,
-            Middle = 1,
-            Bottom = 2,
-            FreeFloating = 3,
+            Grounded = 0,
+            Top = 1,
+            Middle = 2,
+            Bottom = 3,
         }
         [SerializeField]
         Texture2D sheet = default;
         [SerializeField]
         Sprite[] sprites = Array.Empty<Sprite>();
+        [SerializeField]
+        Color tint = Color.white;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
+            tileData.color = tint;
+            tileData.flags = TileFlags.LockColor;
         }
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
@@ -37,17 +40,14 @@ namespace FollowYourDreams.Level {
             }
             return bottom == this
                 ? Segment.Top
-                : Segment.FreeFloating;
+                : Segment.Grounded;
         }
 
 #if UNITY_EDITOR
         [ContextMenu(nameof(OnValidate))]
         void OnValidate() {
             if (sheet) {
-                sprites = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(UnityEditor.AssetDatabase.GetAssetPath(sheet))
-                    .OfType<Sprite>()
-                    .OrderBy(sprite => sprite.name)
-                    .ToArray();
+                sprites = sheet.LoadSprites();
             }
         }
 #endif
