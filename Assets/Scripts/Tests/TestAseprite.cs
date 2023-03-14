@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 namespace FollowYourDreams.Tests {
-    public class TestAseprite {
+    public sealed class TestAseprite {
         string data;
 
         [SetUp]
@@ -87,7 +87,7 @@ namespace FollowYourDreams.Tests {
             Assert.AreEqual("idle", obj.meta.frameTags[0].name);
             Assert.AreEqual(0, obj.meta.frameTags[0].from);
             Assert.AreEqual(1, obj.meta.frameTags[0].to);
-            Assert.AreEqual("forward", obj.meta.frameTags[0].direction);
+            Assert.AreEqual(AsepriteDataFrameDirection.forward, obj.meta.frameTags[0].direction);
         }
     }
 }

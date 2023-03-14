@@ -28,8 +28,12 @@ namespace FollowYourDreams.Avatar {
         Vector2 intendedMove;
         float intendedRotation => intendedMove == Vector2.zero
             ? currentRotation
-            : Vector2.Angle(Vector2.up, intendedMove);
+            : Vector2.SignedAngle(intendedMove, Vector2.up);
+        float intendedSpeed => intendedMove.magnitude;
+        [SerializeField]
+        Direction intendedDirection;
         float torque;
+        float acceleration;
         [SerializeField]
         bool intendsToJump;
 
@@ -58,9 +62,10 @@ namespace FollowYourDreams.Avatar {
         void ProcessInput() {
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
-            var direction = Direction.Down;
-            direction.Set(intendedRotation);
-            currentDirection = direction switch {
+            currentSpeed = Mathf.SmoothDampAngle(currentSpeed, intendedSpeed * settings.maxSpeed, ref acceleration, settings.speedSmoothing);
+
+            intendedDirection.Set(intendedRotation);
+            currentDirection = intendedDirection switch {
                 Direction.Up => AvatarDirection.Up,
                 Direction.UpRight => AvatarDirection.UpLeft,
                 Direction.Right => AvatarDirection.Left,
@@ -69,10 +74,10 @@ namespace FollowYourDreams.Avatar {
                 Direction.DownLeft => AvatarDirection.DownLeft,
                 Direction.Left => AvatarDirection.Left,
                 Direction.UpLeft => AvatarDirection.UpLeft,
-                _ => throw new System.NotImplementedException(),
+                _ => throw new System.NotImplementedException(intendedDirection.ToString()),
             };
 
-            switch (direction) {
+            switch (intendedDirection) {
                 case Direction.UpLeft:
                 case Direction.Left:
                 case Direction.DownLeft:
@@ -84,10 +89,16 @@ namespace FollowYourDreams.Avatar {
                     attachedRenderer.flipX = true;
                     break;
             }
+
+            currentAnimation = intendedSpeed > 0.1f
+                ? intendedSpeed > 0.5f
+                    ? AvatarAnimation.Run
+                    : AvatarAnimation.Walk
+                : AvatarAnimation.Idle;
         }
 
         void ProcessCharacter() {
-            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed;
+            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
         }
 

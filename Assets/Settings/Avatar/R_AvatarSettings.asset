@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
   prefab: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
-  rotationSmoothing: 0.1
+  rotationSmoothing: 0.01
+  speedSmoothing: 0.01
+  maxSpeed: 2
   controller: {fileID: 9100000, guid: ae4acebab7e56af4fb42f3917f6b3747, type: 2}
   sheet: {fileID: 2800000, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   sprites:
@@ -68,6 +70,11 @@ MonoBehaviour:
   - {fileID: -553978710, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -460845404, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: 1051414397, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -886939299, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1218809136, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1690056048, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1084458366, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1446761262, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
@@ -77,29 +84,29 @@ MonoBehaviour:
       format: RGBA8888
       size:
         w: 160
-        h: 200
+        h: 220
       scale: 1
       frameTags:
       - name: Idle
         from: 0
         to: 1
-        direction: forward
+        direction: 0
       - name: Run
         from: 2
         to: 3
-        direction: forward
+        direction: 0
       - name: Walk
         from: 4
         to: 5
-        direction: pingpong
+        direction: 1
       - name: Jump
         from: 6
         to: 8
-        direction: forward
+        direction: 0
       - name: Push
         from: 9
-        to: 9
-        direction: forward
+        to: 10
+        direction: 0
       layers:
       - name: Layer 1
         opacity: 255

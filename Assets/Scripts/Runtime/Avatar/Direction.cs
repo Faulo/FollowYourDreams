@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
-    enum Direction {
+    public enum Direction {
         Up,
         UpRight,
         Right,
@@ -14,7 +14,12 @@ namespace FollowYourDreams.Avatar {
     static class DirectionExtensions {
         public static void Set(this ref Direction direction, float angle) {
             // Normalize the angle to be between 0 and 360 degrees
-            angle = (angle + 360f) % 360f;
+            while (angle < 0) {
+                angle += 360;
+            }
+            while (angle > 360) {
+                angle -= 360;
+            }
 
             // Calculate the index of the closest direction
             int index = Mathf.RoundToInt(angle / 45f) % 8;

@@ -16,6 +16,10 @@ namespace FollowYourDreams.Avatar {
         [Header("Movement")]
         [SerializeField, Range(0, 10)]
         public float rotationSmoothing = 0.1f;
+        [SerializeField, Range(0, 10)]
+        public float speedSmoothing = 0.1f;
+        [SerializeField, Range(0, 10)]
+        public float maxSpeed = 5;
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
@@ -75,7 +79,12 @@ namespace FollowYourDreams.Avatar {
 
                     var animClip = new AnimationClip() {
                         name = GetAnimationName(direction, animation),
-                        wrapMode = WrapMode.Loop,
+                        wrapMode = anim.direction switch {
+                            AsepriteDataFrameDirection.forward => WrapMode.Loop,
+                            AsepriteDataFrameDirection.pingpong => WrapMode.PingPong,
+                            AsepriteDataFrameDirection.reverse => WrapMode.ClampForever,
+                            _ => throw new NotImplementedException(anim.direction.ToString()),
+                        },
                     };
 
                     var settings = AnimationUtility.GetAnimationClipSettings(animClip);
