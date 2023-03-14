@@ -1,7 +1,9 @@
 namespace FollowYourDreams.Avatar {
     enum AvatarAnimation {
-        idle,
-        walk,
-        jump
+        Idle,
+        Walk,
+        Jump,
+        Push,
+        Run,
     }
 }

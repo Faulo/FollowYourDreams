@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace FollowYourDreams.Avatar {
     sealed class AvatarController : MonoBehaviour {
@@ -20,7 +21,17 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         AvatarDirection currentDirection = AvatarDirection.Down;
         [SerializeField]
-        AvatarAnimation currentAnimation = AvatarAnimation.idle;
+        AvatarAnimation currentAnimation = AvatarAnimation.Idle;
+
+        [Header("Input")]
+        [SerializeField]
+        Vector2 intendedMove;
+        float intendedRotation => intendedMove == Vector2.zero
+            ? currentRotation
+            : Vector2.Angle(Vector2.up, intendedMove);
+        float torque;
+        [SerializeField]
+        bool intendsToJump;
 
         void OnValidate() {
             if (!attachedAnimator) {
@@ -35,12 +46,53 @@ namespace FollowYourDreams.Avatar {
         }
 
         void FixedUpdate() {
-            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed;
-            attachedCharacter.Move(motion);
+            ProcessInput();
+            ProcessCharacter();
         }
 
         void Update() {
             attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
+            attachedAnimator.Update(Time.deltaTime);
+        }
+
+        void ProcessInput() {
+            currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
+
+            var direction = Direction.Down;
+            direction.Set(intendedRotation);
+            currentDirection = direction switch {
+                Direction.Up => AvatarDirection.Up,
+                Direction.UpRight => AvatarDirection.UpLeft,
+                Direction.Right => AvatarDirection.Left,
+                Direction.DownRight => AvatarDirection.DownLeft,
+                Direction.Down => AvatarDirection.Down,
+                Direction.DownLeft => AvatarDirection.DownLeft,
+                Direction.Left => AvatarDirection.Left,
+                Direction.UpLeft => AvatarDirection.UpLeft,
+                _ => throw new System.NotImplementedException(),
+            };
+
+            switch (direction) {
+                case Direction.UpLeft:
+                case Direction.Left:
+                case Direction.DownLeft:
+                    attachedRenderer.flipX = false;
+                    break;
+                case Direction.UpRight:
+                case Direction.Right:
+                case Direction.DownRight:
+                    attachedRenderer.flipX = true;
+                    break;
+            }
+        }
+
+        void ProcessCharacter() {
+            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed;
+            attachedCharacter.Move(motion);
+        }
+
+        public void OnMove(InputValue value) {
+            intendedMove = value.Get<Vector2>();
         }
     }
 }

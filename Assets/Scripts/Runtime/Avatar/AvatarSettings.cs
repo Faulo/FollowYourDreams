@@ -13,6 +13,10 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         GameObject prefab;
 
+        [Header("Movement")]
+        [SerializeField, Range(0, 10)]
+        public float rotationSmoothing = 0.1f;
+
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
         const float TIME_MULTIPLIER = 0.001f;
