@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -48,10 +47,7 @@ namespace FollowYourDreams.Level {
         [ContextMenu(nameof(OnValidate))]
         void OnValidate() {
             if (sheet) {
-                sprites = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(UnityEditor.AssetDatabase.GetAssetPath(sheet))
-                    .OfType<Sprite>()
-                    .OrderBy(sprite => sprite.name)
-                    .ToArray();
+                sprites = sheet.LoadSprites();
             }
         }
 #endif

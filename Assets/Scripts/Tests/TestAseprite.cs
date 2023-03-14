@@ -45,6 +45,16 @@ namespace FollowYourDreams.Tests {
             Assert.AreEqual(32, frame.spriteSourceSize.h);
         }
 
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        [TestCase(4)]
+        [TestCase(5)]
+        public void TestThis(int id) {
+            var obj = AsepriteData.FromJson(data);
+            Assert.AreEqual(obj.frames[$"S_Avatar {id}.aseprite"], obj[id]);
+        }
         [Test]
         public void TestFromJsonMeta() {
             var obj = AsepriteData.FromJson(data);

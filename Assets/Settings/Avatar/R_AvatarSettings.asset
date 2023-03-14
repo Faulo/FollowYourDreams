@@ -15,6 +15,37 @@ MonoBehaviour:
   asset: {fileID: 11400000}
   prefab: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
   sheet: {fileID: 2800000, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  sprites:
+  - {fileID: -757028865, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1880835523, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1234711805, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1438063691, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1428651163, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -241682320, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 831798636, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1311715397, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1020234481, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 665374708, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 959665972, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -176323611, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -822665072, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 349674245, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -114750030, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1309921259, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 908157966, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 807750732, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -129627139, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 981508385, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1643263452, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1883862659, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 388021294, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1857273888, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 447850587, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1105344921, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1514896728, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 153468935, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -251152597, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1013716426, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
@@ -23,10 +54,22 @@ MonoBehaviour:
       image: S_Avatar.png
       format: I8
       size:
-        w: 0
-        h: 0
+        w: 80
+        h: 192
       scale: 1
-      frameTags: []
+      frameTags:
+      - name: idle
+        from: 0
+        to: 1
+        direction: forward
+      - name: walk
+        from: 2
+        to: 3
+        direction: forward
+      - name: jump
+        from: 4
+        to: 5
+        direction: forward
       layers:
       - name: avatar
         opacity: 255

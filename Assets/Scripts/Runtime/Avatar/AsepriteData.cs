@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -8,6 +9,11 @@ namespace FollowYourDreams.Avatar {
     class AsepriteData {
         public static AsepriteData FromJson(string text) {
             return JsonConvert.DeserializeObject<AsepriteData>(text);
+        }
+        public AsepriteDataFrame this[int frameId] {
+            get {
+                return frames.ElementAt(frameId).Value;
+            }
         }
         [SerializeField]
         public Dictionary<string, AsepriteDataFrame> frames = new();
