@@ -19,7 +19,9 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Range(0, 10)]
         public float speedSmoothing = 0.1f;
         [SerializeField, Range(0, 10)]
-        public float maxSpeed = 5;
+        public float walkSpeed = 1;
+        [SerializeField, Range(0, 10)]
+        public float runSpeed = 2;
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
