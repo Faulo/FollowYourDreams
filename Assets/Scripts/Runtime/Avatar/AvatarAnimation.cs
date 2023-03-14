@@ -5,5 +5,6 @@ namespace FollowYourDreams.Avatar {
         Jump,
         Push,
         Run,
+        Interact,
     }
 }
