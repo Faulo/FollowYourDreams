@@ -8,9 +8,15 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         SpriteRenderer attachedRenderer;
         [SerializeField]
+        CharacterController attachedCharacter;
+        [SerializeField]
         AvatarSettings settings;
 
         [Header("Runtime")]
+        [SerializeField]
+        float currentRotation = 0;
+        [SerializeField]
+        float currentSpeed = 0;
         [SerializeField]
         AvatarDirection currentDirection = AvatarDirection.Down;
         [SerializeField]
@@ -23,6 +29,14 @@ namespace FollowYourDreams.Avatar {
             if (!attachedRenderer) {
                 TryGetComponent(out attachedRenderer);
             }
+            if (!attachedCharacter) {
+                TryGetComponent(out attachedCharacter);
+            }
+        }
+
+        void FixedUpdate() {
+            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed;
+            attachedCharacter.Move(motion);
         }
 
         void Update() {

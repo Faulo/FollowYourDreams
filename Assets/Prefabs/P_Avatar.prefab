@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440936119859221609}
+  - component: {fileID: -9085380897754867873}
   - component: {fileID: -1088564663788547598}
   - component: {fileID: 2911230427699115473}
-  - component: {fileID: -9085380897754867873}
+  - component: {fileID: 4332099688496705474}
   m_Layer: 0
   m_Name: P_Avatar
   m_TagString: Untagged
@@ -34,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9085380897754867873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583865241736183928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2d03e35dd0b844db271c55b49b53f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachedAnimator: {fileID: -1088564663788547598}
+  attachedRenderer: {fileID: 2911230427699115473}
+  attachedCharacter: {fileID: 4332099688496705474}
+  settings: {fileID: 11400000, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  currentRotation: 0
+  currentSpeed: 0
+  currentDirection: 1
+  currentAnimation: 0
 --- !u!95 &-1088564663788547598
 Animator:
   serializedVersion: 5
@@ -107,20 +128,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-9085380897754867873
-MonoBehaviour:
+--- !u!143 &4332099688496705474
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3583865241736183928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e2d03e35dd0b844db271c55b49b53f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedAnimator: {fileID: -1088564663788547598}
-  attachedRenderer: {fileID: 2911230427699115473}
-  settings: {fileID: 11400000, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
-  currentDirection: 1
-  currentAnimation: 0
+  serializedVersion: 3
+  m_Height: 4
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
