@@ -110,6 +110,6 @@ namespace FollowYourDreams.Avatar {
         public static string GetAnimationName(AvatarDirection direction, AvatarAnimation animation) {
             return $"{direction}_{animation}";
         }
-    }
 #endif
+    }
 }
