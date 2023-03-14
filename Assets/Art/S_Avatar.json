@@ -85,7 +85,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    "S_Avatar 11.aseprite": {
     "frame": { "x": 0, "y": 352, "w": 160, "h": 32 },
@@ -101,7 +101,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 100
    },
    "S_Avatar 13.aseprite": {
     "frame": { "x": 0, "y": 416, "w": 160, "h": 32 },
@@ -142,6 +142,22 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
     "duration": 300
+   },
+   "S_Avatar 18.aseprite": {
+    "frame": { "x": 0, "y": 576, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   "S_Avatar 19.aseprite": {
+    "frame": { "x": 0, "y": 608, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
    }
  },
  "meta": {
@@ -149,16 +165,18 @@
   "version": "1.2.40-x64",
   "image": "S_Avatar.png",
   "format": "RGBA8888",
-  "size": { "w": 160, "h": 576 },
+  "size": { "w": 160, "h": 640 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
    { "name": "Run", "from": 2, "to": 5, "direction": "forward" },
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
-   { "name": "Jump", "from": 8, "to": 10, "direction": "forward" },
-   { "name": "Push", "from": 11, "to": 12, "direction": "forward" },
-   { "name": "Interact", "from": 13, "to": 14, "direction": "forward" },
-   { "name": "Climb", "from": 15, "to": 17, "direction": "forward" }
+   { "name": "Jump", "from": 8, "to": 9, "direction": "forward" },
+   { "name": "Fall", "from": 10, "to": 11, "direction": "forward" },
+   { "name": "Land", "from": 12, "to": 12, "direction": "forward" },
+   { "name": "Push", "from": 13, "to": 14, "direction": "forward" },
+   { "name": "Interact", "from": 15, "to": 16, "direction": "forward" },
+   { "name": "Climb", "from": 17, "to": 19, "direction": "forward" }
   ],
   "layers": [
    { "name": "Flattened", "opacity": 255, "blendMode": "normal" }
