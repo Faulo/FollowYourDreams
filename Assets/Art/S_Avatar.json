@@ -8,7 +8,7 @@
     "duration": 200
    },
    "S_Avatar 1.aseprite": {
-    "frame": { "x": 80, "y": 0, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 32, "w": 80, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
@@ -16,7 +16,7 @@
     "duration": 200
    },
    "S_Avatar 2.aseprite": {
-    "frame": { "x": 160, "y": 0, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 64, "w": 80, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
@@ -24,7 +24,23 @@
     "duration": 200
    },
    "S_Avatar 3.aseprite": {
-    "frame": { "x": 240, "y": 0, "w": 80, "h": 32 },
+    "frame": { "x": 0, "y": 96, "w": 80, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
+    "sourceSize": { "w": 80, "h": 32 },
+    "duration": 200
+   },
+   "S_Avatar 4.aseprite": {
+    "frame": { "x": 0, "y": 128, "w": 80, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
+    "sourceSize": { "w": 80, "h": 32 },
+    "duration": 200
+   },
+   "S_Avatar 5.aseprite": {
+    "frame": { "x": 0, "y": 160, "w": 80, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
@@ -36,12 +52,13 @@
   "app": "https://www.aseprite.org/",
   "version": "1.2.40-x64",
   "image": "S_Avatar.png",
-  "format": "RGBA8888",
-  "size": { "w": 320, "h": 32 },
+  "format": "I8",
+  "size": { "w": 80, "h": 192 },
   "scale": "1",
   "frameTags": [
    { "name": "idle", "from": 0, "to": 1, "direction": "forward" },
-   { "name": "walk", "from": 2, "to": 3, "direction": "forward" }
+   { "name": "walk", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "jump", "from": 4, "to": 5, "direction": "forward" }
   ],
   "layers": [
    { "name": "avatar", "opacity": 255, "blendMode": "normal" }
