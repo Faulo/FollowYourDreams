@@ -23,14 +23,14 @@ namespace FollowYourDreams.Level {
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
             tileData.color = tint;
-            tileData.flags = TileFlags.LockColor;
+            tileData.flags = TileFlags.LockColor | TileFlags.LockTransform;
             tileData.colliderType = Tile.ColliderType.None;
             tileData.gameObject = prefab;
         }
 
         public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
             if (go) {
-                // go.transform.eulerAngles = new(0, 45, 0);
+                go.transform.localRotation = prefab.transform.localRotation;
             }
             return true;
         }

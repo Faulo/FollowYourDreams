@@ -16,8 +16,9 @@ MonoBehaviour:
   prefab: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
   rotationSmoothing: 0.01
   speedSmoothing: 0.01
-  walkSpeed: 1
-  runSpeed: 2
+  walkSpeed: 2
+  runSpeed: 4
+  jumpSpeed: 4
   controller: {fileID: 9100000, guid: ae4acebab7e56af4fb42f3917f6b3747, type: 2}
   sheet: {fileID: 2800000, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   sprites:
