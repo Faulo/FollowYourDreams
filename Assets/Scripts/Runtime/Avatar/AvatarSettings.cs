@@ -75,7 +75,12 @@ namespace FollowYourDreams.Avatar {
 
                     var animClip = new AnimationClip() {
                         name = GetAnimationName(direction, animation),
-                        wrapMode = WrapMode.Loop,
+                        wrapMode = anim.direction switch {
+                            AsepriteDataFrameDirection.forward => WrapMode.Loop,
+                            AsepriteDataFrameDirection.pingpong => WrapMode.PingPong,
+                            AsepriteDataFrameDirection.reverse => WrapMode.ClampForever,
+                            _ => throw new NotImplementedException(anim.direction.ToString()),
+                        },
                     };
 
                     var settings = AnimationUtility.GetAnimationClipSettings(animClip);

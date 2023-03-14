@@ -66,6 +66,11 @@ namespace FollowYourDreams.Avatar {
         public string name;
         public int from;
         public int to;
-        public string direction;
+        public AsepriteDataFrameDirection direction;
+    }
+    enum AsepriteDataFrameDirection {
+        forward,
+        pingpong,
+        reverse
     }
 }
