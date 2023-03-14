@@ -22,6 +22,8 @@ namespace FollowYourDreams.Avatar {
         public float walkSpeed = 1;
         [SerializeField, Range(0, 10)]
         public float runSpeed = 2;
+        [SerializeField, Range(0, 10)]
+        public float jumpSpeed = 5;
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
