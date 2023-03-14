@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4440936119859221609}
   - component: {fileID: -1088564663788547598}
   - component: {fileID: 2911230427699115473}
+  - component: {fileID: -9085380897754867873}
   m_Layer: 0
   m_Name: P_Avatar
   m_TagString: Untagged
@@ -106,3 +107,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-9085380897754867873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583865241736183928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2d03e35dd0b844db271c55b49b53f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachedAnimator: {fileID: -1088564663788547598}
+  attachedRenderer: {fileID: 2911230427699115473}
+  settings: {fileID: 11400000, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  currentDirection: 1
+  currentAnimation: 0
