@@ -112,6 +112,16 @@ MonoBehaviour:
   - {fileID: -1783584155, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: -1118059951, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   - {fileID: 2034135622, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 481317056, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 127360947, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -1385754647, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -740593330, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -950999163, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1375150537, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -598875299, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: -911235862, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 349004747, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  - {fileID: 1210304537, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
   json: {fileID: 4900000, guid: 730b33c2fd793554ba484e29a2208855, type: 3}
   data:
     meta:
@@ -121,7 +131,7 @@ MonoBehaviour:
       format: RGBA8888
       size:
         w: 160
-        h: 576
+        h: 640
       scale: 1
       frameTags:
       - name: Idle
@@ -138,19 +148,27 @@ MonoBehaviour:
         direction: 1
       - name: Jump
         from: 8
-        to: 10
+        to: 9
         direction: 0
-      - name: Push
-        from: 11
+      - name: Fall
+        from: 10
+        to: 11
+        direction: 0
+      - name: Land
+        from: 12
         to: 12
         direction: 0
-      - name: Interact
+      - name: Push
         from: 13
         to: 14
         direction: 0
-      - name: Climb
+      - name: Interact
         from: 15
-        to: 17
+        to: 16
+        direction: 0
+      - name: Climb
+        from: 17
+        to: 19
         direction: 0
       layers:
       - name: Flattened
