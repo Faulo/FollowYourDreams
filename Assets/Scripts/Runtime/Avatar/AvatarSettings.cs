@@ -106,10 +106,10 @@ namespace FollowYourDreams.Avatar {
 
             AssetDatabase.SaveAssets();
         }
+#endif
 
         public static string GetAnimationName(AvatarDirection direction, AvatarAnimation animation) {
             return $"{direction}_{animation}";
         }
-#endif
     }
 }
