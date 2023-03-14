@@ -35,6 +35,11 @@ namespace FollowYourDreams.Avatar {
         float torque;
         float acceleration;
         [SerializeField]
+        bool intendsToRun;
+        float maxSpeed => intendsToRun
+            ? settings.runSpeed
+            : settings.walkSpeed;
+        [SerializeField]
         bool intendsToJump;
 
         void OnValidate() {
@@ -62,7 +67,7 @@ namespace FollowYourDreams.Avatar {
         void ProcessInput() {
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
-            currentSpeed = Mathf.SmoothDampAngle(currentSpeed, intendedSpeed * settings.maxSpeed, ref acceleration, settings.speedSmoothing);
+            currentSpeed = Mathf.SmoothDampAngle(currentSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
 
             intendedDirection.Set(intendedRotation);
             currentDirection = intendedDirection switch {
@@ -91,7 +96,7 @@ namespace FollowYourDreams.Avatar {
             }
 
             currentAnimation = intendedSpeed > 0.1f
-                ? intendedSpeed > 0.5f
+                ? intendsToRun
                     ? AvatarAnimation.Run
                     : AvatarAnimation.Walk
                 : AvatarAnimation.Idle;
@@ -104,6 +109,10 @@ namespace FollowYourDreams.Avatar {
 
         public void OnMove(InputValue value) {
             intendedMove = value.Get<Vector2>();
+        }
+
+        public void OnRun(InputValue value) {
+            intendsToRun = value.isPressed;
         }
     }
 }
