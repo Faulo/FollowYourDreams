@@ -56,6 +56,9 @@ MonoBehaviour:
   currentSpeed: 0
   currentDirection: 1
   currentAnimation: 0
+  intendedMove: {x: 0, y: 0}
+  intendedDirection: 0
+  intendsToJump: 0
 --- !u!95 &-1088564663788547598
 Animator:
   serializedVersion: 5
@@ -148,13 +151,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 4
-  m_Radius: 0.5
+  m_Height: 0.9
+  m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_StepOffset: 0.25
+  m_SkinWidth: 0.0625
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &8394062918357687654
 MonoBehaviour:
   m_ObjectHideFlags: 0

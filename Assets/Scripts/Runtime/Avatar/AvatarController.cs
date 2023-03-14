@@ -29,9 +29,11 @@ namespace FollowYourDreams.Avatar {
         float intendedRotation => intendedMove == Vector2.zero
             ? currentRotation
             : Vector2.SignedAngle(intendedMove, Vector2.up);
+        float intendedSpeed => intendedMove.magnitude;
         [SerializeField]
         Direction intendedDirection;
         float torque;
+        float acceleration;
         [SerializeField]
         bool intendsToJump;
 
@@ -60,6 +62,8 @@ namespace FollowYourDreams.Avatar {
         void ProcessInput() {
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
+            currentSpeed = Mathf.SmoothDampAngle(currentSpeed, intendedSpeed * settings.maxSpeed, ref acceleration, settings.speedSmoothing);
+
             intendedDirection.Set(intendedRotation);
             currentDirection = intendedDirection switch {
                 Direction.Up => AvatarDirection.Up,
@@ -85,10 +89,16 @@ namespace FollowYourDreams.Avatar {
                     attachedRenderer.flipX = true;
                     break;
             }
+
+            currentAnimation = intendedSpeed > 0.1f
+                ? intendedSpeed > 0.5f
+                    ? AvatarAnimation.Run
+                    : AvatarAnimation.Walk
+                : AvatarAnimation.Idle;
         }
 
         void ProcessCharacter() {
-            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed;
+            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
         }
 
