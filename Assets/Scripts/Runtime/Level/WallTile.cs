@@ -12,6 +12,8 @@ namespace FollowYourDreams.Level {
             Bottom = 3,
         }
         [SerializeField]
+        GameObject prefab = default;
+        [SerializeField]
         Texture2D sheet = default;
         [SerializeField]
         Sprite[] sprites = Array.Empty<Sprite>();
@@ -22,6 +24,15 @@ namespace FollowYourDreams.Level {
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
             tileData.color = tint;
             tileData.flags = TileFlags.LockColor;
+            tileData.colliderType = Tile.ColliderType.None;
+            tileData.gameObject = prefab;
+        }
+
+        public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
+            if (go) {
+                // go.transform.eulerAngles = new(0, 45, 0);
+            }
+            return true;
         }
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
