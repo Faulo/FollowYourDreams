@@ -1,17 +1,20 @@
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
     [CreateAssetMenu]
-    sealed class AvatarSettings : ScriptableObject {
+    sealed class AvatarSettings : ScriptableAsset {
         [SerializeField]
         GameObject prefab;
 
-        [Header("Animations")]
 #if UNITY_EDITOR
+        [Header("Animations")]
         [SerializeField]
         Texture2D sheet;
         [SerializeField]
         TextAsset json;
+        [SerializeField]
+        AsepriteData data = new();
         [SerializeField]
         Animator animatorPrefab;
 
@@ -23,6 +26,7 @@ namespace FollowYourDreams.Avatar {
         [ContextMenu(nameof(LoadSheet))]
         void LoadSheet() {
             LoadPrefab();
+            data = JsonConvert.DeserializeObject<AsepriteData>(json.text);
         }
 #endif
     }

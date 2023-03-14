@@ -16,9 +16,13 @@ namespace FollowYourDreams.Level {
         Texture2D sheet = default;
         [SerializeField]
         Sprite[] sprites = Array.Empty<Sprite>();
+        [SerializeField]
+        Color tint = Color.white;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             tileData.sprite = sprites[(int)CalculateSegment(position, tilemap)];
+            tileData.color = tint;
+            tileData.flags = TileFlags.LockColor;
         }
 
         public override void RefreshTile(Vector3Int position, ITilemap tilemap) {
