@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class WallTile : StandaloneTile {
+    sealed class WallTile : ScriptableTile {
         enum Segment {
             Grounded = 0,
             Top = 1,
