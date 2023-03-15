@@ -259,6 +259,55 @@ MonoBehaviour:
       Data2: 1194917086
       Data3: -1121114226
       Data4: -1298004321
-    Path: event:/Avatar/step
+    Path: event:/Avatar/Step
   walkInterval: 0.45
   runInterval: 0.35
+  interactEvent:
+    Guid:
+      Data1: -1794369215
+      Data2: 1171221948
+      Data3: 339476909
+      Data4: -1345852042
+    Path: event:/Avatar/Interact
+  jumpEvent:
+    Guid:
+      Data1: 419628502
+      Data2: 1132999768
+      Data3: 585113750
+      Data4: -1704304690
+    Path: event:/Avatar/Jump
+  landEvent:
+    Guid:
+      Data1: -1290991069
+      Data2: 1279327884
+      Data3: 23335042
+      Data4: -1583441974
+    Path: event:/Avatar/Land
+  climbEvent:
+    Guid:
+      Data1: -1437371105
+      Data2: 1336092433
+      Data3: -993188204
+      Data4: 96533371
+    Path: event:/Avatar/Climb
+  stumbleEvent:
+    Guid:
+      Data1: 1596999023
+      Data2: 1191984579
+      Data3: -1448322118
+      Data4: -662573380
+    Path: event:/Avatar/Stumble
+  goToSleepEvent:
+    Guid:
+      Data1: -83782113
+      Data2: 1188951681
+      Data3: -149473405
+      Data4: -813240850
+    Path: event:/Avatar/GoToSleep
+  wakeUpEvent:
+    Guid:
+      Data1: 676483901
+      Data2: 1228451313
+      Data3: 1388361379
+      Data4: 1634735199
+    Path: event:/Avatar/WakeUp
