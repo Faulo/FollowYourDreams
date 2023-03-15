@@ -20,6 +20,7 @@ namespace FollowYourDreams.Level {
         public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
             if (go) {
                 go.transform.localRotation = prefab.transform.localRotation;
+                go.layer = tilemap.GetComponent<Transform>().gameObject.layer;
             }
             return true;
         }

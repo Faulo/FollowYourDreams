@@ -6,7 +6,7 @@ using UnityObject = UnityEngine.Object;
 
 namespace FollowYourDreams {
     [ExecuteAlways]
-    abstract class DimensionController<T> : MonoBehaviour where T : UnityObject {
+    abstract class DimensionFloatController<T> : MonoBehaviour where T : UnityObject {
         [Header("Setup")]
         [SerializeField, Expandable]
         GameManager manager;

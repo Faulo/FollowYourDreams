@@ -1,7 +1,7 @@
 using UnityEngine.Rendering;
 
 namespace FollowYourDreams {
-    sealed class VolumeController : DimensionController<Volume> {
+    sealed class VolumeController : DimensionFloatController<Volume> {
         protected override float GetDimension(Volume dimension) {
             return dimension.weight;
         }

@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 365273780}
   - component: {fileID: 365273782}
   - component: {fileID: 365273781}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 0
@@ -1575,7 +1575,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 0
@@ -1615,7 +1615,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 0
@@ -1636,12 +1636,12 @@ Tilemap:
     m_Data: {fileID: -325545409, guid: f930f77e7515bd44ab37eeabccdb14dc, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: bfdf7210ff1bb1f4d9c5ab1c381b68f5, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1091029092, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -25421062, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1991480940, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 845918243, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
   - m_RefCount: 8
@@ -1652,12 +1652,12 @@ Tilemap:
     m_Data: {fileID: 1534600452, guid: f930f77e7515bd44ab37eeabccdb14dc, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1991480940, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -25421062, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1091029092, guid: 83b6627e8c5bcc84c8e023ccd59d912f, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 129
     m_Data:
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 0173ee48c7f49ca4cab9363344690aae, type: 2}
 --- !u!1 &437581683
 GameObject:
@@ -1926,11 +1926,11 @@ MonoBehaviour:
   real: {fileID: 2100000, guid: 5c10c01288fb395419889f6309d17bd9, type: 2}
   dream: {fileID: 2100000, guid: ff539e4e9c59bb2438f3755f182603f4, type: 2}
   nightmare: {fileID: 2100000, guid: 468d9d2d412ead4478bdb2c86c1e09ce, type: 2}
-  alphaName: _Alpha
   dimensionSmoothing: 1
   realVelocity: 0
   dreamVelocity: 0
   nightmareVelocity: 0
+  alphaName: _Alpha
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2113,7 @@ GameObject:
   - component: {fileID: 545620119}
   - component: {fileID: 545620121}
   - component: {fileID: 545620120}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Dream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4686,7 +4686,7 @@ GameObject:
   - component: {fileID: 694389399}
   - component: {fileID: 694389401}
   - component: {fileID: 694389400}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Nightmare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: 775f962d8d94c0b4c9297cb1e3ea321e, type: 2}
 --- !u!4 &1915471320
 Transform:

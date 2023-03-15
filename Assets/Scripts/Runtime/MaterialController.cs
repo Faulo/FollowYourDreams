@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace FollowYourDreams {
-    sealed class MaterialController : DimensionController<Material> {
+    sealed class MaterialController : DimensionFloatController<Material> {
         [SerializeField]
         string alphaName = "_Alpha";
 
