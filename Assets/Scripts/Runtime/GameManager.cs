@@ -1,11 +1,8 @@
-using System;
 using UnityEngine;
 
 namespace FollowYourDreams {
     [CreateAssetMenu]
     sealed class GameManager : ScriptableAsset {
-        public event Action<DimensionId> onSetDimension;
-
         [SerializeField]
         public DimensionId currentDimension;
 
@@ -19,9 +16,14 @@ namespace FollowYourDreams {
             ? 1
             : 0;
 
-        protected override void OnValidate() {
-            base.OnValidate();
-            onSetDimension?.Invoke(currentDimension);
+        public void ActivateRealWorld() {
+            currentDimension = DimensionId.RealWorld;
+        }
+        public void ActivateDreamscape() {
+            currentDimension = DimensionId.Dreamscape;
+        }
+        public void ActivateNightmareRealm() {
+            currentDimension = DimensionId.NightmareRealm;
         }
     }
 }
