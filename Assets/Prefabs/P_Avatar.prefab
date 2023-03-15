@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6386752329646142663}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57,7 +58,7 @@ MonoBehaviour:
   currentHorizontalSpeed: 0
   currentVerticalSpeed: 0
   currentDirection: 1
-  currentAnimation: 0
+  m_currentAnimation: 0
   intendedMove: {x: 0, y: 0}
   intendedDirection: 0
   intendsToRun: 0
@@ -207,3 +208,106 @@ MonoBehaviour:
   real: 10
   dream: 11
   nightmare: 12
+--- !u!1 &6920409036269466649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6386752329646142663}
+  - component: {fileID: 8436886869508959023}
+  m_Layer: 10
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6386752329646142663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920409036269466649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4440936119859221609}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8436886869508959023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920409036269466649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3d91b647f4837498364b82b9bc86ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: -9085380897754867873}
+  stepEvent:
+    Guid:
+      Data1: 752715037
+      Data2: 1194917086
+      Data3: -1121114226
+      Data4: -1298004321
+    Path: event:/Avatar/Step
+  walkInterval: 0.45
+  runInterval: 0.35
+  interactEvent:
+    Guid:
+      Data1: -1794369215
+      Data2: 1171221948
+      Data3: 339476909
+      Data4: -1345852042
+    Path: event:/Avatar/Interact
+  jumpEvent:
+    Guid:
+      Data1: 419628502
+      Data2: 1132999768
+      Data3: 585113750
+      Data4: -1704304690
+    Path: event:/Avatar/Jump
+  landEvent:
+    Guid:
+      Data1: -1290991069
+      Data2: 1279327884
+      Data3: 23335042
+      Data4: -1583441974
+    Path: event:/Avatar/Land
+  climbEvent:
+    Guid:
+      Data1: -1437371105
+      Data2: 1336092433
+      Data3: -993188204
+      Data4: 96533371
+    Path: event:/Avatar/Climb
+  stumbleEvent:
+    Guid:
+      Data1: 1596999023
+      Data2: 1191984579
+      Data3: -1448322118
+      Data4: -662573380
+    Path: event:/Avatar/Stumble
+  goToSleepEvent:
+    Guid:
+      Data1: -83782113
+      Data2: 1188951681
+      Data3: -149473405
+      Data4: -813240850
+    Path: event:/Avatar/GoToSleep
+  wakeUpEvent:
+    Guid:
+      Data1: 676483901
+      Data2: 1228451313
+      Data3: 1388361379
+      Data4: 1634735199
+    Path: event:/Avatar/WakeUp
