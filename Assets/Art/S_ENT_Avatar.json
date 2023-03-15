@@ -168,6 +168,7 @@
   "size": { "w": 160, "h": 640 },
   "scale": "1",
   "frameTags": [
+   { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
    { "name": "Run", "from": 2, "to": 5, "direction": "forward" },
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
    { "name": "Jump", "from": 8, "to": 9, "direction": "forward" },
