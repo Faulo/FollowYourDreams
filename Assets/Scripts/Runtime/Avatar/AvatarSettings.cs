@@ -60,7 +60,7 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(LoadSprites))]
         void LoadSprites() {
-            sheet.ExtractSprites(data, pivot, this, sprites);
+            sheet.ExtractSprites(data, pivot, this, sprites, DIRECTION_COUNT);
 
             AssetDatabase.SaveAssets();
         }

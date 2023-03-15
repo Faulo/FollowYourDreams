@@ -18,29 +18,35 @@ namespace FollowYourDreams {
                 .OrderBy(sprite => int.Parse(Regex.Match(sprite.name, @"\d+").Value))
                 .ToArray();
         }
-        public static void ExtractSprites(this Texture2D sheet, AsepriteData data, Vector2 pivot, UnityObject target, List<Sprite> sprites) {
+        public static void ExtractSprites(this Texture2D sheet, AsepriteData data, Vector2 pivot, UnityObject target, List<Sprite> sprites, int columns = 1) {
             string path = target.DestroyChildAssets<UnityObject, Sprite>();
 
             sprites.Clear();
 
             foreach (var frame in data.frames) {
-                var sprite = Sprite.Create(
-                    sheet,
-                    frame.frame.AsRect(),
-                    pivot,
-                    GameManager.pixelsPerUnit,
-                    0,
-                    SpriteMeshType.FullRect,
-                    default,
-                    false,
-                    Array.Empty<SecondarySpriteTexture>()
-                );
+                var rect = frame.frame.AsRectInt();
+                int width = rect.width / columns;
+                for (int i = 0; i < columns; i++) {
+                    var sprite = Sprite.Create(
+                        sheet,
+                        new Rect(rect.x + (width * i), rect.y, width, rect.height),
+                        pivot,
+                        GameManager.pixelsPerUnit,
+                        0,
+                        SpriteMeshType.FullRect,
+                        default,
+                        false,
+                        Array.Empty<SecondarySpriteTexture>()
+                    );
 
-                sprite.name = frame.filename;
+                    sprite.name = columns == 1
+                        ? frame.filename
+                        : frame.filename + "-" + i;
 
-                AssetDatabase.AddObjectToAsset(sprite, path);
+                    AssetDatabase.AddObjectToAsset(sprite, path);
 
-                sprites.Add(sprite);
+                    sprites.Add(sprite);
+                }
             }
 
             AssetDatabase.SaveAssets();
@@ -57,6 +63,7 @@ namespace FollowYourDreams {
 
             return path;
         }
+        public static Rect AsRect(this in RectInt rect) => new(rect.x, rect.y, rect.width, rect.height);
 #endif
     }
 }

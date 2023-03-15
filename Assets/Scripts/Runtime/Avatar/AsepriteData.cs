@@ -58,7 +58,6 @@ namespace FollowYourDreams.Avatar {
         public int w;
         public int h;
 
-        public Rect AsRect() => new(x, y, w, h);
         public RectInt AsRectInt() => new(x, y, w, h);
 
         public override string ToString() => AsRectInt().ToString();
