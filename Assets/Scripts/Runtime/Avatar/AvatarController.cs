@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace FollowYourDreams.Avatar {
     sealed class AvatarController : MonoBehaviour {
+        public event Action<AvatarAnimation> onAnimationChange;
+
+
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
@@ -23,7 +27,17 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         AvatarDirection currentDirection = AvatarDirection.Down;
         [SerializeField]
-        AvatarAnimation currentAnimation = AvatarAnimation.Idle;
+        AvatarAnimation currentAnimation {
+            get => m_currentAnimation;
+            set {
+                if (m_currentAnimation != value) {
+                    m_currentAnimation = value;
+                    onAnimationChange?.Invoke(value);
+                }
+            }
+        }
+        [SerializeField]
+        AvatarAnimation m_currentAnimation = AvatarAnimation.Idle;
 
         [Header("Input")]
         [SerializeField]

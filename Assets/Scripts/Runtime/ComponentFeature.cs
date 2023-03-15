@@ -1,4 +1,5 @@
 using MyBox;
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace FollowYourDreams {
@@ -9,6 +10,9 @@ namespace FollowYourDreams {
         protected virtual void OnValidate() {
             if (!observedComponent) {
                 TryGetComponent(out observedComponent);
+                if (!observedComponent) {
+                    transform.TryGetComponentInParent(out observedComponent);
+                }
             }
         }
     }
