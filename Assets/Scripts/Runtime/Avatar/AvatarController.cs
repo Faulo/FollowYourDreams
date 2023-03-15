@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using MyBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,7 +28,7 @@ namespace FollowYourDreams.Avatar {
         float currentVerticalSpeed = 0;
         [SerializeField, ReadOnly]
         AvatarDirection currentDirection = AvatarDirection.Down;
-        AvatarAnimation currentAnimation {
+        public AvatarAnimation currentAnimation {
             get => m_currentAnimation;
             set {
                 if (m_currentAnimation != value) {
@@ -60,6 +61,11 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, ReadOnly]
         bool isJumping;
 
+        // readonly HashSet<IInteractable> interactablePool = new();
+        IInteractable currentInteractable;
+        Coroutine interactableRoutine;
+        bool isInteracting;
+
         void OnValidate() {
             if (!attachedAnimator) {
                 TryGetComponent(out attachedAnimator);
@@ -78,11 +84,20 @@ namespace FollowYourDreams.Avatar {
         }
 
         void Update() {
-            attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
-            attachedAnimator.Update(Time.deltaTime);
+            if (currentAnimation == AvatarAnimation.None) {
+                attachedRenderer.enabled = false;
+            } else {
+                attachedRenderer.enabled = true;
+                attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
+                attachedAnimator.Update(Time.deltaTime);
+            }
         }
 
         void ProcessInput() {
+            if (isInteracting) {
+                return;
+            }
+
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
@@ -144,6 +159,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         void ProcessCharacter() {
+            if (isInteracting) {
+                return;
+            }
             currentVerticalSpeed += Physics.gravity.y * Time.deltaTime;
             var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentHorizontalSpeed * Time.deltaTime;
             motion.y += currentVerticalSpeed * Time.deltaTime;
@@ -163,6 +181,39 @@ namespace FollowYourDreams.Avatar {
 
         public void OnJump(InputValue value) {
             intendsToJump = value.isPressed;
+        }
+
+        public void OnInteract(InputValue value) {
+            if (value.isPressed) {
+                if (!isInteracting && currentInteractable != null) {
+                    interactableRoutine = StartCoroutine(Interact_Co(currentInteractable));
+                }
+            }
+        }
+
+        IEnumerator Interact_Co(IInteractable interactable) {
+            isInteracting = true;
+            yield return interactable.Interact_Co(this);
+            isInteracting = false;
+            interactableRoutine = null;
+        }
+
+        void OnTriggerEnter(Collider other) {
+            if (other.TryGetComponent<IInteractable>(out var newInteractable)) {
+                if (currentInteractable != null) {
+                    currentInteractable.Deselect();
+                }
+                currentInteractable = newInteractable;
+                newInteractable.Select();
+            }
+        }
+        void OnTriggerExit(Collider other) {
+            if (other.TryGetComponent<IInteractable>(out var oldInteractable)) {
+                if (currentInteractable == oldInteractable) {
+                    currentInteractable.Deselect();
+                }
+                currentInteractable = null;
+            }
         }
     }
 }

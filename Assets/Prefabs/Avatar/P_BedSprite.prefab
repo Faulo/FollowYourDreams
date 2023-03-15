@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4466313974646636520
 MonoBehaviour:
@@ -46,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1ed013e38edb34aa59a26fc7422922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observedComponent: {fileID: 0}
   attachedAnimator: {fileID: 8520049084763824784}
-  m_currentAnimation: 0
+  attachedRenderer: {fileID: 4602807539915955897}
+  m_currentAnimation: 1
 --- !u!95 &8520049084763824784
 Animator:
   serializedVersion: 5

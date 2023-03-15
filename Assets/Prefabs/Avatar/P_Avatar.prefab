@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4332099688496705474}
   - component: {fileID: 8394062918357687654}
   - component: {fileID: 6138110118571824606}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: P_Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,9 +206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
-  real: 10
-  dream: 11
-  nightmare: 12
 --- !u!1 &6920409036269466649
 GameObject:
   m_ObjectHideFlags: 0

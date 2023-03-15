@@ -62,6 +62,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2959723543324241765}
+  - component: {fileID: 5259154363218501205}
+  - component: {fileID: 3635882323751486029}
   m_Layer: 0
   m_Name: P_Avatar_Bed
   m_TagString: Untagged
@@ -88,6 +90,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5259154363218501205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873829164231665580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5bc378faec7d14ca8f8acad3e574b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
+  sleepDelay: 1
+  wakeDelay: 1
+  isOccupied: 0
+--- !u!135 &3635882323751486029
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873829164231665580}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4742429805330904775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_BedSprite_Real
       objectReference: {fileID: 0}
+    - target: {fileID: 5187898484084045848, guid: 53e3ec4ba915e3541ab4f9fc5552d33d, type: 3}
+      propertyPath: observedComponent
+      value: 
+      objectReference: {fileID: 5259154363218501205}
     - target: {fileID: 8211101916283412974, guid: 53e3ec4ba915e3541ab4f9fc5552d33d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -166,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_BedSprite_Dream
       objectReference: {fileID: 0}
+    - target: {fileID: 5187898484084045848, guid: ec70e49adfe74a941bca537f732dd9f5, type: 3}
+      propertyPath: observedComponent
+      value: 
+      objectReference: {fileID: 5259154363218501205}
     - target: {fileID: 8211101916283412974, guid: ec70e49adfe74a941bca537f732dd9f5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -232,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_BedSprite_Nightmare
       objectReference: {fileID: 0}
+    - target: {fileID: 5187898484084045848, guid: 536835c8ceff3d34abae83efea688fca, type: 3}
+      propertyPath: observedComponent
+      value: 
+      objectReference: {fileID: 5259154363218501205}
     - target: {fileID: 8211101916283412974, guid: 536835c8ceff3d34abae83efea688fca, type: 3}
       propertyPath: m_RootOrder
       value: 0
