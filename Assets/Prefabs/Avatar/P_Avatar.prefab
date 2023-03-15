@@ -63,6 +63,7 @@ MonoBehaviour:
   intendedDirection: 0
   intendsToRun: 0
   intendsToJump: 0
+  isJumping: 0
 --- !u!95 &-1088564663788547598
 Animator:
   serializedVersion: 5
@@ -125,12 +126,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -757028865, guid: 50ebec70c9762e54da7acd80f1171d55, type: 3}
+  m_Sprite: {fileID: 7289585587817883002, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.4142135, y: 1.4142135}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

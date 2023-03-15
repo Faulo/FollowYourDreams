@@ -52,14 +52,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4735628200874105323, guid: 768ae68a434ec0849b66e25ae88ae895, type: 2}
+    - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 468d9d2d412ead4478bdb2c86c1e09ce, type: 2}
     - target: {fileID: 6934585968185926055, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Name
-      value: P_Bed_Real
+      value: P_BedSprite_Nightmare
       objectReference: {fileID: 0}
     - target: {fileID: 8520049084763824784, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 88ca1e14868d1b44fadc2cc815cdbda8, type: 2}
+      objectReference: {fileID: 9100000, guid: 03db181c6f9e36d4e960b8e7a3ccfa1d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

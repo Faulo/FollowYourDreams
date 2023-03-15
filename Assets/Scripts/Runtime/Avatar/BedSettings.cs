@@ -37,10 +37,13 @@ namespace FollowYourDreams.Avatar {
         AsepriteData data = new();
         [SerializeField, ReadOnly]
         Animator animatorPrefab;
+        [SerializeField, ReadOnly]
+        SpriteRenderer rendererPrefab;
 
         [ContextMenu(nameof(LoadPrefab))]
         void LoadPrefab() {
             prefab.TryGetComponent(out animatorPrefab);
+            prefab.TryGetComponent(out rendererPrefab);
         }
 
         [ContextMenu(nameof(LoadData))]
@@ -51,6 +54,11 @@ namespace FollowYourDreams.Avatar {
         [ContextMenu(nameof(LoadSprites))]
         void LoadSprites() {
             sheet.ExtractSprites(data, pivot, this, sprites);
+
+            if (rendererPrefab) {
+                rendererPrefab.sprite = GetSprite(0);
+                EditorUtility.SetDirty(rendererPrefab);
+            }
 
             AssetDatabase.SaveAssets();
         }
@@ -107,6 +115,11 @@ namespace FollowYourDreams.Avatar {
                 AssetDatabase.AddObjectToAsset(animClip, path);
 
                 controller.AddMotion(animClip);
+            }
+
+            if (animatorPrefab) {
+                animatorPrefab.runtimeAnimatorController = controller;
+                EditorUtility.SetDirty(animatorPrefab);
             }
 
             AssetDatabase.SaveAssets();

@@ -55,10 +55,10 @@ PrefabInstance:
     - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -8003630002066676638, guid: 4a2b3517a8c641443bb5337aca6651c2, type: 2}
     - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4602807539915955897, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5c10c01288fb395419889f6309d17bd9, type: 2}
     - target: {fileID: 6934585968185926055, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Name
-      value: P_Bed_Real
+      value: P_BedSprite_Real
       objectReference: {fileID: 0}
     - target: {fileID: 8520049084763824784, guid: ee87cd1c95f09da42895d03c9715240b, type: 3}
       propertyPath: m_Controller
