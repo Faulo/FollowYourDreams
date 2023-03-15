@@ -6,7 +6,7 @@ namespace FollowYourDreams {
     abstract class DimensionEnumController : MonoBehaviour {
         [Header("Setup")]
         [SerializeField, Expandable]
-        GameManager manager;
+        protected GameManager manager;
 
         Dimension previousDimension;
 

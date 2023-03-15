@@ -1,24 +1,7 @@
-using System;
-using Slothsoft.UnityExtensions;
-using UnityEngine;
-
 namespace FollowYourDreams.Avatar {
     sealed class LayerController : DimensionEnumController {
-        [Header("Config")]
-        [SerializeField, Layer]
-        int real;
-        [SerializeField, Layer]
-        int dream;
-        [SerializeField, Layer]
-        int nightmare;
-
         protected override void OnSetDimension(Dimension dimension) {
-            gameObject.layer = dimension switch {
-                Dimension.RealWorld => real,
-                Dimension.Dreamscape => dream,
-                Dimension.NightmareRealm => nightmare,
-                _ => throw new NotImplementedException(dimension.ToString()),
-            };
+            gameObject.layer = manager.GetLayerByDimension(dimension);
         }
     }
 }
