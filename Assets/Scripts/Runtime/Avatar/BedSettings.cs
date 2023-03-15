@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MyBox;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
@@ -9,31 +10,32 @@ using UnityEngine;
 namespace FollowYourDreams.Avatar {
     [CreateAssetMenu]
     sealed class BedSettings : ScriptableAsset {
+        [Header("Setup")]
         [SerializeField]
         GameObject prefab;
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
         const float TIME_MULTIPLIER = 0.001f;
-        [Header("Animations")]
+        [Header("Editor-only")]
         [SerializeField]
         AnimatorController controller;
+        [SerializeField]
+        TextAsset json;
         [SerializeField]
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
-        [SerializeField]
-        List<Sprite> sprites = new();
 
+        [Header("Auto-filled")]
+        [SerializeField, ReadOnly]
+        List<Sprite> sprites = new();
         Sprite GetSprite(int index) {
             return sprites[index];
         }
-
-        [SerializeField]
-        TextAsset json;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         AsepriteData data = new();
-        [SerializeField]
+        [SerializeField, ReadOnly]
         Animator animatorPrefab;
 
         [ContextMenu(nameof(LoadPrefab))]
