@@ -1,4 +1,5 @@
 using System;
+using MyBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,15 +19,14 @@ namespace FollowYourDreams.Avatar {
         AvatarSettings settings;
 
         [Header("Runtime")]
-        [SerializeField]
+        [SerializeField, ReadOnly]
         float currentRotation = 0;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         float currentHorizontalSpeed = 0;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         float currentVerticalSpeed = 0;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         AvatarDirection currentDirection = AvatarDirection.Down;
-        [SerializeField]
         AvatarAnimation currentAnimation {
             get => m_currentAnimation;
             set {
@@ -36,27 +36,29 @@ namespace FollowYourDreams.Avatar {
                 }
             }
         }
-        [SerializeField]
+        [SerializeField, ReadOnly]
         AvatarAnimation m_currentAnimation = AvatarAnimation.Idle;
 
         [Header("Input")]
-        [SerializeField]
+        [SerializeField, ReadOnly]
         Vector2 intendedMove;
         float intendedRotation => intendedMove == Vector2.zero
             ? currentRotation
             : Vector2.SignedAngle(intendedMove, Vector2.up);
         float intendedSpeed => intendedMove.magnitude;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         Direction intendedDirection;
         float torque;
         float acceleration;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         bool intendsToRun;
         float maxSpeed => intendsToRun
             ? settings.runSpeed
             : settings.walkSpeed;
-        [SerializeField]
+        [SerializeField, ReadOnly]
         bool intendsToJump;
+        [SerializeField, ReadOnly]
+        bool isJumping;
 
         void OnValidate() {
             if (!attachedAnimator) {
@@ -90,6 +92,12 @@ namespace FollowYourDreams.Avatar {
                 intendsToJump = false;
                 if (attachedCharacter.isGrounded) {
                     currentVerticalSpeed += settings.jumpSpeed;
+                    isJumping = true;
+                }
+            }
+            if (isJumping) {
+                if (currentVerticalSpeed <= 0) {
+                    isJumping = false;
                 }
             }
 
@@ -119,7 +127,17 @@ namespace FollowYourDreams.Avatar {
                     break;
             }
 
-            currentAnimation = intendedSpeed > 0.1f
+            currentAnimation = CalculateAnimation();
+        }
+
+        AvatarAnimation CalculateAnimation() {
+            if (isJumping) {
+                return AvatarAnimation.Jump;
+            }
+            if (!attachedCharacter.isGrounded) {
+                return AvatarAnimation.Fall;
+            }
+            return intendedSpeed > 0.1f
                 ? intendsToRun
                     ? AvatarAnimation.Run
                     : AvatarAnimation.Walk
