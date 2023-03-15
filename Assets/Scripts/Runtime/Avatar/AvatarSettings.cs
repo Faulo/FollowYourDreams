@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
@@ -34,7 +33,9 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         Texture2D sheet;
         [SerializeField]
-        Sprite[] sprites = Array.Empty<Sprite>();
+        Vector2 pivot;
+        [SerializeField]
+        List<Sprite> sprites = new();
 
         Sprite GetSprite(int index, AvatarDirection direction) {
             return sprites[(index * DIRECTION_COUNT) + (int)direction];
@@ -52,22 +53,21 @@ namespace FollowYourDreams.Avatar {
             prefab.TryGetComponent(out animatorPrefab);
         }
 
-        [ContextMenu(nameof(LoadSheet))]
-        void LoadSheet() {
-            LoadPrefab();
-
-            sprites = sheet.LoadSprites();
-
+        [ContextMenu(nameof(LoadData))]
+        void LoadData() {
             data = AsepriteData.FromJson(json.text);
+        }
 
-            string path = AssetDatabase.GetAssetPath(controller);
+        [ContextMenu(nameof(LoadSprites))]
+        void LoadSprites() {
+            sheet.ExtractSprites(data, pivot, this, sprites);
 
-            var animClips = AssetDatabase.LoadAllAssetsAtPath(path)
-                .OfType<AnimationClip>();
+            AssetDatabase.SaveAssets();
+        }
 
-            foreach (var animClip in animClips) {
-                AssetDatabase.RemoveObjectFromAsset(animClip);
-            }
+        [ContextMenu(nameof(LoadController))]
+        void LoadController() {
+            string path = controller.DestroyChildAssets<AnimatorController, AnimationClip>();
 
             var layer = controller.layers[0];
             foreach (var state in layer.stateMachine.states) {
@@ -102,7 +102,7 @@ namespace FollowYourDreams.Avatar {
                             time = time * TIME_MULTIPLIER,
                             value = GetSprite(i, direction)
                         });
-                        time += data[i].duration;
+                        time += data.frames[i].duration;
                     }
                     keyframes.Add(new() {
                         time = time * TIME_MULTIPLIER,
@@ -122,6 +122,14 @@ namespace FollowYourDreams.Avatar {
             }
 
             AssetDatabase.SaveAssets();
+        }
+
+        [ContextMenu(nameof(LoadAll))]
+        void LoadAll() {
+            LoadPrefab();
+            LoadData();
+            LoadSprites();
+            LoadController();
         }
 #endif
 

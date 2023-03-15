@@ -1,53 +1,185 @@
-{ "frames": {
-   "S_Avatar 0.aseprite": {
-    "frame": { "x": 0, "y": 0, "w": 80, "h": 32 },
+{ "frames": [
+   {
+    "filename": "S_ENT_Avatar 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 3500
+   },
+   {
+    "filename": "S_ENT_Avatar 1.aseprite",
+    "frame": { "x": 160, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 500
+   },
+   {
+    "filename": "S_ENT_Avatar 2.aseprite",
+    "frame": { "x": 320, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
     "duration": 200
    },
-   "S_Avatar 1.aseprite": {
-    "frame": { "x": 0, "y": 32, "w": 80, "h": 32 },
+   {
+    "filename": "S_ENT_Avatar 3.aseprite",
+    "frame": { "x": 480, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "S_ENT_Avatar 4.aseprite",
+    "frame": { "x": 640, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
     "duration": 200
    },
-   "S_Avatar 2.aseprite": {
-    "frame": { "x": 0, "y": 64, "w": 80, "h": 32 },
+   {
+    "filename": "S_ENT_Avatar 5.aseprite",
+    "frame": { "x": 800, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
    },
-   "S_Avatar 3.aseprite": {
-    "frame": { "x": 0, "y": 96, "w": 80, "h": 32 },
+   {
+    "filename": "S_ENT_Avatar 6.aseprite",
+    "frame": { "x": 960, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
    },
-   "S_Avatar 4.aseprite": {
-    "frame": { "x": 0, "y": 128, "w": 80, "h": 32 },
+   {
+    "filename": "S_ENT_Avatar 7.aseprite",
+    "frame": { "x": 1120, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
    },
-   "S_Avatar 5.aseprite": {
-    "frame": { "x": 0, "y": 160, "w": 80, "h": 32 },
+   {
+    "filename": "S_ENT_Avatar 8.aseprite",
+    "frame": { "x": 1280, "y": 0, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 32 },
-    "sourceSize": { "w": 80, "h": 32 },
-    "duration": 200
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "S_ENT_Avatar 9.aseprite",
+    "frame": { "x": 1440, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 10.aseprite",
+    "frame": { "x": 1600, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 11.aseprite",
+    "frame": { "x": 1760, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 12.aseprite",
+    "frame": { "x": 1920, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "S_ENT_Avatar 13.aseprite",
+    "frame": { "x": 2080, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 14.aseprite",
+    "frame": { "x": 2240, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 15.aseprite",
+    "frame": { "x": 2400, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 16.aseprite",
+    "frame": { "x": 2560, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 17.aseprite",
+    "frame": { "x": 2720, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 18.aseprite",
+    "frame": { "x": 2880, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 19.aseprite",
+    "frame": { "x": 3040, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
    }
- },
+ ],
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.2.40-x64",
