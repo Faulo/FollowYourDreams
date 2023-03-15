@@ -1,0 +1,44 @@
+{ "frames": {
+   "S_ENT_Totoro_Enemy 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 200
+   },
+   "S_ENT_Totoro_Enemy 1.aseprite": {
+    "frame": { "x": 160, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 200
+   },
+   "S_ENT_Totoro_Enemy 2.aseprite": {
+    "frame": { "x": 320, "y": 0, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 200
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.40-x64",
+  "image": "S_ENT_Totoro_Enemy_Mouthing.png",
+  "format": "I8",
+  "size": { "w": 480, "h": 32 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Move", "from": 0, "to": 2, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Totoro Copy", "opacity": 255, "blendMode": "normal" },
+   { "name": "Floor", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
