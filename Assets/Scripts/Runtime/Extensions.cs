@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using FollowYourDreams.Avatar;
@@ -28,8 +29,8 @@ namespace FollowYourDreams {
                 int width = rect.width / columns;
                 for (int i = 0; i < columns; i++) {
                     var sprite = Sprite.Create(
-                        sheet,
-                        new Rect(rect.x + (width * i), rect.y, width, rect.height),
+sheet,
+                        new Rect(rect.x + (width * i), data.meta.size.h - rect.y - rect.height, width, rect.height),
                         pivot,
                         GameManager.pixelsPerUnit,
                         0,
