@@ -10,4 +10,4 @@ Game Dev Week 2023:
 ## Credits
 - Katharina Broswik (environment art)
 - Daniel Schulz (programming, game design)
-- Fabian ??? (character art, sound design)
+- Fabian Nausner (character art, sound design)
