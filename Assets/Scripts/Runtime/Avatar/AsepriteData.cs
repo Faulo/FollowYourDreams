@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -10,18 +8,24 @@ namespace FollowYourDreams.Avatar {
         public static AsepriteData FromJson(string text) {
             return JsonConvert.DeserializeObject<AsepriteData>(text);
         }
-        public AsepriteDataFrame this[int frameId] {
+        public AsepriteDataFrame this[string frameName] {
             get {
-                return frames.ElementAt(frameId).Value;
+                for (int i = 0; i < frames.Length; i++) {
+                    if (frames[i].filename == frameName) {
+                        return frames[i];
+                    }
+                }
+                throw new ArgumentOutOfRangeException(frameName);
             }
         }
         [SerializeField]
-        public Dictionary<string, AsepriteDataFrame> frames = new();
+        public AsepriteDataFrame[] frames = Array.Empty<AsepriteDataFrame>();
         [SerializeField]
         public AsepriteDataMeta meta = new();
     }
     [Serializable]
     class AsepriteDataFrame {
+        public string filename;
         public AsepriteDataRect frame = new();
         public bool rotated;
         public bool trimmed;
@@ -53,7 +57,11 @@ namespace FollowYourDreams.Avatar {
         public int y;
         public int w;
         public int h;
-        public override string ToString() => new RectInt(x, y, w, h).ToString();
+
+        public Rect AsRect() => new(x, y, w, h);
+        public RectInt AsRectInt() => new(x, y, w, h);
+
+        public override string ToString() => AsRectInt().ToString();
     }
     [Serializable]
     class AsepriteDataLayer {

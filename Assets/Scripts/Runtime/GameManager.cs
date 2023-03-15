@@ -3,6 +3,8 @@ using UnityEngine;
 namespace FollowYourDreams {
     [CreateAssetMenu]
     sealed class GameManager : ScriptableAsset {
+        public static readonly float pixelsPerUnit = 16 * Mathf.Sqrt(2);
+
         [SerializeField]
         public DimensionId currentDimension;
 

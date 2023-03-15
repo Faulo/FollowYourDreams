@@ -26,22 +26,24 @@ namespace FollowYourDreams.Tests {
         public void TestFromJsonFrames() {
             var obj = AsepriteData.FromJson(data);
             Assert.IsNotNull(obj.frames);
-            Assert.IsTrue(obj.frames.ContainsKey("S_Avatar 0.aseprite"));
+            Assert.Greater(obj.frames.Length, 0);
+            Assert.IsNotNull(obj.frames[0]);
 
-            var frame = obj.frames["S_Avatar 0.aseprite"];
+            var frame = obj.frames[0];
 
+            Assert.AreEqual("S_ENT_Avatar 0.aseprite", frame.filename);
             Assert.AreEqual(0, frame.frame.x);
             Assert.AreEqual(0, frame.frame.y);
-            Assert.AreEqual(80, frame.frame.w);
+            Assert.AreEqual(160, frame.frame.w);
             Assert.AreEqual(32, frame.frame.h);
-            Assert.AreEqual(80, frame.sourceSize.w);
+            Assert.AreEqual(160, frame.sourceSize.w);
             Assert.AreEqual(32, frame.sourceSize.h);
-            Assert.AreEqual(200, frame.duration);
+            Assert.AreEqual(3500, frame.duration);
             Assert.AreEqual(false, frame.rotated);
             Assert.AreEqual(false, frame.trimmed);
             Assert.AreEqual(0, frame.spriteSourceSize.x);
             Assert.AreEqual(0, frame.spriteSourceSize.y);
-            Assert.AreEqual(80, frame.spriteSourceSize.w);
+            Assert.AreEqual(160, frame.spriteSourceSize.w);
             Assert.AreEqual(32, frame.spriteSourceSize.h);
         }
 
@@ -53,7 +55,7 @@ namespace FollowYourDreams.Tests {
         [TestCase(5)]
         public void TestThis(int id) {
             var obj = AsepriteData.FromJson(data);
-            Assert.AreEqual(obj.frames[$"S_Avatar {id}.aseprite"], obj[id]);
+            Assert.AreEqual(obj.frames[id], obj[$"S_ENT_Avatar {id}.aseprite"]);
         }
         [Test]
         public void TestFromJsonMeta() {
