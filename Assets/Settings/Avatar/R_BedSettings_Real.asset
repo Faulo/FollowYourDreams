@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fc568ddbf3a04438e2f9e099efc1ac, type: 3}
+  m_Name: R_BedSettings_Real
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  prefab: {fileID: 1889277602759206487, guid: 53e3ec4ba915e3541ab4f9fc5552d33d, type: 3}
+  controller: {fileID: 9100000, guid: 88ca1e14868d1b44fadc2cc815cdbda8, type: 2}
+  sheet: {fileID: 2800000, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  sprites:
+  - {fileID: -515417626, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1910716161, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1469489447, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -985995248, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1011652204, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -33933011, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1072443559, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 929603483, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -142889033, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1594818883, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -205106161, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1416047477, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 763918395, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 290372949, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -19485901, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1382729224, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -563056731, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1855812344, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 654614164, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 429531739, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1589524513, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -462155778, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1425811889, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 1414729448, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -872684407, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: 816887835, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1127217578, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -304511256, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1112422658, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  - {fileID: -1580550553, guid: 8616fd15587e8df42bc7fd75778e488c, type: 3}
+  json: {fileID: 4900000, guid: 61ff080ac5dfd154cb22f0fe95d0521f, type: 3}
+  data:
+    meta:
+      app: https://www.aseprite.org/
+      version: 1.2.40-x64
+      image: S_INT_Bed.png
+      format: I8
+      size:
+        w: 64
+        h: 1920
+      scale: 1
+      frameTags:
+      - name: BedEmpty
+        from: 0
+        to: 0
+        direction: 0
+      - name: GoToSleep
+        from: 1
+        to: 9
+        direction: 0
+      - name: Sleep
+        from: 10
+        to: 10
+        direction: 0
+      - name: DreamSleep
+        from: 11
+        to: 11
+        direction: 0
+      - name: WakeUp
+        from: 12
+        to: 20
+        direction: 0
+      - name: DreamUp
+        from: 21
+        to: 29
+        direction: 0
+      layers:
+      - name: Layer 6
+        opacity: 255
+        blendMode: normal
+      - name: Layer 9
+        opacity: 255
+        blendMode: normal
+      - name: Layer 7
+        opacity: 255
+        blendMode: normal
+      - name: Layer 8
+        opacity: 255
+        blendMode: normal
+      - name: Layer 10
+        opacity: 255
+        blendMode: normal
+  animatorPrefab: {fileID: 880978513745438048, guid: 53e3ec4ba915e3541ab4f9fc5552d33d, type: 3}
