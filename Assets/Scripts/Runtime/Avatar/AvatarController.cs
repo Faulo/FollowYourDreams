@@ -80,7 +80,6 @@ namespace FollowYourDreams.Avatar {
         void Update() {
             attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
             attachedAnimator.Update(Time.deltaTime);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("animation", currentAnimation.ToString());
         }
 
         void ProcessInput() {
@@ -111,7 +110,7 @@ namespace FollowYourDreams.Avatar {
                 Direction.DownLeft => AvatarDirection.DownLeft,
                 Direction.Left => AvatarDirection.Left,
                 Direction.UpLeft => AvatarDirection.UpLeft,
-                _ => throw new System.NotImplementedException(intendedDirection.ToString()),
+                _ => throw new NotImplementedException(intendedDirection.ToString()),
             };
 
             switch (intendedDirection) {
