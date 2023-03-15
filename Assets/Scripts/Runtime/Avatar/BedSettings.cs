@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
+#endif
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
