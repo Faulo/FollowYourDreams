@@ -8,7 +8,7 @@ namespace FollowYourDreams {
         [SerializeField, Expandable]
         GameManager manager;
 
-        DimensionId previousDimension;
+        Dimension previousDimension;
 
         [ContextMenu(nameof(Start))]
         protected void Start() {
@@ -27,6 +27,6 @@ namespace FollowYourDreams {
             }
         }
 
-        protected abstract void OnSetDimension(DimensionId dimension);
+        protected abstract void OnSetDimension(Dimension dimension);
     }
 }

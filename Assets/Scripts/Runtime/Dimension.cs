@@ -1,5 +1,5 @@
 namespace FollowYourDreams {
-    enum DimensionId {
+    enum Dimension {
         RealWorld,
         Dreamscape,
         NightmareRealm

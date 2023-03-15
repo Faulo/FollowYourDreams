@@ -12,11 +12,11 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Layer]
         int nightmare;
 
-        protected override void OnSetDimension(DimensionId dimension) {
+        protected override void OnSetDimension(Dimension dimension) {
             gameObject.layer = dimension switch {
-                DimensionId.RealWorld => real,
-                DimensionId.Dreamscape => dream,
-                DimensionId.NightmareRealm => nightmare,
+                Dimension.RealWorld => real,
+                Dimension.Dreamscape => dream,
+                Dimension.NightmareRealm => nightmare,
                 _ => throw new NotImplementedException(dimension.ToString()),
             };
         }

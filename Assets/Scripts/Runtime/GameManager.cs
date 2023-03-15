@@ -6,26 +6,26 @@ namespace FollowYourDreams {
         public static readonly float pixelsPerUnit = 16 * Mathf.Sqrt(2);
 
         [SerializeField]
-        public DimensionId currentDimension;
+        public Dimension currentDimension;
 
-        public float realStrength => currentDimension == DimensionId.RealWorld
+        public float realStrength => currentDimension == Dimension.RealWorld
             ? 1
             : 0;
-        public float dreamStrength => currentDimension == DimensionId.Dreamscape
+        public float dreamStrength => currentDimension == Dimension.Dreamscape
             ? 1
             : 0;
-        public float nightmareStrength => currentDimension == DimensionId.NightmareRealm
+        public float nightmareStrength => currentDimension == Dimension.NightmareRealm
             ? 1
             : 0;
 
         public void ActivateRealWorld() {
-            currentDimension = DimensionId.RealWorld;
+            currentDimension = Dimension.RealWorld;
         }
         public void ActivateDreamscape() {
-            currentDimension = DimensionId.Dreamscape;
+            currentDimension = Dimension.Dreamscape;
         }
         public void ActivateNightmareRealm() {
-            currentDimension = DimensionId.NightmareRealm;
+            currentDimension = Dimension.NightmareRealm;
         }
     }
 }

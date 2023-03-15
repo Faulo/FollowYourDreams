@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{7821acd4-534a-420e-9e75-e94e24a72d7b}">
+	<object class="ParameterPreset" id="{baaa27ca-08fd-49ea-929a-c59121e7de6c}">
 		<property name="name">
-			<value>animation</value>
+			<value>Dimension</value>
 		</property>
 		<relationship name="folder">
 			<destination>{41062a6b-9a6a-4a1f-86f5-c76cfc6ef6db}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{5818f1e2-1d20-497b-bb7d-f0e4ed7eb377}</destination>
+			<destination>{08e8c2ea-efea-4b3d-9967-6c5b22b28419}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{5818f1e2-1d20-497b-bb7d-f0e4ed7eb377}">
+	<object class="GameParameter" id="{08e8c2ea-efea-4b3d-9967-6c5b22b28419}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>9</value>
+			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Idle</value>
-			<value>Walk</value>
-			<value>Jump</value>
-			<value>Push</value>
-			<value>Run</value>
-			<value>Interact</value>
-			<value>Climb</value>
-			<value>Fall</value>
-			<value>Land</value>
+			<value>RealWorld</value>
+			<value>Dreamscape</value>
+			<value>NightmareRealm</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>
