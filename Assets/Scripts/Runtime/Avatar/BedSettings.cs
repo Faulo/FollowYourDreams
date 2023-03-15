@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MyBox;
+using Slothsoft.UnityExtensions;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
@@ -20,12 +21,15 @@ namespace FollowYourDreams.Avatar {
         [Header("Editor-only")]
         [SerializeField]
         AnimatorController controller;
+
         [SerializeField]
         TextAsset json;
         [SerializeField]
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        [SerializeField]
+        SerializableKeyValuePairs<BedAnimation, bool> isLoopingOverride = new();
 
         [Header("Auto-filled")]
         [SerializeField, ReadOnly]
@@ -72,24 +76,29 @@ namespace FollowYourDreams.Avatar {
                 layer.stateMachine.RemoveState(state.state);
             }
 
+            var states = new Dictionary<BedAnimation, AnimatorState>();
+
             foreach (var anim in data.meta.frameTags) {
                 if (!Enum.TryParse<BedAnimation>(anim.name, out var animation)) {
                     Debug.LogError($"Unknown animation '{anim.name}'!");
                     continue;
                 }
 
+                if (!isLoopingOverride.TryGetValue(animation, out bool isLooping)) {
+                    isLooping = true;
+                }
+
                 var animClip = new AnimationClip() {
                     name = GetAnimationName(animation),
                     wrapMode = anim.direction switch {
-                        AsepriteDataFrameDirection.forward => WrapMode.Loop,
+                        AsepriteDataFrameDirection.forward => isLooping ? WrapMode.Loop : WrapMode.ClampForever,
                         AsepriteDataFrameDirection.pingpong => WrapMode.PingPong,
-                        AsepriteDataFrameDirection.reverse => WrapMode.ClampForever,
                         _ => throw new NotImplementedException(anim.direction.ToString()),
                     },
                 };
 
                 var settings = AnimationUtility.GetAnimationClipSettings(animClip);
-                settings.loopTime = true;
+                settings.loopTime = isLooping;
                 AnimationUtility.SetAnimationClipSettings(animClip, settings);
 
                 var keyframes = new List<ObjectReferenceKeyframe>();
@@ -103,7 +112,7 @@ namespace FollowYourDreams.Avatar {
                 }
                 keyframes.Add(new() {
                     time = time * TIME_MULTIPLIER,
-                    value = GetSprite(anim.from)
+                    value = GetSprite(isLooping ? anim.from : anim.to)
                 });
 
                 AnimationUtility.SetObjectReferenceCurve(
@@ -114,8 +123,19 @@ namespace FollowYourDreams.Avatar {
 
                 AssetDatabase.AddObjectToAsset(animClip, path);
 
-                controller.AddMotion(animClip);
+                states[animation] = controller.AddMotion(animClip);
             }
+
+            void addTransition(BedAnimation from, BedAnimation to) {
+                var transition = states[from].AddTransition(states[to]);
+                transition.hasExitTime = true;
+                transition.exitTime = 1;
+                transition.duration = 0;
+            }
+
+            addTransition(BedAnimation.GoToSleep, BedAnimation.Sleep);
+            addTransition(BedAnimation.DreamUp, BedAnimation.Dreaming);
+            addTransition(BedAnimation.WakeUp, BedAnimation.Awake);
 
             if (animatorPrefab) {
                 animatorPrefab.runtimeAnimatorController = controller;

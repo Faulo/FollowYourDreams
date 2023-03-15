@@ -103,8 +103,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
-  sleepDelay: 1
-  wakeDelay: 1
+  gotoSleepStart: 3.5
+  gotoSleepMiddle: 3
+  gotoSleepEnd: 3
+  dreamAbortStart: 1
+  dreamAbortMiddle: 0.5
+  dreamAbortEnd: 3
   isOccupied: 0
 --- !u!135 &3635882323751486029
 SphereCollider:
@@ -126,7 +130,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.5, y: 0, z: -0.5}
 --- !u!1001 &4742429805330904775
 PrefabInstance:
   m_ObjectHideFlags: 0

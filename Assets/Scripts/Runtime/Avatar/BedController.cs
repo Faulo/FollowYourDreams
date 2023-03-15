@@ -1,11 +1,8 @@
-using System;
 using FollowYourDreams.Level;
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
     sealed class BedController : ComponentFeature<BedState> {
-        public event Action<BedAnimation> onAnimationChange;
-
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
@@ -13,17 +10,9 @@ namespace FollowYourDreams.Avatar {
         SpriteRenderer attachedRenderer;
 
         public BedAnimation currentAnimation {
-            get => m_currentAnimation;
-            set {
-                if (m_currentAnimation != value) {
-                    m_currentAnimation = value;
-                    onAnimationChange?.Invoke(value);
-                }
-            }
+            get => AnimatorExtensions<BedAnimation>.GetCurrentAnimation(attachedAnimator);
+            set => attachedAnimator.Play(value.ToString());
         }
-        [Header("Runtime")]
-        [SerializeField]
-        BedAnimation m_currentAnimation = BedAnimation.BedEmpty;
 
         protected override void OnValidate() {
             base.OnValidate();
@@ -35,28 +24,24 @@ namespace FollowYourDreams.Avatar {
             }
         }
 
+        void OnEnable() {
+            observedComponent.onSetAnimation += OnSetAnimation;
+        }
+
+        void OnDisable() {
+            observedComponent.onSetAnimation += OnSetAnimation;
+        }
+
+        void OnSetAnimation(BedAnimation animation) {
+            currentAnimation = animation;
+        }
+
         void Update() {
             if (currentAnimation == BedAnimation.None) {
                 attachedRenderer.enabled = false;
             } else {
                 attachedRenderer.enabled = true;
-                UpdateAnimation();
-                attachedAnimator.Play(BedSettings.GetAnimationName(currentAnimation));
                 attachedAnimator.Update(Time.deltaTime);
-            }
-        }
-
-        void UpdateAnimation() {
-            if (observedComponent.isOccupied) {
-                if (currentAnimation == BedAnimation.BedEmpty) {
-                    currentAnimation = BedAnimation.Sleep;
-                    return;
-                }
-            } else {
-                if (currentAnimation == BedAnimation.Sleep) {
-                    currentAnimation = BedAnimation.BedEmpty;
-                    return;
-                }
             }
         }
     }

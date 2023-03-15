@@ -6,6 +6,9 @@ namespace FollowYourDreams.Avatar {
         Sleep,
         DreamSleep,
         WakeUp,
-        DreamUp
+        DreamUp,
+        Awake,
+        Dreaming,
+        DreamAbort,
     }
 }
