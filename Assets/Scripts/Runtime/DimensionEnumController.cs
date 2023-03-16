@@ -19,6 +19,16 @@ namespace FollowYourDreams {
         }
 
         protected void FixedUpdate() {
+            CheckDimension();
+        }
+        protected void Update() {
+            CheckDimension();
+        }
+        protected void LateUpdate() {
+            CheckDimension();
+        }
+
+        void CheckDimension() {
             if (manager) {
                 if (previousDimension != manager.currentDimension) {
                     previousDimension = manager.currentDimension;
@@ -26,7 +36,6 @@ namespace FollowYourDreams {
                 }
             }
         }
-
         protected abstract void OnSetDimension(Dimension dimension);
     }
 }
