@@ -11,6 +11,8 @@ namespace FollowYourDreams.Avatar {
         [Header("Config")]
         [SerializeField, Expandable]
         GameManager manager;
+        [SerializeField]
+        Transform interactionSpot;
 
         [Header("Go to sleep")]
         [SerializeField, Range(0, 10)]
@@ -64,6 +66,7 @@ namespace FollowYourDreams.Avatar {
             }
 
             manager.currentDimension = targetDimension;
+            avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = !isOccupied;
             yield return Wait.forSeconds[gotoSleep ? gotoSleepMiddle : dreamAbortMiddle];
 
