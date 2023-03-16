@@ -13,6 +13,7 @@ namespace FollowYourDreams.Avatar {
         Glide,
         Stumble,
         PrepareJump,
-        HighJump
+        HighJump,
+        JumpDream,
     }
 }

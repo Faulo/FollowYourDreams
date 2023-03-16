@@ -7677,6 +7677,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9085380897754867873, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
+      propertyPath: lastUsedBed
+      value: 
+      objectReference: {fileID: 1091984491}
     - target: {fileID: 2911230427699115473, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -7885,6 +7889,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2959723543324241765, guid: f74b9bfa01560ec47a83a46428f134a5, type: 3}
   m_PrefabInstance: {fileID: 1091984489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1091984491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5259154363218501205, guid: f74b9bfa01560ec47a83a46428f134a5, type: 3}
+  m_PrefabInstance: {fileID: 1091984489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5bc378faec7d14ca8f8acad3e574b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1129883994
 GameObject:
   m_ObjectHideFlags: 0

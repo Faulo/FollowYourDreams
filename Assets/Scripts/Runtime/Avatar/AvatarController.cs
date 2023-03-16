@@ -20,6 +20,8 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         AvatarSettings settings;
         AvatarMovement movement => settings.movement;
+        [SerializeField]
+        public BedState lastUsedBed;
 
         [Header("Runtime")]
         [SerializeField, ReadOnly]
@@ -285,13 +287,13 @@ namespace FollowYourDreams.Avatar {
         public void OnInteract(InputValue value) {
             if (value.isPressed) {
                 if (!isInteracting && currentInteractable != null) {
-                    InteractWith(currentInteractable);
+                    InteractWith(currentInteractable.Interact_Co);
                 }
             }
         }
 
-        void InteractWith(IInteractable interactable) {
-            interactableRoutine = StartCoroutine(Interact_Co(interactable.Interact_Co(this)));
+        void InteractWith(Func<AvatarController, IEnumerator> interact) {
+            interactableRoutine = StartCoroutine(Interact_Co(interact(this)));
         }
         void PlayAnimation(AvatarAnimation animation, float duration) {
             interactableRoutine = StartCoroutine(Interact_Co(PlayAnimation_Co(animation, duration)));
@@ -327,9 +329,15 @@ namespace FollowYourDreams.Avatar {
 
         public void WarpTo(Vector3 position, Direction upLeft) {
             transform.position = position;
+            Physics.SyncTransforms();
             intendedDirection = upLeft;
             ProcessIntendedDirection();
             attachedCharacter.Move(Vector3.down);
+        }
+
+        [ContextMenu(nameof(Die))]
+        public void Die() {
+            InteractWith(lastUsedBed.WakeUpIn_Co);
         }
     }
 }

@@ -66,6 +66,7 @@ namespace FollowYourDreams.Avatar {
             }
 
             manager.currentDimension = targetDimension;
+            avatar.lastUsedBed = this;
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = !isOccupied;
             yield return Wait.forSeconds[gotoSleep ? gotoSleepMiddle : dreamAbortMiddle];
@@ -75,6 +76,22 @@ namespace FollowYourDreams.Avatar {
 
             avatar.currentAnimation = AvatarAnimation.Idle;
             onSetAnimation?.Invoke(gotoSleep ? BedAnimation.DreamSleep : BedAnimation.BedEmpty);
+        }
+
+        public IEnumerator WakeUpIn_Co(AvatarController avatar) {
+            if (ownDimension != Dimension.RealWorld) {
+                manager.currentDimension = targetDimension;
+            }
+            avatar.currentAnimation = AvatarAnimation.None;
+            avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
+            isOccupied = false;
+            yield return Wait.forSeconds[dreamAbortMiddle];
+
+            onSetAnimation?.Invoke(BedAnimation.WakeUp);
+            yield return Wait.forSeconds[dreamAbortEnd];
+
+            avatar.currentAnimation = AvatarAnimation.Idle;
+            onSetAnimation?.Invoke(BedAnimation.BedEmpty);
         }
     }
 }
