@@ -3,10 +3,12 @@ using FollowYourDreams.Avatar;
 using UnityEngine;
 
 namespace FollowYourDreams.Level {
-    sealed class CookieJar : MonoBehaviour, IInteractable {
+    sealed class CookieJar : ComponentFeature<AsepriteSprite>, IInteractable {
         public void Select() {
+            observedComponent.currentSpriteId = 1;
         }
         public void Deselect() {
+            observedComponent.currentSpriteId = 0;
         }
         public IEnumerator Interact_Co(AvatarController avatar) {
             yield return null;

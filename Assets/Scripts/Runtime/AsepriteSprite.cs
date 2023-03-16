@@ -1,8 +1,18 @@
+using System.Collections.Generic;
 using FollowYourDreams.Avatar;
 using UnityEngine;
 
 namespace FollowYourDreams {
     sealed class AsepriteSprite : ComponentFeature<SpriteRenderer> {
+        [SerializeField]
+        List<Sprite> sprites = new();
+        public int currentSpriteId {
+            get => sprites.IndexOf(observedComponent.sprite);
+            set {
+                observedComponent.sprite = sprites[value];
+            }
+        }
+
 #if UNITY_EDITOR
         [Header("Editor-only")]
         [SerializeField]
@@ -18,7 +28,8 @@ namespace FollowYourDreams {
         public void LoadSprite() {
             if (sheet && json) {
                 data = AsepriteData.FromJson(json.text);
-                observedComponent.sprite = sheet.ExtractSprite(data, pivot, gameObject);
+                sheet.ExtractSprites(data, pivot, gameObject, sprites);
+                currentSpriteId = 0;
             }
         }
 #endif
