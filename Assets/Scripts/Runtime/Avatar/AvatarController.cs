@@ -183,7 +183,10 @@ namespace FollowYourDreams.Avatar {
                 }
             }
 
-            intendedDirection.Set(intendedRotation);
+            if (!intendsToHighJump) {
+                intendedDirection.Set(intendedRotation);
+            }
+
             ProcessIntendedDirection();
 
             currentAnimation = CalculateAnimation();
