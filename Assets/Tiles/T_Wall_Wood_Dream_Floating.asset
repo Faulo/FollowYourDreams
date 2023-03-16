@@ -1,6 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!213 &-1263301183806280199
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
+  m_Name: T_Wall_Wood_Dream_Floating
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 1219540694872206926}
+  json: {fileID: 4900000, guid: 409388a64b22b4643809b6aa2d4f1db8, type: 3}
+  sheet: {fileID: 2800000, guid: faaf57fd686f22b46a6c94a491bcec7c, type: 3}
+  pivot: {x: 0.5, y: 0.5}
+  data:
+    frames:
+    - filename: S_Wall_Wood_Dream_Floating.aseprite
+      frame:
+        x: 0
+        y: 0
+        w: 32
+        h: 32
+      rotated: 0
+      trimmed: 0
+      spriteSourceSize:
+        x: 0
+        y: 0
+        w: 32
+        h: 32
+      sourceSize:
+        w: 32
+        h: 32
+      duration: 100
+    meta:
+      app: https://www.aseprite.org/
+      version: 1.2.40-x64
+      image: S_Wall_Wood_Dream_Floating.png
+      format: I8
+      size:
+        w: 32
+        h: 32
+      scale: 1
+      frameTags: []
+      layers:
+      - name: Block
+        opacity: 255
+        blendMode: normal
+--- !u!213 &1219540694872206926
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,55 +262,3 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
-  m_Name: T_Wall_Wood_Dream_Floating
-  m_EditorClassIdentifier: 
-  asset: {fileID: 11400000}
-  prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  sprite: {fileID: -1263301183806280199}
-  json: {fileID: 4900000, guid: 409388a64b22b4643809b6aa2d4f1db8, type: 3}
-  sheet: {fileID: 2800000, guid: faaf57fd686f22b46a6c94a491bcec7c, type: 3}
-  pivot: {x: 0.5, y: 0.5}
-  data:
-    frames:
-    - filename: S_Wall_Wood_Dream_Floating.aseprite
-      frame:
-        x: 0
-        y: 0
-        w: 32
-        h: 32
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 32
-      sourceSize:
-        w: 32
-        h: 32
-      duration: 100
-    meta:
-      app: https://www.aseprite.org/
-      version: 1.2.40-x64
-      image: S_Wall_Wood_Dream_Floating.png
-      format: I8
-      size:
-        w: 32
-        h: 32
-      scale: 1
-      frameTags: []
-      layers:
-      - name: Block
-        opacity: 255
-        blendMode: normal
