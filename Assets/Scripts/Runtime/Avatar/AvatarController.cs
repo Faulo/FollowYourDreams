@@ -55,9 +55,11 @@ namespace FollowYourDreams.Avatar {
         float acceleration;
         [SerializeField, ReadOnly]
         bool intendsToRun;
-        float maxSpeed => intendsToRun
-            ? movement.runSpeed
-            : movement.walkSpeed;
+        float maxSpeed => isGliding
+            ? movement.glideSpeed
+            : intendsToRun
+                ? movement.runSpeed
+                : movement.walkSpeed;
         float speedSmoothing => isGliding
             ? movement.glideSmoothing
             : intendedSpeed > 0.1f
