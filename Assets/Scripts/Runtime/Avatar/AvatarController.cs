@@ -184,6 +184,11 @@ namespace FollowYourDreams.Avatar {
             }
 
             intendedDirection.Set(intendedRotation);
+            ProcessIntendedDirection();
+
+            currentAnimation = CalculateAnimation();
+        }
+        void ProcessIntendedDirection() {
             currentDirection = intendedDirection switch {
                 Direction.Up => AvatarDirection.Up,
                 Direction.UpRight => AvatarDirection.UpLeft,
@@ -208,8 +213,6 @@ namespace FollowYourDreams.Avatar {
                     attachedRenderer.flipX = true;
                     break;
             }
-
-            currentAnimation = CalculateAnimation();
         }
 
         AvatarAnimation CalculateAnimation() {
@@ -317,6 +320,13 @@ namespace FollowYourDreams.Avatar {
                 }
                 currentInteractable = null;
             }
+        }
+
+        public void WarpTo(Vector3 position, Direction upLeft) {
+            transform.position = position;
+            intendedDirection = upLeft;
+            ProcessIntendedDirection();
+            attachedCharacter.Move(Vector3.down);
         }
     }
 }
