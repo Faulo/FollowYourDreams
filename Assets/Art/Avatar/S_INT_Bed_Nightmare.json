@@ -286,6 +286,60 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 32.aseprite",
+    "frame": { "x": 2048, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 33.aseprite",
+    "frame": { "x": 2112, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 34.aseprite",
+    "frame": { "x": 2176, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 35.aseprite",
+    "frame": { "x": 2240, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 36.aseprite",
+    "frame": { "x": 2304, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
+   },
+   {
+    "filename": "S_INT_Bed_Nightmare 37.aseprite",
+    "frame": { "x": 2368, "y": 0, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 300
    }
  ],
  "meta": {
@@ -293,7 +347,7 @@
   "version": "1.2.40-x64",
   "image": "S_INT_Bed_Nightmare.png",
   "format": "I8",
-  "size": { "w": 2048, "h": 64 },
+  "size": { "w": 2432, "h": 64 },
   "scale": "1",
   "frameTags": [
    { "name": "BedEmpty", "from": 0, "to": 0, "direction": "forward" },
@@ -302,17 +356,14 @@
    { "name": "Sleep", "from": 11, "to": 11, "direction": "forward" },
    { "name": "DreamSleepSelected", "from": 12, "to": 12, "direction": "forward" },
    { "name": "DreamSleep", "from": 13, "to": 13, "direction": "forward" },
-   { "name": "WakeUp", "from": 14, "to": 22, "direction": "forward" },
-   { "name": "Awake", "from": 22, "to": 22, "direction": "forward" },
-   { "name": "DreamUp", "from": 23, "to": 31, "direction": "forward" },
-   { "name": "DreamAbort", "from": 30, "to": 30, "direction": "forward" },
-   { "name": "Dreaming", "from": 31, "to": 31, "direction": "forward" }
+   { "name": "WakeUp", "from": 14, "to": 23, "direction": "forward" },
+   { "name": "Awake", "from": 23, "to": 23, "direction": "forward" },
+   { "name": "DreamUp", "from": 24, "to": 32, "direction": "forward" },
+   { "name": "DreamAbort", "from": 33, "to": 36, "direction": "forward" },
+   { "name": "Dreaming", "from": 37, "to": 37, "direction": "forward" }
   ],
   "layers": [
-   { "name": "Flattened", "opacity": 255, "blendMode": "normal" },
-   { "name": "Avatar", "opacity": 255, "blendMode": "normal" },
-   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
-   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" }
+   { "name": "Flattened", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]
