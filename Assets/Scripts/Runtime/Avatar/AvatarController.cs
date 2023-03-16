@@ -56,10 +56,17 @@ namespace FollowYourDreams.Avatar {
         float maxSpeed => intendsToRun
             ? settings.runSpeed
             : settings.walkSpeed;
+        float speedSmoothing => isGliding
+            ? settings.glideSmoothing
+            : settings.speedSmoothing;
         [SerializeField, ReadOnly]
         bool intendsToJump;
         [SerializeField, ReadOnly]
+        bool intendsToJumpStart;
+        [SerializeField, ReadOnly]
         bool isJumping;
+        [SerializeField, ReadOnly]
+        bool isGliding;
 
         // readonly HashSet<IInteractable> interactablePool = new();
         IInteractable currentInteractable;
@@ -100,18 +107,31 @@ namespace FollowYourDreams.Avatar {
 
             currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
 
-            currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, settings.speedSmoothing);
+            float intendedSpeed = isGliding
+                ? 1
+                : this.intendedSpeed;
 
-            if (intendsToJump) {
-                intendsToJump = false;
+            currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, speedSmoothing);
+
+            if (isGliding) {
+                if (!intendsToJump) {
+                    isGliding = false;
+                }
+            } else if (isJumping) {
+                if (!intendsToJump || currentVerticalSpeed <= 0) {
+                    isJumping = false;
+                    currentVerticalSpeed *= settings.jumpStopMultiplier;
+                }
+            } else if (intendsToJumpStart) {
                 if (attachedCharacter.isGrounded) {
+                    intendsToJumpStart = false;
                     currentVerticalSpeed += settings.jumpSpeed;
                     isJumping = true;
-                }
-            }
-            if (isJumping) {
-                if (currentVerticalSpeed <= 0) {
-                    isJumping = false;
+                } else {
+                    intendsToJumpStart = false;
+                    currentVerticalSpeed = settings.glideVerticalBoost;
+                    currentHorizontalSpeed += settings.glideHorizontalBoost;
+                    isGliding = true;
                 }
             }
 
@@ -145,6 +165,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         AvatarAnimation CalculateAnimation() {
+            if (isGliding) {
+                return AvatarAnimation.Glide;
+            }
             if (isJumping) {
                 return AvatarAnimation.Jump;
             }
@@ -162,7 +185,14 @@ namespace FollowYourDreams.Avatar {
             if (isInteracting) {
                 return;
             }
-            currentVerticalSpeed += Physics.gravity.y * Time.deltaTime;
+            float gravity = Physics.gravity.y * Time.deltaTime;
+            if (isJumping) {
+                gravity *= settings.jumpGravityMultiplier;
+            }
+            if (isGliding) {
+                gravity *= settings.glideGravityMultiplier;
+            }
+            currentVerticalSpeed += gravity;
             var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentHorizontalSpeed * Time.deltaTime;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
@@ -181,6 +211,7 @@ namespace FollowYourDreams.Avatar {
 
         public void OnJump(InputValue value) {
             intendsToJump = value.isPressed;
+            intendsToJumpStart = value.isPressed;
         }
 
         public void OnInteract(InputValue value) {
