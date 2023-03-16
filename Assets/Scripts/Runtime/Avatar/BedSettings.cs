@@ -15,12 +15,9 @@ namespace FollowYourDreams.Avatar {
         GameObject prefab;
 
 #if UNITY_EDITOR
-        const int DIRECTION_COUNT = 5;
-        const float TIME_MULTIPLIER = 0.001f;
         [Header("Editor-only")]
         [SerializeField]
         AnimatorController controller;
-
         [SerializeField]
         TextAsset json;
         [SerializeField]
