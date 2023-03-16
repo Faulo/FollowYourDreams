@@ -13,9 +13,15 @@ namespace FollowYourDreams.Level {
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             base.GetTileData(position, tilemap, ref tileData);
-            tileData.sprite = instantiateSpriteInRuntime || !Application.isPlaying
+#if UNITY_EDITOR
+            tileData.sprite = instantiateSpriteInRuntime || !UnityEditor.EditorApplication.isPlaying
                 ? sprite
                 : null;
+#else
+            if (instantiateSpriteInRuntime) {
+                tileData.sprite = sprite;
+            }
+#endif
         }
 
 #if UNITY_EDITOR
