@@ -268,6 +268,24 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
     "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 30.aseprite",
+    "frame": { "x": 0, "y": 960, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "S_ENT_Avatar 31.aseprite",
+    "frame": { "x": 0, "y": 992, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 3500
    }
  ],
  "meta": {
@@ -275,7 +293,7 @@
   "version": "1.2.40-x64",
   "image": "S_ENT_Avatar.png",
   "format": "I8",
-  "size": { "w": 160, "h": 960 },
+  "size": { "w": 160, "h": 1024 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
@@ -290,7 +308,8 @@
    { "name": "Interact", "from": 21, "to": 22, "direction": "forward" },
    { "name": "Climb", "from": 23, "to": 25, "direction": "forward" },
    { "name": "Glide", "from": 26, "to": 27, "direction": "forward" },
-   { "name": "Stumble", "from": 29, "to": 29, "direction": "forward" }
+   { "name": "Stumble", "from": 29, "to": 29, "direction": "forward" },
+   { "name": "JumpDream", "from": 30, "to": 31, "direction": "forward" }
   ],
   "layers": [
    { "name": "Flattened", "opacity": 255, "blendMode": "normal" }
