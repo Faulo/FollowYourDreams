@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using FMODUnity;
-using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
@@ -34,14 +32,6 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         EventReference stumbleEvent = new();
 
-        [Header("Go To Sleep")]
-        [SerializeField]
-        EventReference goToSleepEvent = new();
-
-        [Header("Wake Up")]
-        [SerializeField]
-        EventReference wakeUpEvent = new();
-
         Coroutine coroutine;
 
         void OnEnable() {
@@ -58,39 +48,26 @@ namespace FollowYourDreams.Avatar {
             }
             switch (animation) {
                 case AvatarAnimation.Jump:
-                    PlayOnce(jumpEvent);
+                    jumpEvent.PlayOnce();
                     break;
                 case AvatarAnimation.Land:
-                    PlayOnce(landEvent);
+                    landEvent.PlayOnce();
                     break;
                 case AvatarAnimation.Climb:
-                    PlayOnce(climbEvent);
+                    climbEvent.PlayOnce();
+                    break;
+                case AvatarAnimation.Stumble:
+                    stumbleEvent.PlayOnce();
                     break;
                 case AvatarAnimation.Interact:
-                    PlayOnce(interactEvent);
+                    interactEvent.PlayOnce();
                     break;
                 case AvatarAnimation.Walk:
-                    PlayRepeatedly(stepEvent, walkInterval);
+                    coroutine = stepEvent.PlayRepeatedly(this, walkInterval);
                     break;
                 case AvatarAnimation.Run:
-                    PlayRepeatedly(stepEvent, runInterval);
+                    coroutine = stepEvent.PlayRepeatedly(this, runInterval);
                     break;
-            }
-        }
-
-        void PlayOnce(in EventReference reference) {
-            var instance = RuntimeManager.CreateInstance(reference);
-            instance.start();
-        }
-        void PlayRepeatedly(in EventReference reference, float interval) {
-            coroutine = StartCoroutine(PlayRepeatedly_Co(reference, interval));
-        }
-
-        IEnumerator PlayRepeatedly_Co(EventReference reference, float interval) {
-            while (true) {
-                var instance = RuntimeManager.CreateInstance(reference);
-                instance.start();
-                yield return Wait.forSeconds[interval];
             }
         }
     }

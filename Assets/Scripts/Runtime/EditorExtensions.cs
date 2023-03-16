@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityObject = UnityEngine.Object;
 
 namespace FollowYourDreams {
-    static class Extensions {
+    static class EditorExtensions {
 #if UNITY_EDITOR
         public static Sprite[] LoadSprites(this Texture2D sheet) {
             return AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(sheet))

@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
-using FollowYourDreams.Avatar;
+using FMODUnity;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 
-namespace FollowYourDreams.Level {
+namespace FollowYourDreams.Avatar {
     sealed class BedState : MonoBehaviour, IInteractable {
         public event Action<BedAnimation> onSetAnimation;
 
@@ -23,6 +23,12 @@ namespace FollowYourDreams.Level {
         float dreamAbortMiddle = 1;
         [SerializeField, Range(0, 10)]
         float dreamAbortEnd = 1;
+
+        [Header("Audio")]
+        [SerializeField]
+        EventReference goToSleepEvent = new();
+        [SerializeField]
+        EventReference wakeUpEvent = new();
 
         [Header("Runtime")]
         [SerializeField]
@@ -44,6 +50,12 @@ namespace FollowYourDreams.Level {
 
             onSetAnimation?.Invoke(gotoSleep ? BedAnimation.GoToSleep : BedAnimation.DreamAbort);
             yield return Wait.forSeconds[gotoSleep ? gotoSleepStart : dreamAbortStart];
+
+            if (gotoSleep) {
+                goToSleepEvent.PlayOnce();
+            } else {
+                wakeUpEvent.PlayOnce();
+            }
 
             manager.currentDimension = targetDimension;
             isOccupied = !isOccupied;
