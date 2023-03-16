@@ -8,10 +8,14 @@ namespace FollowYourDreams.Level {
         [Header("Standalone Tile")]
         [SerializeField]
         Sprite sprite = default;
+        [SerializeField]
+        bool instantiateSpriteInRuntime = true;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             base.GetTileData(position, tilemap, ref tileData);
-            tileData.sprite = sprite;
+            tileData.sprite = instantiateSpriteInRuntime || !Application.isPlaying
+                ? sprite
+                : null;
         }
 
 #if UNITY_EDITOR

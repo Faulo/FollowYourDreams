@@ -18,7 +18,7 @@ namespace FollowYourDreams {
             }
         }
 
-        protected void Update() {
+        protected void FixedUpdate() {
             if (manager) {
                 if (previousDimension != manager.currentDimension) {
                     previousDimension = manager.currentDimension;

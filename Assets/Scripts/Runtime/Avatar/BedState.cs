@@ -66,6 +66,7 @@ namespace FollowYourDreams.Avatar {
             }
 
             manager.currentDimension = targetDimension;
+            yield return Wait.forFixedUpdate;
             avatar.lastUsedBed = this;
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = !isOccupied;
@@ -81,6 +82,7 @@ namespace FollowYourDreams.Avatar {
         public IEnumerator WakeUpIn_Co(AvatarController avatar) {
             if (ownDimension != Dimension.RealWorld) {
                 manager.currentDimension = targetDimension;
+                yield return Wait.forFixedUpdate;
             }
             avatar.currentAnimation = AvatarAnimation.None;
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);

@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5434069404413095336, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  m_Sprite: {fileID: -5419324322038028332, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,10 +167,10 @@ CharacterController:
   m_Height: 0.5
   m_Radius: 0.25
   m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.015625
+  m_StepOffset: 0.125
+  m_SkinWidth: 0.0078125
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8394062918357687654
 MonoBehaviour:
   m_ObjectHideFlags: 0
