@@ -7,6 +7,7 @@ namespace FollowYourDreams {
     sealed class GameManager : ScriptableAsset {
         public static readonly float pixelsPerUnit = 16 * Mathf.Sqrt(2);
 
+        [Header("Config")]
         [SerializeField, Layer]
         int realLayer;
         [SerializeField, Layer]
@@ -14,6 +15,7 @@ namespace FollowYourDreams {
         [SerializeField, Layer]
         int nightmareLayer;
 
+        [Header("Runtime")]
         [SerializeField]
         public Dimension currentDimension;
 
@@ -33,7 +35,7 @@ namespace FollowYourDreams {
             Dimension.RealWorld => realLayer,
             Dimension.Dreamscape => dreamLayer,
             Dimension.NightmareRealm => nightmareLayer,
-            _ => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(dimension.ToString()),
         };
 
         public float realStrength => currentDimension == Dimension.RealWorld
