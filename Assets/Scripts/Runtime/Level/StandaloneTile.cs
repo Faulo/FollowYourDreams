@@ -1,9 +1,10 @@
+using FollowYourDreams.Avatar;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    class StandaloneTile : ScriptableTile {
+    sealed class StandaloneTile : ScriptableTile {
         [Header("Standalone Tile")]
         [SerializeField]
         Sprite sprite = default;
@@ -12,5 +13,25 @@ namespace FollowYourDreams.Level {
             base.GetTileData(position, tilemap, ref tileData);
             tileData.sprite = sprite;
         }
+
+#if UNITY_EDITOR
+        [Header("Editor-only")]
+        [SerializeField]
+        TextAsset json = default;
+        [SerializeField]
+        Texture2D sheet = default;
+        [SerializeField]
+        Vector2 pivot = new(0.5f, 0.5f);
+        [SerializeField]
+        AsepriteData data = new();
+
+        [ContextMenu(nameof(LoadSprite))]
+        public void LoadSprite() {
+            if (sheet && json) {
+                data = AsepriteData.FromJson(json.text);
+                sprite = sheet.ExtractSprite(data, pivot, this);
+            }
+        }
+#endif
     }
 }

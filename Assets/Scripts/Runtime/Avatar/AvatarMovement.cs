@@ -13,7 +13,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Range(0, 10)]
         public float walkSpeed = 1;
         [SerializeField, Range(0, 10)]
-        public float runSpeed = 2;        
+        public float runSpeed = 2;
 
         [Space]
         [SerializeField]

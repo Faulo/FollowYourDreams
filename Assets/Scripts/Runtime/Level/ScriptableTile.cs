@@ -1,3 +1,4 @@
+using MyBox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -5,10 +6,18 @@ namespace FollowYourDreams.Level {
     [CreateAssetMenu]
     abstract class ScriptableTile : TileBase {
         [Header("Base Tile")]
+        [SerializeField, ReadOnly]
+        ScriptableTile asset;
         [SerializeField]
-        GameObject prefab = default;
+        GameObject prefab;
         [SerializeField]
         Color tint = Color.white;
+
+        protected virtual void OnValidate() {
+            if (asset != this) {
+                asset = this;
+            }
+        }
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             tileData.color = tint;
