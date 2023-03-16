@@ -327,10 +327,14 @@ namespace FollowYourDreams.Avatar {
             }
         }
 
-        public void WarpTo(Vector3 position, Direction upLeft) {
+        public void WarpTo(Vector3 position, Direction direction) {
             transform.position = position;
             Physics.SyncTransforms();
-            intendedDirection = upLeft;
+            currentRotation = Vector2.SignedAngle(direction.AsVector2(), Vector2.up);
+            intendedDirection = direction;
+            intendedMove = Vector2.zero;
+            currentHorizontalSpeed = 0;
+            currentVerticalSpeed = 0;
             ProcessIntendedDirection();
             attachedCharacter.Move(Vector3.down);
         }
