@@ -10,5 +10,8 @@ namespace FollowYourDreams.Avatar {
         Climb,
         Fall,
         Land,
+        Glide,
+        Stumble,
+        PrepareJump
     }
 }
