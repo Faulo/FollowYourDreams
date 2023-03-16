@@ -114,7 +114,7 @@ namespace FollowYourDreams.Avatar {
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, speedSmoothing);
 
             if (isGliding) {
-                if (!intendsToJump) {
+                if (!intendsToJump || attachedCharacter.isGrounded) {
                     isGliding = false;
                 }
             } else if (isJumping) {
