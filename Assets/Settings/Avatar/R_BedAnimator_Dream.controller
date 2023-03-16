@@ -1,27 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1101 &-9109660247253994075
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -3638391831680365744}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 1
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1107 &-8244255915941724214
 AnimatorStateMachine:
   serializedVersion: 6
@@ -32,37 +10,37 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -7685147069602335809}
+    m_State: {fileID: 3425229001926406798}
     m_Position: {x: 200, y: 0, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3811062554720303375}
+    m_State: {fileID: -2347850570592305983}
     m_Position: {x: 235, y: 65, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8202825954060802680}
+    m_State: {fileID: 3083961941111291105}
     m_Position: {x: 270, y: 130, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 3277101752619739327}
+    m_State: {fileID: 8222544056978841223}
     m_Position: {x: 305, y: 195, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3664902560129941426}
+    m_State: {fileID: 7197353772195238202}
     m_Position: {x: 340, y: 260, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -6482581238720505863}
+    m_State: {fileID: 6646177581448148637}
     m_Position: {x: 375, y: 325, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -342745990675540432}
+    m_State: {fileID: 6358673540697415292}
     m_Position: {x: 410, y: 390, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1665509200396760598}
+    m_State: {fileID: 7009447338429699499}
     m_Position: {x: 445, y: 455, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7932830239606799212}
+    m_State: {fileID: -1719637463172922437}
     m_Position: {x: 480, y: 520, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5215992747692128907}
+    m_State: {fileID: -6480147452608374320}
     m_Position: {x: 515, y: 585, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3638391831680365744}
+    m_State: {fileID: -6220509328316957389}
     m_Position: {x: 550, y: 650, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -73,429 +51,8 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -7685147069602335809}
---- !u!74 &-8174736298986535539
-AnimationClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WakeUp
-  serializedVersion: 7
-  m_Legacy: 0
-  m_Compressed: 0
-  m_UseHighQualityCurve: 1
-  m_RotationCurves: []
-  m_CompressedRotationCurves: []
-  m_EulerCurves: []
-  m_PositionCurves: []
-  m_ScaleCurves: []
-  m_FloatCurves: []
-  m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: -6852578379726187759, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.3
-      value: {fileID: 5357722524248333372, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.6
-      value: {fileID: 5745841914194095479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.90000004
-      value: {fileID: 4407322080992872902, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.2
-      value: {fileID: -2371539055481960710, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.5000001
-      value: {fileID: 4970047254965677056, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.8000001
-      value: {fileID: 2843904239511152437, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.1000001
-      value: {fileID: 4402826068496985150, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.4
-      value: {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.7
-      value: {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  m_SampleRate: 60
-  m_WrapMode: 8
-  m_Bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -6852578379726187759, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5357722524248333372, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5745841914194095479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 4407322080992872902, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -2371539055481960710, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 4970047254965677056, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 2843904239511152437, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 4402826068496985150, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-  m_AnimationClipSettings:
-    serializedVersion: 2
-    m_AdditiveReferencePoseClip: {fileID: 0}
-    m_AdditiveReferencePoseTime: 0
-    m_StartTime: 0
-    m_StopTime: 2.7166667
-    m_OrientationOffsetY: 0
-    m_Level: 0
-    m_CycleOffset: 0
-    m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
-    m_LoopBlend: 0
-    m_LoopBlendOrientation: 0
-    m_LoopBlendPositionY: 0
-    m_LoopBlendPositionXZ: 0
-    m_KeepOriginalOrientation: 0
-    m_KeepOriginalPositionY: 1
-    m_KeepOriginalPositionXZ: 0
-    m_HeightFromFeet: 0
-    m_Mirror: 0
-  m_EditorCurves: []
-  m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 0
-  m_HasMotionFloatCurves: 0
-  m_Events: []
---- !u!74 &-8093175360230474588
-AnimationClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GoToSleep
-  serializedVersion: 7
-  m_Legacy: 0
-  m_Compressed: 0
-  m_UseHighQualityCurve: 1
-  m_RotationCurves: []
-  m_CompressedRotationCurves: []
-  m_EulerCurves: []
-  m_PositionCurves: []
-  m_ScaleCurves: []
-  m_FloatCurves: []
-  m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: -2721066072217741210, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.3
-      value: {fileID: 8785708484113158111, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.6
-      value: {fileID: -1510383169034964236, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.90000004
-      value: {fileID: -3225861253145053981, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.2
-      value: {fileID: -7157180947230538203, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.5000001
-      value: {fileID: 2221259763375854906, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.8000001
-      value: {fileID: -5679823629852330041, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.1000001
-      value: {fileID: 1872886949128380062, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.4
-      value: {fileID: 5270351480736156460, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.7
-      value: {fileID: 5270351480736156460, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  m_SampleRate: 60
-  m_WrapMode: 8
-  m_Bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -2721066072217741210, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 8785708484113158111, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -1510383169034964236, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -3225861253145053981, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -7157180947230538203, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 2221259763375854906, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -5679823629852330041, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 1872886949128380062, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5270351480736156460, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5270351480736156460, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-  m_AnimationClipSettings:
-    serializedVersion: 2
-    m_AdditiveReferencePoseClip: {fileID: 0}
-    m_AdditiveReferencePoseTime: 0
-    m_StartTime: 0
-    m_StopTime: 2.7166667
-    m_OrientationOffsetY: 0
-    m_Level: 0
-    m_CycleOffset: 0
-    m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
-    m_LoopBlend: 0
-    m_LoopBlendOrientation: 0
-    m_LoopBlendPositionY: 0
-    m_LoopBlendPositionXZ: 0
-    m_KeepOriginalOrientation: 0
-    m_KeepOriginalPositionY: 1
-    m_KeepOriginalPositionXZ: 0
-    m_HeightFromFeet: 0
-    m_Mirror: 0
-  m_EditorCurves: []
-  m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 0
-  m_HasMotionFloatCurves: 0
-  m_Events: []
---- !u!1102 &-7685147069602335809
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BedEmpty
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -260905755422768907}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-6482581238720505863
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DreamSleep
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 1317834679088975877}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!74 &-4680312424124289417
-AnimationClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DreamUp
-  serializedVersion: 7
-  m_Legacy: 0
-  m_Compressed: 0
-  m_UseHighQualityCurve: 1
-  m_RotationCurves: []
-  m_CompressedRotationCurves: []
-  m_EulerCurves: []
-  m_PositionCurves: []
-  m_ScaleCurves: []
-  m_FloatCurves: []
-  m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: 8862957659748333448, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.3
-      value: {fileID: -4497632355468526816, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.6
-      value: {fileID: 4296583608713032401, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.90000004
-      value: {fileID: -864428968337647070, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.2
-      value: {fileID: 4084224253575717594, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.5000001
-      value: {fileID: 2655996448436482356, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 1.8000001
-      value: {fileID: -4720344754993038565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.1000001
-      value: {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.4
-      value: {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 2.7
-      value: {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  m_SampleRate: 60
-  m_WrapMode: 8
-  m_Bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 8862957659748333448, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -4497632355468526816, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 4296583608713032401, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -864428968337647070, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 4084224253575717594, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 2655996448436482356, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -4720344754993038565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-  m_AnimationClipSettings:
-    serializedVersion: 2
-    m_AdditiveReferencePoseClip: {fileID: 0}
-    m_AdditiveReferencePoseTime: 0
-    m_StartTime: 0
-    m_StopTime: 2.7166667
-    m_OrientationOffsetY: 0
-    m_Level: 0
-    m_CycleOffset: 0
-    m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
-    m_LoopBlend: 0
-    m_LoopBlendOrientation: 0
-    m_LoopBlendPositionY: 0
-    m_LoopBlendPositionXZ: 0
-    m_KeepOriginalOrientation: 0
-    m_KeepOriginalPositionY: 1
-    m_KeepOriginalPositionXZ: 0
-    m_HeightFromFeet: 0
-    m_Mirror: 0
-  m_EditorCurves: []
-  m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 0
-  m_HasMotionFloatCurves: 0
-  m_Events: []
---- !u!1102 &-3811062554720303375
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BedEmptySelected
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -2920723132182374510}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-3664902560129941426
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DreamSleepSelected
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -2430534660136324913}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-3638391831680365744
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Dreaming
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 9210527688815107330}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!74 &-3143640642512979980
+  m_DefaultState: {fileID: 3425229001926406798}
+--- !u!74 &-7916969904681078925
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -516,9 +73,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -7806896408401010425, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 1690316626603715903, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: -7806896408401010425, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 1690316626603715903, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -541,8 +98,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -7806896408401010425, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: -7806896408401010425, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 1690316626603715903, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 1690316626603715903, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -568,13 +125,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!74 &-2920723132182374510
+--- !u!74 &-7677190067844042921
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BedEmptySelected
+  m_Name: WakeUp
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -589,16 +146,34 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7665914920205966229, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 6078232176459335, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 7665914920205966229, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 2810450817844764378, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.6
+      value: {fileID: -4325063094465043436, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.90000004
+      value: {fileID: 2304817052173179937, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.2
+      value: {fileID: 4756949334705260912, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.5000001
+      value: {fileID: 4633176835552356783, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.8000001
+      value: {fileID: -3207749677019714374, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.1000001
+      value: {fileID: 5619614372103649154, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.4
+      value: {fileID: -6983022595654393288, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.7
+      value: {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 3.0000002
+      value: {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
   m_SampleRate: 60
-  m_WrapMode: 2
+  m_WrapMode: 8
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -614,19 +189,28 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 7665914920205966229, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 7665914920205966229, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 6078232176459335, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 2810450817844764378, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -4325063094465043436, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 2304817052173179937, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 4756949334705260912, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 4633176835552356783, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3207749677019714374, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 5619614372103649154, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -6983022595654393288, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3166667
+    m_StopTime: 3.016667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -641,7 +225,201 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!74 &-2430534660136324913
+--- !u!1102 &-6480147452608374320
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DreamAbort
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 1979214281778730335}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-6220509328316957389
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dreaming
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 8163834476744181097}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!74 &-3955362983834145426
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DreamUp
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -2731186501479444539, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.3
+      value: {fileID: 1599735740047309864, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.6
+      value: {fileID: -437081636382210049, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.90000004
+      value: {fileID: 8157690465021048572, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.2
+      value: {fileID: -5541853572950651255, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.5000001
+      value: {fileID: -3727948902896657729, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.8000001
+      value: {fileID: 1040595948740316828, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.1000001
+      value: {fileID: -1533937720574143495, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.4
+      value: {fileID: -1533937720574143495, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 60
+  m_WrapMode: 8
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: -2731186501479444539, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 1599735740047309864, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -437081636382210049, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 8157690465021048572, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -5541853572950651255, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3727948902896657729, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 1040595948740316828, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -1533937720574143495, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -1533937720574143495, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 2.4166667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
+--- !u!1101 &-3464087040628403025
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 7009447338429699499}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &-2347850570592305983
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BedEmptySelected
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 8696509293284441699}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!74 &-2253753460163454493
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,9 +440,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 55382347070162177, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: -3835350403658343322, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 55382347070162177, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: -3835350403658343322, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -687,8 +465,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 55382347070162177, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 55382347070162177, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3835350403658343322, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3835350403658343322, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -714,113 +492,18 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!1101 &-1625096872510112194
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 3277101752619739327}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 1
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!74 &-475992601906326413
-AnimationClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DreamAbort
-  serializedVersion: 7
-  m_Legacy: 0
-  m_Compressed: 0
-  m_UseHighQualityCurve: 1
-  m_RotationCurves: []
-  m_CompressedRotationCurves: []
-  m_EulerCurves: []
-  m_PositionCurves: []
-  m_ScaleCurves: []
-  m_FloatCurves: []
-  m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - time: 0.3
-      value: {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  m_SampleRate: 60
-  m_WrapMode: 2
-  m_Bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5305596203139043514, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-  m_AnimationClipSettings:
-    serializedVersion: 2
-    m_AdditiveReferencePoseClip: {fileID: 0}
-    m_AdditiveReferencePoseTime: 0
-    m_StartTime: 0
-    m_StopTime: 0.3166667
-    m_OrientationOffsetY: 0
-    m_Level: 0
-    m_CycleOffset: 0
-    m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
-    m_LoopBlend: 0
-    m_LoopBlendOrientation: 0
-    m_LoopBlendPositionY: 0
-    m_LoopBlendPositionXZ: 0
-    m_KeepOriginalOrientation: 0
-    m_KeepOriginalPositionY: 1
-    m_KeepOriginalPositionXZ: 0
-    m_HeightFromFeet: 0
-    m_Mirror: 0
-  m_EditorCurves: []
-  m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 0
-  m_HasMotionFloatCurves: 0
-  m_Events: []
---- !u!1102 &-342745990675540432
+--- !u!1102 &-1719637463172922437
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WakeUp
+  m_Name: DreamUp
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 100944017208462555}
+  - {fileID: 2314720402617309147}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -830,19 +513,19 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8174736298986535539}
+  m_Motion: {fileID: -3955362983834145426}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!74 &-260905755422768907
+--- !u!74 &-137260220945185034
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BedEmpty
+  m_Name: GoToSleep
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -857,16 +540,32 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 9150418823587845479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 7847311834418840581, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 9150418823587845479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 5061381402049364125, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.6
+      value: {fileID: -5124122713113353487, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.90000004
+      value: {fileID: 553215460276439896, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.2
+      value: {fileID: 5292028090584375635, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.5000001
+      value: {fileID: 6780643627123059419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.8000001
+      value: {fileID: -577980515911287958, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.1000001
+      value: {fileID: -840895462586298212, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.4
+      value: {fileID: -8457441849769799069, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 2.7
+      value: {fileID: -8457441849769799069, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
   m_SampleRate: 60
-  m_WrapMode: 2
+  m_WrapMode: 8
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -882,19 +581,27 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 9150418823587845479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 9150418823587845479, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 7847311834418840581, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 5061381402049364125, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -5124122713113353487, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 553215460276439896, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 5292028090584375635, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 6780643627123059419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -577980515911287958, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -840895462586298212, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -8457441849769799069, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -8457441849769799069, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3166667
+    m_StopTime: 2.7166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -931,29 +638,153 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &100944017208462555
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
+--- !u!74 &178138278507705837
+AnimationClip:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1665509200396760598}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 1
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!74 &1317834679088975877
+  m_Name: BedEmpty
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 2220449103305595419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.3
+      value: {fileID: 2220449103305595419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 60
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: 2220449103305595419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 2220449103305595419, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.3166667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
+--- !u!74 &225168943571739020
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Awake
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.3
+      value: {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 60
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -3136495457842124246, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.3166667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
+--- !u!74 &466855887737892397
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -974,9 +805,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 28330417873930565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 5328313852044548112, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 28330417873930565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 5328313852044548112, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -999,8 +830,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 28330417873930565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 28330417873930565, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 5328313852044548112, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 5328313852044548112, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -1026,65 +857,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!1102 &1665509200396760598
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Awake
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 4286543788161850629}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &3277101752619739327
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sleep
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -3143640642512979980}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!74 &4286543788161850629
+--- !u!74 &1979214281778730335
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Awake
+  m_Name: DreamAbort
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -1099,9 +878,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: -8956141904665769358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: 6177246696001770711, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.6
+      value: {fileID: 8928540050249345512, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.90000004
+      value: {fileID: 493792157474903601, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 1.2
+      value: {fileID: -8956141904665769358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -1124,14 +909,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 5036795864006502358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -8956141904665769358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 6177246696001770711, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 8928540050249345512, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 493792157474903601, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -8956141904665769358, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3166667
+    m_StopTime: 1.2166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1151,14 +939,63 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!1102 &5215992747692128907
+--- !u!1101 &2314720402617309147
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -6220509328316957389}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &3083961941111291105
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DreamAbort
+  m_Name: GoToSleep
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 3823705793023619608}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -137260220945185034}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &3425229001926406798
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BedEmpty
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1171,24 +1008,46 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -475992601906326413}
+  m_Motion: {fileID: 178138278507705837}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7932830239606799212
+--- !u!1101 &3823705793023619608
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8222544056978841223}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &6358673540697415292
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DreamUp
+  m_Name: WakeUp
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: -9109660247253994075}
+  - {fileID: -3464087040628403025}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1198,24 +1057,23 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -4680312424124289417}
+  m_Motion: {fileID: -7677190067844042921}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &8202825954060802680
+--- !u!1102 &6646177581448148637
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GoToSleep
+  m_Name: DreamSleep
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -1625096872510112194}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1225,13 +1083,65 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8093175360230474588}
+  m_Motion: {fileID: 466855887737892397}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!74 &9210527688815107330
+--- !u!1102 &7009447338429699499
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Awake
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 225168943571739020}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7197353772195238202
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DreamSleepSelected
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -2253753460163454493}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!74 &8163834476744181097
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1252,9 +1162,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: -759198535116522806, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     - time: 0.3
-      value: {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+      value: {fileID: -759198535116522806, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -1277,8 +1187,107 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
-    - {fileID: 117244102710700325, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -759198535116522806, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: -759198535116522806, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.3166667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
+--- !u!1102 &8222544056978841223
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sleep
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7916969904681078925}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!74 &8696509293284441699
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BedEmptySelected
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 7667728431122739339, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - time: 0.3
+      value: {fileID: 7667728431122739339, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 60
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: 7667728431122739339, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+    - {fileID: 7667728431122739339, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
