@@ -3,7 +3,7 @@ using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace FollowYourDreams {
-    abstract class ComponentFeature<T> : MonoBehaviour where T : MonoBehaviour {
+    abstract class ComponentFeature<T> : MonoBehaviour where T : Component {
         [SerializeField, ReadOnly]
         protected T observedComponent = default;
 
