@@ -114,7 +114,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 13.aseprite",
@@ -123,7 +123,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 14.aseprite",
@@ -132,7 +132,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 100
    },
    {
     "filename": "S_ENT_Avatar 15.aseprite",
@@ -141,7 +141,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 100
    },
    {
     "filename": "S_ENT_Avatar 16.aseprite",
@@ -195,7 +195,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 3500
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 22.aseprite",
@@ -213,11 +213,29 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 3500
    },
    {
     "filename": "S_ENT_Avatar 24.aseprite",
     "frame": { "x": 0, "y": 768, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 25.aseprite",
+    "frame": { "x": 0, "y": 800, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 300
+   },
+   {
+    "filename": "S_ENT_Avatar 26.aseprite",
+    "frame": { "x": 0, "y": 832, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
@@ -230,7 +248,7 @@
   "version": "1.2.40-x64",
   "image": "S_ENT_Avatar.png",
   "format": "I8",
-  "size": { "w": 160, "h": 800 },
+  "size": { "w": 160, "h": 864 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
@@ -238,13 +256,14 @@
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
    { "name": "Jump", "from": 8, "to": 9, "direction": "forward" },
    { "name": "Fall", "from": 10, "to": 11, "direction": "forward" },
-   { "name": "Land", "from": 12, "to": 12, "direction": "forward" },
-   { "name": "PrepareJump", "from": 13, "to": 13, "direction": "forward" },
-   { "name": "Push", "from": 14, "to": 15, "direction": "forward" },
-   { "name": "Interact", "from": 16, "to": 17, "direction": "forward" },
-   { "name": "Climb", "from": 18, "to": 20, "direction": "forward" },
-   { "name": "Glide", "from": 21, "to": 22, "direction": "forward" },
-   { "name": "Stumble", "from": 24, "to": 24, "direction": "forward" }
+   { "name": "HighJump", "from": 12, "to": 13, "direction": "forward" },
+   { "name": "Land", "from": 14, "to": 14, "direction": "forward" },
+   { "name": "PrepareJump", "from": 15, "to": 15, "direction": "forward" },
+   { "name": "Push", "from": 16, "to": 17, "direction": "forward" },
+   { "name": "Interact", "from": 18, "to": 19, "direction": "forward" },
+   { "name": "Climb", "from": 20, "to": 22, "direction": "forward" },
+   { "name": "Glide", "from": 23, "to": 24, "direction": "forward" },
+   { "name": "Stumble", "from": 26, "to": 26, "direction": "forward" }
   ],
   "layers": [
    { "name": "Flattened", "opacity": 255, "blendMode": "normal" }

@@ -220,7 +220,7 @@ namespace FollowYourDreams.Avatar {
                 return AvatarAnimation.Jump;
             }
             if (isHighJumping) {
-                return AvatarAnimation.Fall;
+                return AvatarAnimation.HighJump;
             }
             if (!attachedCharacter.isGrounded) {
                 return AvatarAnimation.Fall;
