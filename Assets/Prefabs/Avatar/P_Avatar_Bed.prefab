@@ -109,6 +109,20 @@ MonoBehaviour:
   dreamAbortStart: 1
   dreamAbortMiddle: 0.5
   dreamAbortEnd: 3
+  goToSleepEvent:
+    Guid:
+      Data1: -83782113
+      Data2: 1188951681
+      Data3: -149473405
+      Data4: -813240850
+    Path: event:/Avatar/GoToSleep
+  wakeUpEvent:
+    Guid:
+      Data1: 676483901
+      Data2: 1228451313
+      Data3: 1388361379
+      Data4: 1634735199
+    Path: event:/Avatar/WakeUp
   isOccupied: 0
 --- !u!135 &3635882323751486029
 SphereCollider:

@@ -1,4 +1,3 @@
-using FollowYourDreams.Level;
 using UnityEngine;
 
 namespace FollowYourDreams.Avatar {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4332099688496705474}
   - component: {fileID: 8394062918357687654}
   - component: {fileID: 6138110118571824606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: P_Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2343116080001014186, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  m_Sprite: {fileID: 1030198434125298617, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -295,17 +295,3 @@ MonoBehaviour:
       Data3: -1448322118
       Data4: -662573380
     Path: event:/Avatar/Stumble
-  goToSleepEvent:
-    Guid:
-      Data1: -83782113
-      Data2: 1188951681
-      Data3: -149473405
-      Data4: -813240850
-    Path: event:/Avatar/GoToSleep
-  wakeUpEvent:
-    Guid:
-      Data1: 676483901
-      Data2: 1228451313
-      Data3: 1388361379
-      Data4: 1634735199
-    Path: event:/Avatar/WakeUp
