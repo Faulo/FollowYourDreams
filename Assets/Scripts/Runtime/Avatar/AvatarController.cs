@@ -53,16 +53,19 @@ namespace FollowYourDreams.Avatar {
         Direction intendedDirection;
         float torque;
         float acceleration;
+        bool intendsToMove => intendedSpeed > 0.1f;
         [SerializeField, ReadOnly]
         bool intendsToRun;
         float maxSpeed => isGliding
             ? movement.glideSpeed
-            : intendsToRun
-                ? movement.runSpeed
-                : movement.walkSpeed;
+            : intendsToHighJump
+                ? 0
+                : intendsToRun
+                    ? movement.runSpeed
+                    : movement.walkSpeed;
         float speedSmoothing => isGliding
             ? movement.glideSmoothing
-            : intendedSpeed > 0.1f
+            : intendsToMove
                 ? movement.accelerationSmoothing
                 : movement.decelerationSmoothing;
         [SerializeField, ReadOnly]
@@ -73,6 +76,16 @@ namespace FollowYourDreams.Avatar {
         bool isJumping;
         [SerializeField, ReadOnly]
         bool isGliding;
+
+        [Space]
+        [SerializeField, ReadOnly]
+        bool intendsToHighJump;
+        [SerializeField, ReadOnly]
+        bool intendsToHighJumpStart;
+        [SerializeField, ReadOnly]
+        float highJumpCharge = 0;
+        [SerializeField, ReadOnly]
+        bool isHighJumping;
 
         // readonly HashSet<IInteractable> interactablePool = new();
         IInteractable currentInteractable;
@@ -133,6 +146,10 @@ namespace FollowYourDreams.Avatar {
                     isJumping = false;
                     currentVerticalSpeed *= movement.jumpStopMultiplier;
                 }
+            } else if (isHighJumping) {
+                if (currentVerticalSpeed <= 0) {
+                    isHighJumping = false;
+                }
             } else if (intendsToJumpStart) {
                 if (attachedCharacter.isGrounded) {
                     intendsToJumpStart = false;
@@ -140,13 +157,29 @@ namespace FollowYourDreams.Avatar {
                         PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
                         return;
                     }
-                    currentVerticalSpeed += movement.jumpSpeed;
+                    currentVerticalSpeed = movement.jumpSpeed;
                     isJumping = true;
                 } else {
                     intendsToJumpStart = false;
                     currentVerticalSpeed = movement.glideVerticalBoost;
                     currentHorizontalSpeed += movement.glideHorizontalBoost;
                     isGliding = true;
+                }
+            }
+
+            if (attachedCharacter.isGrounded) {
+                if (intendsToHighJumpStart && highJumpCharge > movement.highJumpChargeMinimum) {
+                    intendsToHighJumpStart = false;
+                    float multiplier = Mathf.InverseLerp(0, movement.highJumpChargeMaximum, highJumpCharge);
+                    currentVerticalSpeed = movement.highJumpSpeed * multiplier;
+                    isHighJumping = true;
+                    highJumpCharge = 0;
+                } else {
+                    if (intendsToHighJump) {
+                        highJumpCharge += Time.deltaTime;
+                    } else {
+                        highJumpCharge = 0;
+                    }
                 }
             }
 
@@ -186,10 +219,16 @@ namespace FollowYourDreams.Avatar {
             if (isJumping) {
                 return AvatarAnimation.Jump;
             }
+            if (isHighJumping) {
+                return AvatarAnimation.Fall;
+            }
             if (!attachedCharacter.isGrounded) {
                 return AvatarAnimation.Fall;
             }
-            return intendedSpeed > 0.1f
+            if (intendsToHighJump) {
+                return AvatarAnimation.PrepareJump;
+            }
+            return intendsToMove
                 ? intendsToRun
                     ? AvatarAnimation.Run
                     : AvatarAnimation.Walk
@@ -203,6 +242,9 @@ namespace FollowYourDreams.Avatar {
             float gravity = Physics.gravity.y * Time.deltaTime;
             if (isJumping) {
                 gravity *= movement.jumpGravityMultiplier;
+            }
+            if (isHighJumping) {
+                gravity *= movement.highJumpGravityMultiplier;
             }
             if (isGliding) {
                 gravity *= movement.glideGravityMultiplier;
@@ -227,6 +269,11 @@ namespace FollowYourDreams.Avatar {
         public void OnJump(InputValue value) {
             intendsToJump = value.isPressed;
             intendsToJumpStart = value.isPressed;
+        }
+
+        public void OnHighJump(InputValue value) {
+            intendsToHighJump = value.isPressed;
+            intendsToHighJumpStart = !value.isPressed;
         }
 
         public void OnInteract(InputValue value) {
