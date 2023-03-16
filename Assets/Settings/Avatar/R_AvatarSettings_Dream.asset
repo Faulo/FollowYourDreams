@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: R_AvatarSettings_Dream
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  rotationSmoothing: 0.01
-  accelerationSmoothing: 0.01
-  decelerationSmoothing: 0.01
+  rotationSmoothing: 0.033333335
+  accelerationSmoothing: 0.033333335
+  decelerationSmoothing: 0.016666668
   walkSpeed: 2
   runSpeed: 4
   canJump: 1
@@ -30,3 +30,7 @@ MonoBehaviour:
   canCancelGlide: 1
   glideToLandAnimation: 9
   glideToLandDuration: 0
+  highJumpChargeMinimum: 0.033333335
+  highJumpChargeMaximum: 0.8
+  highJumpSpeed: 8
+  highJumpGravityMultiplier: 0.5

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: R_AvatarSettings_Nightmare
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  rotationSmoothing: 0.01
+  rotationSmoothing: 0.033333335
   accelerationSmoothing: 0.2
-  decelerationSmoothing: 0.01
+  decelerationSmoothing: 0.016666668
   walkSpeed: 2
   runSpeed: 1.5
   canJump: 0
@@ -30,3 +30,7 @@ MonoBehaviour:
   canCancelGlide: 0
   glideToLandAnimation: 11
   glideToLandDuration: 0.5
+  highJumpChargeMinimum: 0.033333335
+  highJumpChargeMaximum: 0.8
+  highJumpSpeed: 5
+  highJumpGravityMultiplier: 0.5

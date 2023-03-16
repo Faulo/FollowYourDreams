@@ -15,7 +15,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Range(0, 10)]
         public float runSpeed = 2;
 
-        [Space]
+        [Header("Jump")]
         [SerializeField]
         public bool canJump = true;
         [SerializeField, Range(0, 10)]
@@ -25,7 +25,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Range(0, 10)]
         public float jumpGravityMultiplier = 0.25f;
 
-        [Space]
+        [Header("Glide")]
         [SerializeField, Range(0, 10)]
         public float glideSpeed = 2;
         [SerializeField, Range(0, 10)]
@@ -42,5 +42,15 @@ namespace FollowYourDreams.Avatar {
         public AvatarAnimation glideToLandAnimation = AvatarAnimation.Land;
         [SerializeField, Range(0, 10)]
         public float glideToLandDuration = 0.1f;
+
+        [Header("HighJump")]
+        [SerializeField, Range(0, 10)]
+        public float highJumpChargeMinimum = 0;
+        [SerializeField, Range(0, 10)]
+        public float highJumpChargeMaximum = 1f;
+        [SerializeField, Range(0, 20)]
+        public float highJumpSpeed = 5f;
+        [SerializeField, Range(0, 10)]
+        public float highJumpGravityMultiplier = 0.25f;
     }
 }

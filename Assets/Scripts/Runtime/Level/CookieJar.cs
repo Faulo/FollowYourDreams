@@ -1,9 +1,16 @@
 using System.Collections;
 using FollowYourDreams.Avatar;
+using Slothsoft.UnityExtensions;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace FollowYourDreams.Level {
     sealed class CookieJar : ComponentFeature<AsepriteSprite>, IInteractable {
+        [SerializeField, Range(0, 10)]
+        float invokeEventDelay = 1;
+        [SerializeField]
+        UnityEvent onInteract = new();
+
         public void Select() {
             observedComponent.currentSpriteId = 1;
         }
@@ -11,8 +18,9 @@ namespace FollowYourDreams.Level {
             observedComponent.currentSpriteId = 0;
         }
         public IEnumerator Interact_Co(AvatarController avatar) {
-            yield return null;
-            Debug.Log("YOU WIN");
+            avatar.currentAnimation = AvatarAnimation.Interact;
+            yield return Wait.forSeconds[invokeEventDelay];
+            onInteract.Invoke();
         }
     }
 }
