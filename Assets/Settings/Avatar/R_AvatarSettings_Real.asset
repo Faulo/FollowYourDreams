@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73babce10a544f41ad53dd39a9a68a5, type: 3}
+  m_Name: R_AvatarSettings_Real
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  rotationSmoothing: 0.01
+  accelerationSmoothing: 0.1
+  decelerationSmoothing: 0.01
+  walkSpeed: 1.5
+  runSpeed: 3
+  jumpSpeed: 2
+  jumpStopMultiplier: 0.25
+  jumpGravityMultiplier: 0.75
+  glideVerticalBoost: 0
+  glideHorizontalBoost: 1
+  glideGravityMultiplier: 0.5
+  glideSmoothing: 1

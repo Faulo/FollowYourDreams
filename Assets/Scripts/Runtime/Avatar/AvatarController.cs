@@ -18,6 +18,7 @@ namespace FollowYourDreams.Avatar {
         CharacterController attachedCharacter;
         [SerializeField]
         AvatarSettings settings;
+        AvatarMovement movement => settings.movement;
 
         [Header("Runtime")]
         [SerializeField, ReadOnly]
@@ -54,11 +55,13 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, ReadOnly]
         bool intendsToRun;
         float maxSpeed => intendsToRun
-            ? settings.runSpeed
-            : settings.walkSpeed;
+            ? movement.runSpeed
+            : movement.walkSpeed;
         float speedSmoothing => isGliding
-            ? settings.glideSmoothing
-            : settings.speedSmoothing;
+            ? movement.glideSmoothing
+            : intendedSpeed > 0.1f
+                ? movement.accelerationSmoothing
+                : movement.decelerationSmoothing;
         [SerializeField, ReadOnly]
         bool intendsToJump;
         [SerializeField, ReadOnly]
@@ -105,7 +108,7 @@ namespace FollowYourDreams.Avatar {
                 return;
             }
 
-            currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, settings.rotationSmoothing);
+            currentRotation = Mathf.SmoothDampAngle(currentRotation, intendedRotation, ref torque, movement.rotationSmoothing);
 
             float intendedSpeed = isGliding
                 ? 1
@@ -120,17 +123,17 @@ namespace FollowYourDreams.Avatar {
             } else if (isJumping) {
                 if (!intendsToJump || currentVerticalSpeed <= 0) {
                     isJumping = false;
-                    currentVerticalSpeed *= settings.jumpStopMultiplier;
+                    currentVerticalSpeed *= movement.jumpStopMultiplier;
                 }
             } else if (intendsToJumpStart) {
                 if (attachedCharacter.isGrounded) {
                     intendsToJumpStart = false;
-                    currentVerticalSpeed += settings.jumpSpeed;
+                    currentVerticalSpeed += movement.jumpSpeed;
                     isJumping = true;
                 } else {
                     intendsToJumpStart = false;
-                    currentVerticalSpeed = settings.glideVerticalBoost;
-                    currentHorizontalSpeed += settings.glideHorizontalBoost;
+                    currentVerticalSpeed = movement.glideVerticalBoost;
+                    currentHorizontalSpeed += movement.glideHorizontalBoost;
                     isGliding = true;
                 }
             }
@@ -187,10 +190,10 @@ namespace FollowYourDreams.Avatar {
             }
             float gravity = Physics.gravity.y * Time.deltaTime;
             if (isJumping) {
-                gravity *= settings.jumpGravityMultiplier;
+                gravity *= movement.jumpGravityMultiplier;
             }
             if (isGliding) {
-                gravity *= settings.glideGravityMultiplier;
+                gravity *= movement.glideGravityMultiplier;
             }
             currentVerticalSpeed += gravity;
             var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentHorizontalSpeed * Time.deltaTime;
