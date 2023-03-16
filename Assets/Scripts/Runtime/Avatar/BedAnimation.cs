@@ -10,5 +10,7 @@ namespace FollowYourDreams.Avatar {
         Awake,
         Dreaming,
         DreamAbort,
+        DreamSleepSelected,
+        BedEmptySelected
     }
 }

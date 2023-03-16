@@ -574,6 +574,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &263393052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
+  m_PrefabInstance: {fileID: 1155593980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &346553955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7931,7 +7936,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1435901651}
     m_Modifications:
     - target: {fileID: 4657725804604475884, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_Name
@@ -7943,7 +7948,7 @@ PrefabInstance:
       objectReference: {fileID: -1013718862199837026}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7963,15 +7968,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8603279190951094960, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8103,6 +8108,7 @@ Transform:
   m_Children:
   - {fileID: 1091984490}
   - {fileID: 346553956}
+  - {fileID: 263393052}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
