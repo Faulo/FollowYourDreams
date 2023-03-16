@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MyBox;
+using Slothsoft.UnityExtensions;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
@@ -38,6 +39,8 @@ namespace FollowYourDreams.Avatar {
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        [SerializeField]
+        SerializableKeyValuePairs<AvatarAnimation, bool> isLoopingOverride = new();
 
         [Header("Auto-filled")]
         [SerializeField, ReadOnly]
@@ -77,59 +80,9 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(LoadController))]
         void LoadController() {
-            string path = controller.DestroyChildAssets<AnimatorController, AnimationClip>();
+            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, DIRECTION_COUNT);
 
-            var layer = controller.layers[0];
-            foreach (var state in layer.stateMachine.states) {
-                layer.stateMachine.RemoveState(state.state);
-            }
-
-            foreach (AvatarDirection direction in Enum.GetValues(typeof(AvatarDirection))) {
-                foreach (var anim in data.meta.frameTags) {
-                    if (!Enum.TryParse<AvatarAnimation>(anim.name, out var animation)) {
-                        Debug.LogError($"Unknown animation '{anim.name}'!");
-                        continue;
-                    }
-
-                    var animClip = new AnimationClip() {
-                        name = GetAnimationName(direction, animation),
-                        wrapMode = anim.direction switch {
-                            AsepriteDataFrameDirection.forward => WrapMode.Loop,
-                            AsepriteDataFrameDirection.pingpong => WrapMode.PingPong,
-                            AsepriteDataFrameDirection.reverse => WrapMode.ClampForever,
-                            _ => throw new NotImplementedException(anim.direction.ToString()),
-                        },
-                    };
-
-                    var settings = AnimationUtility.GetAnimationClipSettings(animClip);
-                    settings.loopTime = true;
-                    AnimationUtility.SetAnimationClipSettings(animClip, settings);
-
-                    var keyframes = new List<ObjectReferenceKeyframe>();
-                    int time = 0;
-                    for (int i = anim.from; i <= anim.to; i++) {
-                        keyframes.Add(new() {
-                            time = time * TIME_MULTIPLIER,
-                            value = GetSprite(i, direction)
-                        });
-                        time += data.frames[i].duration;
-                    }
-                    keyframes.Add(new() {
-                        time = time * TIME_MULTIPLIER,
-                        value = GetSprite(anim.from, direction)
-                    });
-
-                    AnimationUtility.SetObjectReferenceCurve(
-                        animClip,
-                        EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"),
-                        keyframes.ToArray()
-                    );
-
-                    AssetDatabase.AddObjectToAsset(animClip, path);
-
-                    controller.AddMotion(animClip);
-                }
-            }
+            addTransition(AvatarAnimation.Land, AvatarAnimation.Idle);
 
             if (animatorPrefab) {
                 animatorPrefab.runtimeAnimatorController = controller;
@@ -150,6 +103,9 @@ namespace FollowYourDreams.Avatar {
 
         public static string GetAnimationName(AvatarDirection direction, AvatarAnimation animation) {
             return $"{direction}_{animation}";
+        }
+        static string GetAnimationName(AvatarAnimation animation, int direction) {
+            return GetAnimationName((AvatarDirection)direction, animation);
         }
     }
 }

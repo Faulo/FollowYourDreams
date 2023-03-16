@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using MyBox;
 using Slothsoft.UnityExtensions;
@@ -69,69 +68,7 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(LoadController))]
         void LoadController() {
-            string path = controller.DestroyChildAssets<AnimatorController, AnimationClip>();
-
-            var layer = controller.layers[0];
-            foreach (var state in layer.stateMachine.states) {
-                layer.stateMachine.RemoveState(state.state);
-            }
-
-            var states = new Dictionary<BedAnimation, AnimatorState>();
-
-            foreach (var anim in data.meta.frameTags) {
-                if (!Enum.TryParse<BedAnimation>(anim.name, out var animation)) {
-                    Debug.LogError($"Unknown animation '{anim.name}'!");
-                    continue;
-                }
-
-                if (!isLoopingOverride.TryGetValue(animation, out bool isLooping)) {
-                    isLooping = true;
-                }
-
-                var animClip = new AnimationClip() {
-                    name = GetAnimationName(animation),
-                    wrapMode = anim.direction switch {
-                        AsepriteDataFrameDirection.forward => isLooping ? WrapMode.Loop : WrapMode.ClampForever,
-                        AsepriteDataFrameDirection.pingpong => WrapMode.PingPong,
-                        _ => throw new NotImplementedException(anim.direction.ToString()),
-                    },
-                };
-
-                var settings = AnimationUtility.GetAnimationClipSettings(animClip);
-                settings.loopTime = isLooping;
-                AnimationUtility.SetAnimationClipSettings(animClip, settings);
-
-                var keyframes = new List<ObjectReferenceKeyframe>();
-                int time = 0;
-                for (int i = anim.from; i <= anim.to; i++) {
-                    keyframes.Add(new() {
-                        time = time * TIME_MULTIPLIER,
-                        value = GetSprite(i)
-                    });
-                    time += data.frames[i].duration;
-                }
-                keyframes.Add(new() {
-                    time = time * TIME_MULTIPLIER,
-                    value = GetSprite(isLooping ? anim.from : anim.to)
-                });
-
-                AnimationUtility.SetObjectReferenceCurve(
-                    animClip,
-                    EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"),
-                    keyframes.ToArray()
-                );
-
-                AssetDatabase.AddObjectToAsset(animClip, path);
-
-                states[animation] = controller.AddMotion(animClip);
-            }
-
-            void addTransition(BedAnimation from, BedAnimation to) {
-                var transition = states[from].AddTransition(states[to]);
-                transition.hasExitTime = true;
-                transition.exitTime = 1;
-                transition.duration = 0;
-            }
+            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName);
 
             addTransition(BedAnimation.GoToSleep, BedAnimation.Sleep);
             addTransition(BedAnimation.DreamUp, BedAnimation.Dreaming);
@@ -153,6 +90,9 @@ namespace FollowYourDreams.Avatar {
             LoadController();
         }
 #endif
+        static string GetAnimationName(BedAnimation animation, int _) {
+            return GetAnimationName(animation);
+        }
         public static string GetAnimationName(BedAnimation animation) {
             return animation.ToString();
         }

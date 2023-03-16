@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace FollowYourDreams {
     static class AnimatorExtensions<T> where T : Enum {
-
         static readonly (T value, string name)[] animations = Enum
             .GetValues(typeof(T))
             .Cast<T>()
