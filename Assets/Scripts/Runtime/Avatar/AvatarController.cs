@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using MyBox;
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -74,7 +75,7 @@ namespace FollowYourDreams.Avatar {
         // readonly HashSet<IInteractable> interactablePool = new();
         IInteractable currentInteractable;
         Coroutine interactableRoutine;
-        bool isInteracting;
+        bool isInteracting => interactableRoutine != null;
 
         void OnValidate() {
             if (!attachedAnimator) {
@@ -117,8 +118,13 @@ namespace FollowYourDreams.Avatar {
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, speedSmoothing);
 
             if (isGliding) {
-                if (!intendsToJump || attachedCharacter.isGrounded) {
+                if (!intendsToJump && movement.canCancelGlide) {
                     isGliding = false;
+                }
+                if (attachedCharacter.isGrounded) {
+                    isGliding = false;
+                    PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
+                    return;
                 }
             } else if (isJumping) {
                 if (!intendsToJump || currentVerticalSpeed <= 0) {
@@ -128,6 +134,10 @@ namespace FollowYourDreams.Avatar {
             } else if (intendsToJumpStart) {
                 if (attachedCharacter.isGrounded) {
                     intendsToJumpStart = false;
+                    if (!movement.canJump) {
+                        PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
+                        return;
+                    }
                     currentVerticalSpeed += movement.jumpSpeed;
                     isJumping = true;
                 } else {
@@ -220,15 +230,25 @@ namespace FollowYourDreams.Avatar {
         public void OnInteract(InputValue value) {
             if (value.isPressed) {
                 if (!isInteracting && currentInteractable != null) {
-                    interactableRoutine = StartCoroutine(Interact_Co(currentInteractable));
+                    InteractWith(currentInteractable);
                 }
             }
         }
 
-        IEnumerator Interact_Co(IInteractable interactable) {
-            isInteracting = true;
-            yield return interactable.Interact_Co(this);
-            isInteracting = false;
+        void InteractWith(IInteractable interactable) {
+            interactableRoutine = StartCoroutine(Interact_Co(interactable.Interact_Co(this)));
+        }
+        void PlayAnimation(AvatarAnimation animation, float duration) {
+            interactableRoutine = StartCoroutine(Interact_Co(PlayAnimation_Co(animation, duration)));
+        }
+
+        IEnumerator PlayAnimation_Co(AvatarAnimation animation, float duration) {
+            currentAnimation = animation;
+            yield return Wait.forSeconds[duration];
+        }
+
+        IEnumerator Interact_Co(IEnumerator interaction) {
+            yield return interaction;
             interactableRoutine = null;
         }
 

@@ -18,10 +18,14 @@ MonoBehaviour:
   decelerationSmoothing: 0.01
   walkSpeed: 1.5
   runSpeed: 3
+  canJump: 1
   jumpSpeed: 2
   jumpStopMultiplier: 0.25
   jumpGravityMultiplier: 0.75
-  glideVerticalBoost: 0
-  glideHorizontalBoost: 1
+  glideVerticalBoost: 0.25
+  glideHorizontalBoost: 2
   glideGravityMultiplier: 0.5
   glideSmoothing: 1
+  canCancelGlide: 0
+  glideToLandAnimation: 11
+  glideToLandDuration: 0.25
