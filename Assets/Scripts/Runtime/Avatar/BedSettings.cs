@@ -56,7 +56,7 @@ namespace FollowYourDreams.Avatar {
             sheet.ExtractSprites(data, pivot, this, sprites);
 
             if (rendererPrefab) {
-                rendererPrefab.sprite = GetSprite(1);
+                rendererPrefab.sprite = GetSprite(0);
                 EditorUtility.SetDirty(rendererPrefab);
             }
 
