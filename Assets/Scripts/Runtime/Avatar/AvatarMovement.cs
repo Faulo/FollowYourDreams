@@ -27,6 +27,8 @@ namespace FollowYourDreams.Avatar {
 
         [Space]
         [SerializeField, Range(0, 10)]
+        public float glideSpeed = 2;
+        [SerializeField, Range(0, 10)]
         public float glideVerticalBoost = 1;
         [SerializeField, Range(0, 10)]
         public float glideHorizontalBoost = 1;

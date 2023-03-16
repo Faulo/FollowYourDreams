@@ -1,4 +1,5 @@
-using System;
+using System.Collections.Generic;
+using FollowYourDreams.Avatar;
 using MyBox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -13,10 +14,8 @@ namespace FollowYourDreams.Level {
             Bottom = 3,
         }
         [Header("Wall Tile")]
-        [SerializeField]
-        Texture2D sheet = default;
         [SerializeField, ReadOnly]
-        Sprite[] sprites = Array.Empty<Sprite>();
+        List<Sprite> sprites = new();
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             base.GetTileData(position, tilemap, ref tileData);
@@ -43,10 +42,21 @@ namespace FollowYourDreams.Level {
         }
 
 #if UNITY_EDITOR
-        [ContextMenu(nameof(OnValidate))]
-        void OnValidate() {
-            if (sheet) {
-                sprites = sheet.LoadSprites();
+        [Header("Editor-only")]
+        [SerializeField]
+        TextAsset json = default;
+        [SerializeField]
+        Texture2D sheet = default;
+        [SerializeField]
+        Vector2 pivot = new(0.5f, 0.5f);
+        [SerializeField]
+        AsepriteData data = new();
+
+        [ContextMenu(nameof(LoadSprite))]
+        public void LoadSprite() {
+            if (sheet && json) {
+                data = AsepriteData.FromJson(json.text);
+                sheet.ExtractSprites(data, pivot, this, sprites);
             }
         }
 #endif

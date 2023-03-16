@@ -20,6 +20,13 @@ namespace FollowYourDreams {
                 .OrderBy(sprite => int.Parse(Regex.Match(sprite.name, @"\d+").Value))
                 .ToArray();
         }
+        public static Sprite ExtractSprite(this Texture2D sheet, AsepriteData data, Vector2 pivot, UnityObject target) {
+            var sprites = new List<Sprite>();
+            sheet.ExtractSprites(data, pivot, target, sprites, 1);
+            return sprites.Count > 0
+                ? sprites[0]
+                : default;
+        }
         public static void ExtractSprites(this Texture2D sheet, AsepriteData data, Vector2 pivot, UnityObject target, List<Sprite> sprites, int columns = 1) {
             string path = target.DestroyChildAssets<UnityObject, Sprite>();
 

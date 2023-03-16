@@ -22,10 +22,11 @@ MonoBehaviour:
   jumpSpeed: 1
   jumpStopMultiplier: 0.25
   jumpGravityMultiplier: 0.5
+  glideSpeed: 2
   glideVerticalBoost: 0
   glideHorizontalBoost: 0.5
   glideGravityMultiplier: 0.5
   glideSmoothing: 1
   canCancelGlide: 0
   glideToLandAnimation: 11
-  glideToLandDuration: 1
+  glideToLandDuration: 0.5
