@@ -6,10 +6,12 @@ namespace FollowYourDreams {
     sealed class AsepriteSprite : ComponentFeature<SpriteRenderer> {
         [SerializeField]
         List<Sprite> sprites = new();
+        [SerializeField]
+        int spriteOffset = 0;
         public int currentSpriteId {
             get => sprites.IndexOf(observedComponent.sprite);
             set {
-                observedComponent.sprite = sprites[value];
+                observedComponent.sprite = sprites[spriteOffset + value];
             }
         }
 
