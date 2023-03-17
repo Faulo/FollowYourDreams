@@ -32,7 +32,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, ReadOnly]
         float currentHorizontalSpeed = 0;
         [SerializeField, ReadOnly]
-        float currentVerticalSpeed = 0;
+        public float currentVerticalSpeed = 0;
         [SerializeField, ReadOnly]
         AvatarDirection currentDirection = AvatarDirection.Down;
         public AvatarAnimation currentAnimation {
@@ -301,7 +301,7 @@ namespace FollowYourDreams.Avatar {
             var motion = currentHorizontalSpeed * Time.deltaTime * currentForward;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
-            if (attachedCharacter.isGrounded) {
+            if (attachedCharacter.isGrounded && currentVerticalSpeed < 0) {
                 currentVerticalSpeed = 0;
             }
         }
@@ -386,6 +386,12 @@ namespace FollowYourDreams.Avatar {
         [ContextMenu(nameof(Die))]
         public void Die() {
             InteractWith(lastUsedBed.WakeUpIn_Co);
+        }
+
+        void OnControllerColliderHit(ControllerColliderHit hit) {
+            if (hit.gameObject.TryGetComponent<ICollidable>(out var collidable)) {
+                collidable.OnCollide(hit, this);
+            }
         }
     }
 }
