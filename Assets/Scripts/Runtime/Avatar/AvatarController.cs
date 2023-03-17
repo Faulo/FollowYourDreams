@@ -103,7 +103,7 @@ namespace FollowYourDreams.Avatar {
         [Header("Carrying")]
         [SerializeField]
         float carryDistance = 0.5f;
-        Vector3 carryPosition => transform.position + (Vector3.up * carryDistance);
+        Vector3 carryPosition => transform.position + (currentForward * carryDistance);
         Vector3 leavePosition => transform.position;
         public ICarryable carryable {
             get => m_carryable;
@@ -257,7 +257,9 @@ namespace FollowYourDreams.Avatar {
 
         AvatarAnimation CalculateAnimation() {
             if (isCarrying) {
-                return AvatarAnimation.Carry;
+                return intendsToMove
+                    ? AvatarAnimation.Push
+                    : AvatarAnimation.PushIdle;
             }
             if (isGliding) {
                 return AvatarAnimation.Glide;
@@ -296,7 +298,7 @@ namespace FollowYourDreams.Avatar {
                 gravity *= movement.glideGravityMultiplier;
             }
             currentVerticalSpeed += gravity;
-            var motion = currentForward * currentHorizontalSpeed * Time.deltaTime;
+            var motion = currentHorizontalSpeed * Time.deltaTime * currentForward;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
             if (attachedCharacter.isGrounded) {

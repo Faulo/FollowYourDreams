@@ -132,7 +132,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 100
    },
    {
     "filename": "S_ENT_Avatar 15.aseprite",
@@ -177,7 +177,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 20.aseprite",
@@ -310,10 +310,10 @@
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
    { "name": "Jump", "from": 8, "to": 9, "direction": "forward" },
    { "name": "Fall", "from": 10, "to": 11, "direction": "forward" },
-   { "name": "Carry", "from": 12, "to": 12, "direction": "forward" },
-   { "name": "HighJump", "from": 13, "to": 14, "direction": "forward" },
-   { "name": "Land", "from": 15, "to": 15, "direction": "forward" },
-   { "name": "PrepareJump", "from": 16, "to": 19, "direction": "forward" },
+   { "name": "HighJump", "from": 12, "to": 13, "direction": "forward" },
+   { "name": "Land", "from": 14, "to": 14, "direction": "forward" },
+   { "name": "PrepareJump", "from": 15, "to": 18, "direction": "forward" },
+   { "name": "PushIdle", "from": 19, "to": 19, "direction": "forward" },
    { "name": "Push", "from": 20, "to": 21, "direction": "forward" },
    { "name": "Interact", "from": 22, "to": 23, "direction": "forward" },
    { "name": "Climb", "from": 24, "to": 26, "direction": "forward" },

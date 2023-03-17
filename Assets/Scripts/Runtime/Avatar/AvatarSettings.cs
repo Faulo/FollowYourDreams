@@ -84,7 +84,7 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(LoadController))]
         void LoadController() {
-            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, DIRECTION_COUNT);
+            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, (AvatarAnimation.Idle, (int)AvatarDirection.Down), DIRECTION_COUNT);
 
             addTransition(AvatarAnimation.Land, AvatarAnimation.Idle);
 
