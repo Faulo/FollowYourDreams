@@ -350,7 +350,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         void OnTriggerEnter(Collider other) {
-            if (other.TryGetComponent<IInteractable>(out var newInteractable)) {
+            if (other.TryGetComponent<IInteractable>(out var newInteractable) && newInteractable.isSelectable) {
                 var oldInteractable = currentInteractable;
                 interactablePool.Add(newInteractable);
                 if (oldInteractable != newInteractable) {
