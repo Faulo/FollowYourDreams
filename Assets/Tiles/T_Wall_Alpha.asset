@@ -9,10 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e30d6c9c2aab64cb1b99243d6712c5, type: 3}
+  m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
   m_Name: T_Wall_Alpha
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
   prefab: {fileID: 6485669815321698707, guid: 1d37db3447650814aae22b1388350eb0, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
-  editorPrefab: {fileID: 6485669815321698707, guid: fd407c881686fe04dae9c6058e5b1bae, type: 3}
+  sprites: []
+  spriteIndex: 0
+  json: {fileID: 0}
+  sheet: {fileID: 0}
+  pivot: {x: 0.5, y: 0.5}
+  data:
+    frames: []
+    meta:
+      app: 
+      version: 
+      image: 
+      format: 
+      size:
+        w: 0
+        h: 0
+      scale: 0
+      frameTags: []
+      layers: []
