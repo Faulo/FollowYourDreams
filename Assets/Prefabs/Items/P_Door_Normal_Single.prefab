@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4518781492525154473}
   - component: {fileID: 4798746788273508174}
-  - component: {fileID: -5771350220897249703}
+  - component: {fileID: 8194896035921522109}
   - component: {fileID: 8834343898733987136}
   m_Layer: 0
-  m_Name: P_Door_Dream
+  m_Name: P_Door_Normal_Single
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff539e4e9c59bb2438f3755f182603f4, type: 2}
+  - {fileID: 2100000, guid: 5c10c01288fb395419889f6309d17bd9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4302987180043433434}
+  m_Sprite: {fileID: 6625372225532236079, guid: e83382091235dd24da0b87cbd8b3f5b5, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,151 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &-5771350220897249703
-MonoBehaviour:
+--- !u!95 &8194896035921522109
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3961227417806421077}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9321beceba3f651409a958c31814f9a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observedComponent: {fileID: 4798746788273508174}
-  sprites:
-  - {fileID: 1895869502899158070}
-  - {fileID: -6875400978243558490}
-  - {fileID: 4302987180043433434}
-  - {fileID: -7175283617503535029}
-  - {fileID: -1975533584628940552}
-  - {fileID: 3427161629190678074}
-  spriteOffset: 2
-  json: {fileID: 4900000, guid: b7638e30de61eff498b8f333fda49a63, type: 3}
-  sheet: {fileID: 2800000, guid: aae6b2603d75893479ff598357ccd80d, type: 3}
-  pivot: {x: 0.5, y: 0.25}
-  data:
-    frames:
-    - filename: S_INT_Door 0.aseprite
-      frame:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    - filename: S_INT_Door 1.aseprite
-      frame:
-        x: 32
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    - filename: S_INT_Door 2.aseprite
-      frame:
-        x: 64
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    - filename: S_INT_Door 3.aseprite
-      frame:
-        x: 96
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    - filename: S_INT_Door 4.aseprite
-      frame:
-        x: 128
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    - filename: S_INT_Door 5.aseprite
-      frame:
-        x: 160
-        y: 0
-        w: 32
-        h: 64
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 64
-      sourceSize:
-        w: 32
-        h: 64
-      duration: 100
-    meta:
-      app: https://www.aseprite.org/
-      version: 1.2.40-x64
-      image: S_INT_Door.png
-      format: I8
-      size:
-        w: 192
-        h: 64
-      scale: 1
-      frameTags: []
-      layers:
-      - name: Layer 2
-        opacity: 255
-        blendMode: normal
-      - name: Layer 2
-        opacity: 255
-        blendMode: normal
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5889aed6751f53441ae04c30171ec85d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8834343898733987136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observedComponent: {fileID: 0}
-  attachedSprite: {fileID: -5771350220897249703}
+  attachedAnimator: {fileID: 8194896035921522109}
+  dimension: 0
+  isOpen: 0
+  isSelected: 0
 --- !u!213 &-7175283617503535029
 Sprite:
   m_ObjectHideFlags: 0
@@ -267,7 +146,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: -7175283617503535029
+    17748451ef6c0c9408354dbe8bfe1148: -7175283617503535029
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -477,7 +356,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: -6875400978243558490
+    17748451ef6c0c9408354dbe8bfe1148: -6875400978243558490
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -687,7 +566,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: -1975533584628940552
+    17748451ef6c0c9408354dbe8bfe1148: -1975533584628940552
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -897,7 +776,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: 1895869502899158070
+    17748451ef6c0c9408354dbe8bfe1148: 1895869502899158070
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -1107,7 +986,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: 3427161629190678074
+    17748451ef6c0c9408354dbe8bfe1148: 3427161629190678074
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -1317,7 +1196,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    768a72fa6dc2df044922dffcbb5df17b: 4302987180043433434
+    17748451ef6c0c9408354dbe8bfe1148: 4302987180043433434
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
