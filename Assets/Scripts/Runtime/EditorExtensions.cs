@@ -36,9 +36,15 @@ namespace FollowYourDreams {
                 var rect = frame.frame.AsRectInt();
                 int width = rect.width / columns;
                 for (int i = 0; i < columns; i++) {
+                    var spriteRect = new Rect(
+                        rect.x + (width * i),
+                        data.meta.size.h - rect.y - rect.height,
+                        width,
+                        rect.height
+                    );
                     var sprite = Sprite.Create(
-sheet,
-                        new Rect(rect.x + (width * i), data.meta.size.h - rect.y - rect.height, width, rect.height),
+                        sheet,
+                        spriteRect,
                         pivot,
                         GameManager.pixelsPerUnit,
                         0,
