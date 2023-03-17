@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11225439, g: 0.122307, b: 0.191, a: 0}
+  m_Color: {r: 0.11225439, g: 0.122307, b: 0.191, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13240,7 +13240,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 0173ee48c7f49ca4cab9363344690aae, type: 2}
 --- !u!1001 &436358639
 PrefabInstance:
@@ -20781,7 +20781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4440936119859221609, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
       propertyPath: m_RootOrder
@@ -21372,15 +21372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4224598871936535800, guid: 7c97f533460a32847be7ff63c4ebb0be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.857697
+      value: -12.725
       objectReference: {fileID: 0}
     - target: {fileID: 4224598871936535800, guid: 7c97f533460a32847be7ff63c4ebb0be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7071068
+      value: -0.597
       objectReference: {fileID: 0}
     - target: {fileID: 4224598871936535800, guid: 7c97f533460a32847be7ff63c4ebb0be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6881714
+      value: -16.334
       objectReference: {fileID: 0}
     - target: {fileID: 4224598871936535800, guid: 7c97f533460a32847be7ff63c4ebb0be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21471,7 +21471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22, g: 0.14732143, b: 0.17482144, a: 1}
+  m_Color: {r: 0.22, g: 0.14732143, b: 0.17482144, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21543,7 +21543,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: 80b0073537c6d564e8f936c0ffa139e9, type: 2}
 --- !u!1 &1703152547
 GameObject:
