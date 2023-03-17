@@ -149,7 +149,7 @@ namespace FollowYourDreams {
                 }
             }
 
-            layer.stateMachine.AddEntryTransition(states[entry.animation][entry.column]);
+            layer.stateMachine.defaultState = states[entry.animation][entry.column];
 
             return (TAnim from, TAnim to) => {
                 if (states.TryGetValue(from, out var fromStates) && states.TryGetValue(to, out var toStates)) {

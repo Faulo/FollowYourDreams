@@ -11,11 +11,15 @@ PrefabInstance:
     - target: {fileID: -4443477534257480974, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7481865987278681771, guid: f73546f01840ed64abc1ecc17e035d6e, type: 2}
+      objectReference: {fileID: 5907817434308837984, guid: f73546f01840ed64abc1ecc17e035d6e, type: 2}
     - target: {fileID: -4443477534257480974, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4443477534257480974, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c10c01288fb395419889f6309d17bd9, type: 2}
     - target: {fileID: 923734421092182667, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -23,6 +27,10 @@ PrefabInstance:
     - target: {fileID: 2714226562753427611, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_Name
       value: P_PowerUp_Climb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714226562753427611, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3934654562581048836, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_RootOrder
