@@ -26,6 +26,8 @@ namespace FollowYourDreams.Level {
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
         [SerializeField]
+        ItemAnimation defaultAnimation;
+        [SerializeField]
         SerializableKeyValuePairs<ItemAnimation, bool> isLoopingOverride = new();
 
         [Header("Auto-filled")]
@@ -66,7 +68,7 @@ namespace FollowYourDreams.Level {
 
         [ContextMenu(nameof(LoadController))]
         void LoadController() {
-            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName);
+            var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, (defaultAnimation, 0));
 
             if (animatorPrefab) {
                 animatorPrefab.runtimeAnimatorController = controller;

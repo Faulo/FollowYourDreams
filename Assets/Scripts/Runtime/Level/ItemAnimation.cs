@@ -1,6 +1,9 @@
 namespace FollowYourDreams.Level {
     enum ItemAnimation {
         Sleep,
-        Move
+        Move,
+        Glide,
+        HighJump,
+        Climb
     }
 }

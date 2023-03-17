@@ -82,7 +82,7 @@ namespace FollowYourDreams {
 
         const float TIME_MULTIPLIER = 0.001f;
         public static Action<TAnim, TAnim> ImportAnimations<TAnim>(
-            this AnimatorController controller, AsepriteData data, IReadOnlyDictionary<TAnim, bool> isLoopingOverride, IReadOnlyList<Sprite> sprites, Func<TAnim, int, string> namer, int columns = 1) where TAnim : struct {
+            this AnimatorController controller, AsepriteData data, IReadOnlyDictionary<TAnim, bool> isLoopingOverride, IReadOnlyList<Sprite> sprites, Func<TAnim, int, string> namer, (TAnim animation, int column) entry, int columns = 1) where TAnim : struct {
             Sprite getSprite(int index, int column) {
                 return sprites[(index * columns) + column];
             }
@@ -148,6 +148,8 @@ namespace FollowYourDreams {
                     list.Add(controller.AddMotion(animClip));
                 }
             }
+
+            layer.stateMachine.AddEntryTransition(states[entry.animation][entry.column]);
 
             return (TAnim from, TAnim to) => {
                 if (states.TryGetValue(from, out var fromStates) && states.TryGetValue(to, out var toStates)) {
