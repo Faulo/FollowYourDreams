@@ -12,6 +12,9 @@ namespace FollowYourDreams.Level {
         GameObject prefab;
         [SerializeField]
         Color tint = Color.white;
+        [SerializeField]
+        bool m_isGround = true;
+        public bool isGround => m_isGround;
 
         protected virtual void OnValidate() {
             if (asset != this) {
