@@ -10,12 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8603279190951094960}
   - component: {fileID: -7313829922059949941}
-  - component: {fileID: -556856940903930971}
-  - component: {fileID: -382180304424984428}
-  - component: {fileID: 6271163480323519850}
-  - component: {fileID: 4758606052332085264}
-  m_Layer: 10
-  m_Name: P_Totoro_Plush
+  - component: {fileID: 6717517935500418839}
+  m_Layer: 12
+  m_Name: P_Totoro_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c10c01288fb395419889f6309d17bd9, type: 2}
+  - {fileID: 2100000, guid: 468d9d2d412ead4478bdb2c86c1e09ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -155008844028022319}
+  m_Sprite: {fileID: 7345876257852842733, guid: 041f0552001507a43bb0420cc0f33a12, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,201 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &-556856940903930971
-MonoBehaviour:
+--- !u!95 &6717517935500418839
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4657725804604475884}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9321beceba3f651409a958c31814f9a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observedComponent: {fileID: -7313829922059949941}
-  sprites:
-  - {fileID: 7679354349050720617}
-  - {fileID: 8699131865811930288}
-  - {fileID: -155008844028022319}
-  - {fileID: 6287580957678143784}
-  - {fileID: -6136202068351798340}
-  - {fileID: 8335695581193137928}
-  spriteOffset: 0
-  json: {fileID: 4900000, guid: bfed750fea9952243a63fcf26f2326c5, type: 3}
-  sheet: {fileID: 2800000, guid: 3417bec7dcb35124fae41bc98cbe69fb, type: 3}
-  pivot: {x: 0.5, y: 0.125}
-  data:
-    frames:
-    - filename: S_INT_Plush 0.aseprite
-      frame:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    - filename: S_INT_Plush 1.aseprite
-      frame:
-        x: 0
-        y: 16
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    - filename: S_INT_Plush 2.aseprite
-      frame:
-        x: 0
-        y: 32
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    - filename: S_INT_Plush 3.aseprite
-      frame:
-        x: 0
-        y: 48
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    - filename: S_INT_Plush 4.aseprite
-      frame:
-        x: 0
-        y: 64
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    - filename: S_INT_Plush 5.aseprite
-      frame:
-        x: 0
-        y: 80
-        w: 16
-        h: 16
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 16
-        h: 16
-      sourceSize:
-        w: 16
-        h: 16
-      duration: 3500
-    meta:
-      app: https://www.aseprite.org/
-      version: 1.2.40-x64
-      image: S_INT_Plush.png
-      format: I8
-      size:
-        w: 16
-        h: 96
-      scale: 1
-      frameTags: []
-      layers:
-      - name: Sprite Sheet
-        opacity: 255
-        blendMode: normal
---- !u!135 &-382180304424984428
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657725804604475884}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6271163480323519850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657725804604475884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a494bf4639a66ff4094b43a78c89748d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observedComponent: {fileID: -382180304424984428}
-  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
---- !u!114 &4758606052332085264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657725804604475884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c250a75562260344cb6cc49c911ff7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observedComponent: {fileID: -556856940903930971}
-  context: {fileID: 8603279190951094960}
-  interactDuration: 0.1
-  follow: {fileID: 0}
-  defaultSpriteId: 2
-  selectedSpriteId: 3
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50d4ba8c15ddae641aef33cd5dd5aaa2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!213 &-6136202068351798340
 Sprite:
   m_ObjectHideFlags: 0
@@ -305,7 +128,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: -6136202068351798340
+    c7c4df2ad3c3601469b3b325acfebb8d: -6136202068351798340
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -515,7 +338,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: -155008844028022319
+    c7c4df2ad3c3601469b3b325acfebb8d: -155008844028022319
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -725,7 +548,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: 6287580957678143784
+    c7c4df2ad3c3601469b3b325acfebb8d: 6287580957678143784
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -935,7 +758,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: 7679354349050720617
+    c7c4df2ad3c3601469b3b325acfebb8d: 7679354349050720617
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -1145,7 +968,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: 8335695581193137928
+    c7c4df2ad3c3601469b3b325acfebb8d: 8335695581193137928
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -1355,7 +1178,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    41b0e7ab8860e8347ae66e1b5afc8994: 8699131865811930288
+    c7c4df2ad3c3601469b3b325acfebb8d: 8699131865811930288
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
