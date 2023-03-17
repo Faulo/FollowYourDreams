@@ -15,6 +15,7 @@ namespace FollowYourDreams.Avatar {
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
+
         [SerializeField]
         SpriteRenderer attachedRenderer;
         [SerializeField]
@@ -25,6 +26,13 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         public BedState lastUsedBed;
 
+        readonly Dictionary<Power, bool> powers = Enum.GetValues(typeof(Power))
+            .Cast<Power>()
+            .ToDictionary(p => p, p => false);
+
+        public bool HasPower(Power power) => powers[power];
+        public void GainPower(Power power) => powers[power] = true;
+
         [Header("Runtime")]
         [SerializeField, ReadOnly]
         float currentRotation = 0;
@@ -32,7 +40,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, ReadOnly]
         float currentHorizontalSpeed = 0;
         [SerializeField, ReadOnly]
-        float currentVerticalSpeed = 0;
+        public float currentVerticalSpeed = 0;
         [SerializeField, ReadOnly]
         AvatarDirection currentDirection = AvatarDirection.Down;
         public AvatarAnimation currentAnimation {
@@ -104,7 +112,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         float carryDistance = 0.5f;
         Vector3 carryPosition => transform.position + (currentForward * carryDistance);
-        Vector3 leavePosition => transform.position;
+        Vector3 leavePosition => GridManager.instance.RoundToTileCenter(transform.position);
         public ICarryable carryable {
             get => m_carryable;
             set {
@@ -152,6 +160,7 @@ namespace FollowYourDreams.Avatar {
                 attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
                 attachedAnimator.Update(Time.deltaTime);
             }
+            // Debug.Log(string.Join(" | ", powers.Select(kv => $"{kv.Key}: {kv.Value}")));
         }
 
         void ProcessInput() {
@@ -197,9 +206,11 @@ namespace FollowYourDreams.Avatar {
                         isJumping = true;
                     } else {
                         intendsToJumpStart = false;
-                        currentVerticalSpeed = movement.glideVerticalBoost;
-                        currentHorizontalSpeed += movement.glideHorizontalBoost;
-                        isGliding = true;
+                        if (HasPower(Power.Glide)) {
+                            currentVerticalSpeed = movement.glideVerticalBoost;
+                            currentHorizontalSpeed += movement.glideHorizontalBoost;
+                            isGliding = true;
+                        }
                     }
                 }
 
@@ -301,7 +312,7 @@ namespace FollowYourDreams.Avatar {
             var motion = currentHorizontalSpeed * Time.deltaTime * currentForward;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
-            if (attachedCharacter.isGrounded) {
+            if (attachedCharacter.isGrounded && currentVerticalSpeed < 0) {
                 currentVerticalSpeed = 0;
             }
         }
@@ -320,6 +331,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         public void OnHighJump(InputValue value) {
+            if (!HasPower(Power.HighJump)) {
+                return;
+            }
             intendsToHighJump = value.isPressed;
             intendsToHighJumpStart = !value.isPressed;
         }
@@ -350,7 +364,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         void OnTriggerEnter(Collider other) {
-            if (other.TryGetComponent<IInteractable>(out var newInteractable)) {
+            if (other.TryGetComponent<IInteractable>(out var newInteractable) && newInteractable.isSelectable) {
                 var oldInteractable = currentInteractable;
                 interactablePool.Add(newInteractable);
                 if (oldInteractable != newInteractable) {
@@ -386,6 +400,12 @@ namespace FollowYourDreams.Avatar {
         [ContextMenu(nameof(Die))]
         public void Die() {
             InteractWith(lastUsedBed.WakeUpIn_Co);
+        }
+
+        void OnControllerColliderHit(ControllerColliderHit hit) {
+            if (hit.gameObject.TryGetComponent<ICollidable>(out var collidable)) {
+                collidable.OnCollide(hit, this);
+            }
         }
     }
 }

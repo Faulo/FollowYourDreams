@@ -146,6 +146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7910520752721727739}
   - component: {fileID: 5467745369943813258}
+  - component: {fileID: 8546051168267104361}
+  - component: {fileID: 1423492851390110311}
   m_Layer: 0
   m_Name: P_Door
   m_TagString: Untagged
@@ -187,7 +189,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpenCollider: {fileID: 2742089059290174240}
   isClosedCollider: {fileID: 17703154748516356}
-  isOpen: 0
+  interactDuration: 0.2
+  m_isOpen: 0
+--- !u!135 &8546051168267104361
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021280954852167498}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.4
+  m_Center: {x: 0.707107, y: 0, z: 0}
+--- !u!114 &1423492851390110311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021280954852167498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a494bf4639a66ff4094b43a78c89748d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: 8546051168267104361}
+  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1001 &4617957171703437537
 PrefabInstance:
   m_ObjectHideFlags: 0

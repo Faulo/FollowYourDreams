@@ -45,6 +45,9 @@ namespace FollowYourDreams.Avatar {
         Dimension targetDimension => ownDimension + dimensionOffset;
 
         public int priority => 0;
+
+        public bool isSelectable => true;
+
         public void Select() {
             bool gotoSleep = !isOccupied;
             onSetAnimation?.Invoke(gotoSleep ? BedAnimation.BedEmptySelected : BedAnimation.DreamSleepSelected);

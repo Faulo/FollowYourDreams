@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 8603279190951094960}
   - component: {fileID: -7313829922059949941}
   - component: {fileID: 6717517935500418839}
+  - component: {fileID: 5957320268870935250}
+  - component: {fileID: 9198670937497542227}
+  - component: {fileID: 2793317213768327704}
+  - component: {fileID: 4572861764725166805}
   m_Layer: 11
   m_Name: P_Totoro_Asleep
   m_TagString: Untagged
@@ -106,6 +110,68 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!135 &5957320268870935250
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657725804604475884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &9198670937497542227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657725804604475884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a494bf4639a66ff4094b43a78c89748d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: 5957320268870935250}
+  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
+--- !u!114 &2793317213768327704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657725804604475884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7091152144c17445b8dc92f5a21c751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBounceSpeed: 3
+  bounceSpeed: 10
+--- !u!114 &4572861764725166805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657725804604475884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd37c4d84efaa74697e3c6e417a6f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 0}
 --- !u!213 &-6136202068351798340
 Sprite:
   m_ObjectHideFlags: 0

@@ -65,6 +65,9 @@ namespace FollowYourDreams.Avatar {
                 case AvatarAnimation.Walk:
                     coroutine = stepEvent.PlayRepeatedly(this, walkInterval);
                     break;
+                case AvatarAnimation.Push:
+                    coroutine = stepEvent.PlayRepeatedly(this, walkInterval);
+                    break;
                 case AvatarAnimation.Run:
                     coroutine = stepEvent.PlayRepeatedly(this, runInterval);
                     break;

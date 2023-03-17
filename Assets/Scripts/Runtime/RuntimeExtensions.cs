@@ -1,7 +1,9 @@
 using System.Collections;
 using FMODUnity;
+using FollowYourDreams.Level;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams {
     static class RuntimeExtensions {
@@ -18,6 +20,16 @@ namespace FollowYourDreams {
                 instance.start();
                 yield return Wait.forSeconds[interval];
             }
+        }
+        public static bool HasGround(this Tilemap tilemap, Vector3Int position) {
+            return !tilemap.IsGround(position) && tilemap.IsGround(position + Vector3Int.back);
+        }
+        public static bool IsGround(this Tilemap tilemap, Vector3Int position) {
+            var tile = tilemap.GetTile<ScriptableTile>(position);
+            if (!tile) {
+                return false;
+            }
+            return tile.isGround;
         }
     }
 }
