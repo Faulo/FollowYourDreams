@@ -18,9 +18,9 @@ namespace FollowYourDreams.Level {
                 ? sprite
                 : null;
 #else
-            if (instantiateSpriteInRuntime) {
-                tileData.sprite = sprite;
-            }
+            tileData.sprite = instantiateSpriteInRuntime
+                ? sprite
+                : null;
 #endif
         }
 
