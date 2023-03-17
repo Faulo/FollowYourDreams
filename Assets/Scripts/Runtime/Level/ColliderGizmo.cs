@@ -15,6 +15,12 @@ namespace FollowYourDreams.Level {
                 case SphereCollider sphere:
                     Gizmos.DrawWireSphere(sphere.center, sphere.radius);
                     break;
+                case CharacterController capsule:
+                    Gizmos.DrawWireSphere(capsule.center, capsule.radius);
+                    break;
+                case CapsuleCollider capsule:
+                    Gizmos.DrawWireSphere(capsule.center, capsule.radius);
+                    break;
             }
             Gizmos.matrix = Matrix4x4.identity;
         }

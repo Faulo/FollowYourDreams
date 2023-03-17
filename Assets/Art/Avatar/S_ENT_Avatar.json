@@ -132,7 +132,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 15.aseprite",
@@ -177,7 +177,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 100
    },
    {
     "filename": "S_ENT_Avatar 20.aseprite",
@@ -240,7 +240,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 3500
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 27.aseprite",
@@ -249,7 +249,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 300
+    "duration": 3500
    },
    {
     "filename": "S_ENT_Avatar 28.aseprite",
@@ -276,11 +276,20 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
     "sourceSize": { "w": 160, "h": 32 },
-    "duration": 100
+    "duration": 300
    },
    {
     "filename": "S_ENT_Avatar 31.aseprite",
     "frame": { "x": 0, "y": 992, "w": 160, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
+    "sourceSize": { "w": 160, "h": 32 },
+    "duration": 100
+   },
+   {
+    "filename": "S_ENT_Avatar 32.aseprite",
+    "frame": { "x": 0, "y": 1024, "w": 160, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 160, "h": 32 },
@@ -293,7 +302,7 @@
   "version": "1.2.40-x64",
   "image": "S_ENT_Avatar.png",
   "format": "I8",
-  "size": { "w": 160, "h": 1024 },
+  "size": { "w": 160, "h": 1056 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 1, "direction": "forward" },
@@ -301,15 +310,16 @@
    { "name": "Walk", "from": 6, "to": 7, "direction": "pingpong" },
    { "name": "Jump", "from": 8, "to": 9, "direction": "forward" },
    { "name": "Fall", "from": 10, "to": 11, "direction": "forward" },
-   { "name": "HighJump", "from": 12, "to": 13, "direction": "forward" },
-   { "name": "Land", "from": 14, "to": 14, "direction": "forward" },
-   { "name": "PrepareJump", "from": 15, "to": 18, "direction": "forward" },
-   { "name": "Push", "from": 19, "to": 20, "direction": "forward" },
-   { "name": "Interact", "from": 21, "to": 22, "direction": "forward" },
-   { "name": "Climb", "from": 23, "to": 25, "direction": "forward" },
-   { "name": "Glide", "from": 26, "to": 27, "direction": "forward" },
-   { "name": "Stumble", "from": 29, "to": 29, "direction": "forward" },
-   { "name": "JumpDream", "from": 30, "to": 31, "direction": "forward" }
+   { "name": "Carry", "from": 12, "to": 12, "direction": "forward" },
+   { "name": "HighJump", "from": 13, "to": 14, "direction": "forward" },
+   { "name": "Land", "from": 15, "to": 15, "direction": "forward" },
+   { "name": "PrepareJump", "from": 16, "to": 19, "direction": "forward" },
+   { "name": "Push", "from": 20, "to": 21, "direction": "forward" },
+   { "name": "Interact", "from": 22, "to": 23, "direction": "forward" },
+   { "name": "Climb", "from": 24, "to": 26, "direction": "forward" },
+   { "name": "Glide", "from": 27, "to": 28, "direction": "forward" },
+   { "name": "Stumble", "from": 30, "to": 30, "direction": "forward" },
+   { "name": "JumpDream", "from": 31, "to": 32, "direction": "forward" }
   ],
   "layers": [
    { "name": "Flattened", "opacity": 255, "blendMode": "normal" }

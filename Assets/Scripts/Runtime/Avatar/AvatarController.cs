@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
@@ -26,6 +28,7 @@ namespace FollowYourDreams.Avatar {
         [Header("Runtime")]
         [SerializeField, ReadOnly]
         float currentRotation = 0;
+        public Vector3 currentForward => Quaternion.Euler(0, currentRotation, 0) * Vector3.forward;
         [SerializeField, ReadOnly]
         float currentHorizontalSpeed = 0;
         [SerializeField, ReadOnly]
@@ -89,9 +92,38 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, ReadOnly]
         bool isHighJumping;
 
-        // readonly HashSet<IInteractable> interactablePool = new();
-        IInteractable currentInteractable;
+        readonly HashSet<IInteractable> interactablePool = new();
+        IInteractable currentInteractable => interactablePool.Count == 0
+            ? null
+            : interactablePool
+                .OrderByDescending(i => i.priority)
+                .FirstOrDefault();
         Coroutine interactableRoutine;
+
+        [Header("Carrying")]
+        [SerializeField]
+        float carryDistance = 0.5f;
+        Vector3 carryPosition => transform.position + (Vector3.up * carryDistance);
+        Vector3 leavePosition => transform.position;
+        public ICarryable carryable {
+            get => m_carryable;
+            set {
+                if (m_carryable != null) {
+                    m_carryable.position = leavePosition;
+                }
+                m_carryable = value;
+                isCarrying = value != null;
+                UpdateCarry();
+            }
+        }
+        ICarryable m_carryable;
+        bool isCarrying;
+        void UpdateCarry() {
+            if (isCarrying) {
+                m_carryable.position = carryPosition;
+            }
+        }
+
         bool isInteracting => interactableRoutine != null;
 
         void OnValidate() {
@@ -109,6 +141,7 @@ namespace FollowYourDreams.Avatar {
         void FixedUpdate() {
             ProcessInput();
             ProcessCharacter();
+            UpdateCarry();
         }
 
         void Update() {
@@ -134,53 +167,55 @@ namespace FollowYourDreams.Avatar {
 
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, speedSmoothing);
 
-            if (isGliding) {
-                if (!intendsToJump && movement.canCancelGlide) {
-                    isGliding = false;
-                }
-                if (attachedCharacter.isGrounded) {
-                    isGliding = false;
-                    PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
-                    return;
-                }
-            } else if (isJumping) {
-                if (!intendsToJump || currentVerticalSpeed <= 0) {
-                    isJumping = false;
-                    currentVerticalSpeed *= movement.jumpStopMultiplier;
-                }
-            } else if (isHighJumping) {
-                if (currentVerticalSpeed <= 0) {
-                    isHighJumping = false;
-                }
-            } else if (intendsToJumpStart) {
-                if (attachedCharacter.isGrounded) {
-                    intendsToJumpStart = false;
-                    if (!movement.canJump) {
+            if (!isCarrying) {
+                if (isGliding) {
+                    if (!intendsToJump && movement.canCancelGlide) {
+                        isGliding = false;
+                    }
+                    if (attachedCharacter.isGrounded) {
+                        isGliding = false;
                         PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
                         return;
                     }
-                    currentVerticalSpeed = movement.jumpSpeed;
-                    isJumping = true;
-                } else {
-                    intendsToJumpStart = false;
-                    currentVerticalSpeed = movement.glideVerticalBoost;
-                    currentHorizontalSpeed += movement.glideHorizontalBoost;
-                    isGliding = true;
-                }
-            }
-
-            if (attachedCharacter.isGrounded) {
-                if (intendsToHighJumpStart && highJumpCharge > movement.highJumpChargeMinimum) {
-                    intendsToHighJumpStart = false;
-                    float multiplier = Mathf.InverseLerp(0, movement.highJumpChargeMaximum, highJumpCharge);
-                    currentVerticalSpeed = movement.highJumpSpeed * multiplier;
-                    isHighJumping = true;
-                    highJumpCharge = 0;
-                } else {
-                    if (intendsToHighJump) {
-                        highJumpCharge += Time.deltaTime;
+                } else if (isJumping) {
+                    if (!intendsToJump || currentVerticalSpeed <= 0) {
+                        isJumping = false;
+                        currentVerticalSpeed *= movement.jumpStopMultiplier;
+                    }
+                } else if (isHighJumping) {
+                    if (currentVerticalSpeed <= 0) {
+                        isHighJumping = false;
+                    }
+                } else if (intendsToJumpStart) {
+                    if (attachedCharacter.isGrounded) {
+                        intendsToJumpStart = false;
+                        if (!movement.canJump) {
+                            PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
+                            return;
+                        }
+                        currentVerticalSpeed = movement.jumpSpeed;
+                        isJumping = true;
                     } else {
+                        intendsToJumpStart = false;
+                        currentVerticalSpeed = movement.glideVerticalBoost;
+                        currentHorizontalSpeed += movement.glideHorizontalBoost;
+                        isGliding = true;
+                    }
+                }
+
+                if (attachedCharacter.isGrounded) {
+                    if (intendsToHighJumpStart && highJumpCharge > movement.highJumpChargeMinimum) {
+                        intendsToHighJumpStart = false;
+                        float multiplier = Mathf.InverseLerp(0, movement.highJumpChargeMaximum, highJumpCharge);
+                        currentVerticalSpeed = movement.highJumpSpeed * multiplier;
+                        isHighJumping = true;
                         highJumpCharge = 0;
+                    } else {
+                        if (intendsToHighJump) {
+                            highJumpCharge += Time.deltaTime;
+                        } else {
+                            highJumpCharge = 0;
+                        }
                     }
                 }
             }
@@ -221,6 +256,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         AvatarAnimation CalculateAnimation() {
+            if (isCarrying) {
+                return AvatarAnimation.Carry;
+            }
             if (isGliding) {
                 return AvatarAnimation.Glide;
             }
@@ -258,7 +296,7 @@ namespace FollowYourDreams.Avatar {
                 gravity *= movement.glideGravityMultiplier;
             }
             currentVerticalSpeed += gravity;
-            var motion = Quaternion.Euler(0, currentRotation, 0) * Vector3.forward * currentHorizontalSpeed * Time.deltaTime;
+            var motion = currentForward * currentHorizontalSpeed * Time.deltaTime;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
             if (attachedCharacter.isGrounded) {
@@ -311,19 +349,23 @@ namespace FollowYourDreams.Avatar {
 
         void OnTriggerEnter(Collider other) {
             if (other.TryGetComponent<IInteractable>(out var newInteractable)) {
-                if (currentInteractable != null) {
-                    currentInteractable.Deselect();
+                var oldInteractable = currentInteractable;
+                interactablePool.Add(newInteractable);
+                if (oldInteractable != newInteractable) {
+                    oldInteractable?.Deselect();
+                    currentInteractable.Select();
                 }
-                currentInteractable = newInteractable;
-                newInteractable.Select();
             }
         }
+
         void OnTriggerExit(Collider other) {
-            if (other.TryGetComponent<IInteractable>(out var oldInteractable)) {
-                if (currentInteractable == oldInteractable) {
-                    currentInteractable.Deselect();
+            if (other.TryGetComponent<IInteractable>(out var newInteractable)) {
+                var oldInteractable = currentInteractable;
+                interactablePool.Remove(newInteractable);
+                if (oldInteractable == newInteractable) {
+                    oldInteractable.Deselect();
+                    currentInteractable?.Select();
                 }
-                currentInteractable = null;
             }
         }
 

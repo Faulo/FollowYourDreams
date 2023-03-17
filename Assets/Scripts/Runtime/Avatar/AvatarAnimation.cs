@@ -15,5 +15,6 @@ namespace FollowYourDreams.Avatar {
         PrepareJump,
         HighJump,
         JumpDream,
+        Carry,
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4332099688496705474}
   - component: {fileID: 8394062918357687654}
   - component: {fileID: 6138110118571824606}
+  - component: {fileID: 6109631288491704368}
   m_Layer: 10
   m_Name: P_Avatar
   m_TagString: Untagged
@@ -72,6 +73,7 @@ MonoBehaviour:
   intendsToHighJumpStart: 0
   highJumpCharge: 0
   isHighJumping: 0
+  carryDistance: 0.25
 --- !u!95 &-1088564663788547598
 Animator:
   serializedVersion: 5
@@ -134,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5419324322038028332, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  m_Sprite: {fileID: 4180443400217160521, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -214,6 +216,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
+--- !u!114 &6109631288491704368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583865241736183928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a494bf4639a66ff4094b43a78c89748d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: 4332099688496705474}
+  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1 &5590412264274690752
 GameObject:
   m_ObjectHideFlags: 0

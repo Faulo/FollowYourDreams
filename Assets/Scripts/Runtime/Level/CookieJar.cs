@@ -11,6 +11,7 @@ namespace FollowYourDreams.Level {
         [SerializeField]
         UnityEvent onInteract = new();
 
+        public int priority => 0;
         public void Select() {
             observedComponent.currentSpriteId = 1;
         }
