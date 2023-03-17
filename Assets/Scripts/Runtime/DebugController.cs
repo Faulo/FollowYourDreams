@@ -9,11 +9,11 @@ namespace FollowYourDreams {
         [SerializeField]
         string colorName = "_MainColor";
         [SerializeField]
-        Color editorColor = Color.black.WithAlpha(0.1f);
+        Color runtimeColor = Color.black.WithAlpha(0);
 
 #if UNITY_EDITOR
         [SerializeField]
-        Color runtimeColor = Color.black.WithAlpha(0);
+        Color editorColor = Color.black.WithAlpha(0.1f);
 
         void Update() {
             debugMaterial.SetColor(colorName, Application.isPlaying ? runtimeColor : editorColor);
