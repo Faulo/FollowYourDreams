@@ -77,7 +77,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6079958495442085214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0.5, y: 0.25, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2959723543324241765}
   - component: {fileID: 5259154363218501205}
   - component: {fileID: 3635882323751486029}
+  - component: {fileID: 1082312459357248096}
   m_Layer: 0
   m_Name: P_Avatar_Bed
   m_TagString: Untagged
@@ -178,6 +179,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0.5, y: 0, z: -0.5}
+--- !u!114 &1082312459357248096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873829164231665580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a494bf4639a66ff4094b43a78c89748d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: 3635882323751486029}
+  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1001 &4742429805330904775
 PrefabInstance:
   m_ObjectHideFlags: 0

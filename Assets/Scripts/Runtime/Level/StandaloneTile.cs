@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using FollowYourDreams.Avatar;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,11 +8,15 @@ namespace FollowYourDreams.Level {
     sealed class StandaloneTile : ScriptableTile {
         [Header("Standalone Tile")]
         [SerializeField]
-        Sprite sprite = default;
+        List<Sprite> sprites = new();
+        [SerializeField]
+        int spriteIndex = 0;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             base.GetTileData(position, tilemap, ref tileData);
-            tileData.sprite = sprite;
+            tileData.sprite = sprites.Count > spriteIndex
+                ? sprites[spriteIndex]
+                : default;
         }
 
 #if UNITY_EDITOR
@@ -29,7 +34,7 @@ namespace FollowYourDreams.Level {
         public void LoadSprite() {
             if (sheet && json) {
                 data = AsepriteData.FromJson(json.text);
-                sprite = sheet.ExtractSprite(data, pivot, this);
+                sheet.ExtractSprites(data, pivot, this, sprites);
             }
         }
 #endif

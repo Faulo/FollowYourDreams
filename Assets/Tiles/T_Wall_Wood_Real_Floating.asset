@@ -15,7 +15,9 @@ MonoBehaviour:
   asset: {fileID: 11400000}
   prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
-  sprite: {fileID: 8783458978429585221}
+  sprites:
+  - {fileID: 825493494041092337}
+  spriteIndex: 0
   json: {fileID: 4900000, guid: 4b36d265e5f79014f9efe47cb440ec7c, type: 3}
   sheet: {fileID: 2800000, guid: bfdf7210ff1bb1f4d9c5ab1c381b68f5, type: 3}
   pivot: {x: 0.5, y: 0.5}
@@ -52,7 +54,7 @@ MonoBehaviour:
       - name: Block
         opacity: 255
         blendMode: normal
---- !u!213 &8783458978429585221
+--- !u!213 &825493494041092337
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +157,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf00000000000000330000803f0000803f0000803f00000033000000330000803f00000033
+      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2

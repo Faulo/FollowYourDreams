@@ -15,7 +15,9 @@ MonoBehaviour:
   asset: {fileID: 11400000}
   prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
-  sprite: {fileID: 1219540694872206926}
+  sprites:
+  - {fileID: 790836217059224168}
+  spriteIndex: 0
   json: {fileID: 4900000, guid: 409388a64b22b4643809b6aa2d4f1db8, type: 3}
   sheet: {fileID: 2800000, guid: faaf57fd686f22b46a6c94a491bcec7c, type: 3}
   pivot: {x: 0.5, y: 0.5}
@@ -52,7 +54,7 @@ MonoBehaviour:
       - name: Block
         opacity: 255
         blendMode: normal
---- !u!213 &1219540694872206926
+--- !u!213 &790836217059224168
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
