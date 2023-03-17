@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using FollowYourDreams.Avatar;
 using MyBox;
 using Slothsoft.UnityExtensions;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
+#endif
 using UnityEngine;
 
 namespace FollowYourDreams.Level {
