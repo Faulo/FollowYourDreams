@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11225439, g: 0.122307, b: 0.191, a: 1}
+  m_Color: {r: 0.11225439, g: 0.122307, b: 0.191, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13358,6 +13358,7 @@ GameObject:
   - component: {fileID: 449426286}
   - component: {fileID: 449426285}
   - component: {fileID: 449426287}
+  - component: {fileID: 449426288}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -13416,6 +13417,23 @@ MonoBehaviour:
   dreamVelocity: 0
   nightmareVelocity: 0
   alphaName: _Alpha
+--- !u!114 &449426288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449426284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0bdc3ec03df2d4d9974078f76d9f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observedComponent: {fileID: 449426285}
+  manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
+  real: {fileID: 365273782}
+  dream: {fileID: 545620121}
+  nightmare: {fileID: 694389401}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -20697,7 +20715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583865241736183928, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4440936119859221609, guid: 66f04d2a0ad547a4e9f0923889b374c8, type: 3}
       propertyPath: m_RootOrder
@@ -20804,7 +20822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16488573, g: 0.1194, b: 0.199, a: 0}
+  m_Color: {r: 0.16488573, g: 0.1194, b: 0.199, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21324,7 +21342,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 80b0073537c6d564e8f936c0ffa139e9, type: 2}
 --- !u!1 &1703152547
 GameObject:
@@ -21430,7 +21448,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: 775f962d8d94c0b4c9297cb1e3ea321e, type: 2}
 --- !u!4 &1915471320
 Transform:

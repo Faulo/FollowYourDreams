@@ -104,7 +104,7 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         float carryDistance = 0.5f;
         Vector3 carryPosition => transform.position + (currentForward * carryDistance);
-        Vector3 leavePosition => transform.position;
+        Vector3 leavePosition => GridManager.instance.RoundToTileCenter(transform.position);
         public ICarryable carryable {
             get => m_carryable;
             set {
