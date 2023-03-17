@@ -5,25 +5,63 @@ namespace FollowYourDreams.Level {
     sealed class DoorController : ComponentFeature<DoorState> {
         [Header("Configuration")]
         [SerializeField]
-        AsepriteSprite attachedSprite;
+        Animator attachedAnimator;
+        [SerializeField]
+        Dimension dimension;
+        [SerializeField]
+        bool isOpen;
+        [SerializeField]
+        bool isSelected;
+
+        DoorSprite doorState {
+            set {
+                attachedAnimator.Play(DoorSettings.GetAnimationName(value));
+            }
+        }
 
         protected override void OnValidate() {
             base.OnValidate();
-            if (!attachedSprite) {
-                TryGetComponent(out attachedSprite);
+            if (!attachedAnimator) {
+                TryGetComponent(out attachedAnimator);
             }
         }
         void OnEnable() {
             observedComponent.onChangeOpen += HandleOpen;
+            observedComponent.onChangeSelect += HandleSelect;
         }
         void OnDisable() {
-            observedComponent.onChangeOpen += HandleOpen;
+            observedComponent.onChangeOpen -= HandleOpen;
+            observedComponent.onChangeSelect -= HandleSelect;
         }
 
         void HandleOpen(bool isOpen) {
-            attachedSprite.currentSpriteId = isOpen
-                ? 0
-                : 1;
+            this.isOpen = isOpen;
+            UpdateState();
+        }
+
+        void HandleSelect(bool isSelected) {
+            this.isSelected = isSelected;
+            UpdateState();
+        }
+
+        void UpdateState() {
+            doorState = dimension switch {
+                Dimension.RealWorld when isOpen && isSelected => DoorSprite.NormalDoorOpenSelected,
+                Dimension.RealWorld when isOpen => DoorSprite.NormalDoorOpen,
+                Dimension.RealWorld when isSelected => DoorSprite.NormalDoorClosedSelected,
+                Dimension.RealWorld => DoorSprite.NormalDoorClosed,
+
+                Dimension.Dreamscape when isOpen && isSelected => DoorSprite.DreamDoorOpenSelected,
+                Dimension.Dreamscape when isOpen => DoorSprite.DreamDoorOpen,
+                Dimension.Dreamscape when isSelected => DoorSprite.DreamDoorClosedSelected,
+                Dimension.Dreamscape => DoorSprite.DreamDoorClosed,
+
+                Dimension.NightmareRealm when isOpen && isSelected => DoorSprite.NightmareDoorOpenSelected,
+                Dimension.NightmareRealm when isOpen => DoorSprite.NightmareDoorOpen,
+                Dimension.NightmareRealm when isSelected => DoorSprite.NightmareDoorClosedSelected,
+                Dimension.NightmareRealm => DoorSprite.NightmareDoorClosed,
+                _ => throw new System.NotImplementedException(),
+            };
         }
     }
 }
