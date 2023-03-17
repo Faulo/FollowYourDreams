@@ -26,13 +26,6 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         public BedState lastUsedBed;
 
-        readonly Dictionary<Power, bool> powers = Enum.GetValues(typeof(Power))
-            .Cast<Power>()
-            .ToDictionary(p => p, p => false);
-
-        public bool HasPower(Power power) => powers[power];
-        public void GainPower(Power power) => powers[power] = true;
-
         [Header("Runtime")]
         [SerializeField, ReadOnly]
         float currentRotation = 0;
@@ -206,7 +199,7 @@ namespace FollowYourDreams.Avatar {
                         isJumping = true;
                     } else {
                         intendsToJumpStart = false;
-                        if (HasPower(Power.Glide)) {
+                        if (settings.HasPower(Power.Glide)) {
                             currentVerticalSpeed = movement.glideVerticalBoost;
                             currentHorizontalSpeed += movement.glideHorizontalBoost;
                             isGliding = true;
@@ -331,7 +324,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         public void OnHighJump(InputValue value) {
-            if (!HasPower(Power.HighJump)) {
+            if (!settings.HasPower(Power.HighJump)) {
                 return;
             }
             intendsToHighJump = value.isPressed;

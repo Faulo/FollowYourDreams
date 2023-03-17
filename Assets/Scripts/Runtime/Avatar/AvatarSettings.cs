@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using MyBox;
 using Slothsoft.UnityExtensions;
 #if UNITY_EDITOR
@@ -31,6 +32,16 @@ namespace FollowYourDreams.Avatar {
             Dimension.NightmareRealm => nightmare,
             _ => throw new NotImplementedException(),
         };
+
+        readonly Dictionary<Power, bool> powers = Enum.GetValues(typeof(Power))
+            .Cast<Power>()
+            .ToDictionary(p => p, p => false);
+
+        public bool HasPower(Power power) => powers[power];
+        void TogglePower(Power power) => powers[power] = !powers[power];
+        public void ToggleClimb() => TogglePower(Power.Climb);
+        public void ToggleGlide() => TogglePower(Power.Glide);
+        public void ToggleHighJump() => TogglePower(Power.HighJump);
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
