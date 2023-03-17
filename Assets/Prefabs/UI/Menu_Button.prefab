@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2570547168438175290, guid: c6c1e25e3833aa04bad0070f71d46234, type: 2}
+  m_Sprite: {fileID: 1306264026, guid: f7bdd8f0902cd4f49acc1e243fcdfc31, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -107,10 +107,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 2038834086, guid: f7bdd8f0902cd4f49acc1e243fcdfc31, type: 3}
+    m_PressedSprite: {fileID: 2038834086, guid: f7bdd8f0902cd4f49acc1e243fcdfc31, type: 3}
+    m_SelectedSprite: {fileID: 2038834086, guid: f7bdd8f0902cd4f49acc1e243fcdfc31, type: 3}
+    m_DisabledSprite: {fileID: 1306264026, guid: f7bdd8f0902cd4f49acc1e243fcdfc31, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -148,19 +148,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378023014860894385, guid: 454d0cea0ea2f174c858b7f71b12941a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378023014860894385, guid: 454d0cea0ea2f174c858b7f71b12941a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378023014860894385, guid: 454d0cea0ea2f174c858b7f71b12941a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378023014860894385, guid: 454d0cea0ea2f174c858b7f71b12941a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.2
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 8378023014860894385, guid: 454d0cea0ea2f174c858b7f71b12941a, type: 3}
       propertyPath: m_SizeDelta.x
