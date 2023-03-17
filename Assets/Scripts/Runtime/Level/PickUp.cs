@@ -27,6 +27,7 @@ namespace FollowYourDreams.Level {
             Deselect();
         }
         public int priority => 1;
+        public bool isSelectable => true;
 
         public Vector3 position {
             get => context.transform.position;

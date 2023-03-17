@@ -12,6 +12,7 @@ namespace FollowYourDreams.Level {
         UnityEvent onInteract = new();
 
         public int priority => 0;
+        public bool isSelectable => true;
         public void Select() {
             observedComponent.currentSpriteId = 1;
         }
