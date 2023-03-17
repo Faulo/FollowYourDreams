@@ -1,6 +1,6 @@
 { "frames": [
    {
-    "filename": "S_INT_Door 0.aseprite",
+    "filename": "S_INT_Door_WithWindow 0.aseprite",
     "frame": { "x": 0, "y": 0, "w": 32, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -9,7 +9,7 @@
     "duration": 100
    },
    {
-    "filename": "S_INT_Door 1.aseprite",
+    "filename": "S_INT_Door_WithWindow 1.aseprite",
     "frame": { "x": 32, "y": 0, "w": 32, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -18,8 +18,8 @@
     "duration": 100
    },
    {
-    "filename": "S_INT_Door 2.aseprite",
-    "frame": { "x": 64, "y": 0, "w": 32, "h": 64 },
+    "filename": "S_INT_Door_WithWindow 2.aseprite",
+    "frame": { "x": 0, "y": 64, "w": 32, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
@@ -27,26 +27,8 @@
     "duration": 100
    },
    {
-    "filename": "S_INT_Door 3.aseprite",
-    "frame": { "x": 96, "y": 0, "w": 32, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
-    "sourceSize": { "w": 32, "h": 64 },
-    "duration": 100
-   },
-   {
-    "filename": "S_INT_Door 4.aseprite",
-    "frame": { "x": 128, "y": 0, "w": 32, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
-    "sourceSize": { "w": 32, "h": 64 },
-    "duration": 100
-   },
-   {
-    "filename": "S_INT_Door 5.aseprite",
-    "frame": { "x": 160, "y": 0, "w": 32, "h": 64 },
+    "filename": "S_INT_Door_WithWindow 3.aseprite",
+    "frame": { "x": 32, "y": 64, "w": 32, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
@@ -57,11 +39,15 @@
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.2.40-x64",
-  "image": "S_INT_Door.png",
-  "format": "I8",
-  "size": { "w": 192, "h": 64 },
+  "image": "S_INT_Door_WithWindow.png",
+  "format": "RGBA8888",
+  "size": { "w": 64, "h": 128 },
   "scale": "1",
   "frameTags": [
+   { "name": "NormalDoorOpen", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "NormalDoorClosed", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "NormalDoorOpenSelected", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "NormalDoorClosedSelected", "from": 3, "to": 3, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 2", "opacity": 255, "blendMode": "normal" },
