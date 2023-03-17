@@ -8,6 +8,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: powerToUnlock
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleHighJump
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FollowYourDreams.Avatar.AvatarSettings, FollowYourDreams
+      objectReference: {fileID: 0}
+    - target: {fileID: -5129925692980049882, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
+      propertyPath: onCollect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: -4443477534257480974, guid: fea0bc1db1580e047b7f6a69fc05a61a, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -15,6 +15,7 @@ namespace FollowYourDreams.Avatar {
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
+
         [SerializeField]
         SpriteRenderer attachedRenderer;
         [SerializeField]
@@ -152,6 +153,7 @@ namespace FollowYourDreams.Avatar {
                 attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
                 attachedAnimator.Update(Time.deltaTime);
             }
+            // Debug.Log(string.Join(" | ", powers.Select(kv => $"{kv.Key}: {kv.Value}")));
         }
 
         void ProcessInput() {
@@ -197,9 +199,11 @@ namespace FollowYourDreams.Avatar {
                         isJumping = true;
                     } else {
                         intendsToJumpStart = false;
-                        currentVerticalSpeed = movement.glideVerticalBoost;
-                        currentHorizontalSpeed += movement.glideHorizontalBoost;
-                        isGliding = true;
+                        if (settings.HasPower(Power.Glide)) {
+                            currentVerticalSpeed = movement.glideVerticalBoost;
+                            currentHorizontalSpeed += movement.glideHorizontalBoost;
+                            isGliding = true;
+                        }
                     }
                 }
 
@@ -320,6 +324,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         public void OnHighJump(InputValue value) {
+            if (!settings.HasPower(Power.HighJump)) {
+                return;
+            }
             intendsToHighJump = value.isPressed;
             intendsToHighJumpStart = !value.isPressed;
         }
