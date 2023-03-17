@@ -15,6 +15,7 @@ namespace FollowYourDreams.Avatar {
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
+
         [SerializeField]
         SpriteRenderer attachedRenderer;
         [SerializeField]
@@ -24,6 +25,13 @@ namespace FollowYourDreams.Avatar {
         AvatarMovement movement => settings.movement;
         [SerializeField]
         public BedState lastUsedBed;
+
+        readonly Dictionary<Power, bool> powers = Enum.GetValues(typeof(Power))
+            .Cast<Power>()
+            .ToDictionary(p => p, p => false);
+
+        public bool HasPower(Power power) => powers[power];
+        public void GainPower(Power power) => powers[power] = true;
 
         [Header("Runtime")]
         [SerializeField, ReadOnly]
@@ -152,6 +160,7 @@ namespace FollowYourDreams.Avatar {
                 attachedAnimator.Play(AvatarSettings.GetAnimationName(currentDirection, currentAnimation));
                 attachedAnimator.Update(Time.deltaTime);
             }
+            // Debug.Log(string.Join(" | ", powers.Select(kv => $"{kv.Key}: {kv.Value}")));
         }
 
         void ProcessInput() {
@@ -197,9 +206,11 @@ namespace FollowYourDreams.Avatar {
                         isJumping = true;
                     } else {
                         intendsToJumpStart = false;
-                        currentVerticalSpeed = movement.glideVerticalBoost;
-                        currentHorizontalSpeed += movement.glideHorizontalBoost;
-                        isGliding = true;
+                        if (HasPower(Power.Glide)) {
+                            currentVerticalSpeed = movement.glideVerticalBoost;
+                            currentHorizontalSpeed += movement.glideHorizontalBoost;
+                            isGliding = true;
+                        }
                     }
                 }
 
@@ -320,6 +331,9 @@ namespace FollowYourDreams.Avatar {
         }
 
         public void OnHighJump(InputValue value) {
+            if (!HasPower(Power.HighJump)) {
+                return;
+            }
             intendsToHighJump = value.isPressed;
             intendsToHighJumpStart = !value.isPressed;
         }
