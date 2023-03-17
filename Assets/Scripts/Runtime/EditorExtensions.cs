@@ -94,7 +94,7 @@ namespace FollowYourDreams {
                 layer.stateMachine.RemoveState(state.state);
             }
 
-            var states = new Dictionary<TAnim, AnimatorState>();
+            var states = new Dictionary<TAnim, List<AnimatorState>>();
 
             for (int c = 0; c < columns; c++) {
                 foreach (var anim in data.meta.frameTags) {
@@ -142,15 +142,22 @@ namespace FollowYourDreams {
 
                     AssetDatabase.AddObjectToAsset(animClip, path);
 
-                    states[animation] = controller.AddMotion(animClip);
+                    if (!states.TryGetValue(animation, out var list)) {
+                        states[animation] = list = new();
+                    }
+                    list.Add(controller.AddMotion(animClip));
                 }
             }
 
             return (TAnim from, TAnim to) => {
-                var transition = states[from].AddTransition(states[to]);
-                transition.hasExitTime = true;
-                transition.exitTime = 1;
-                transition.duration = 0;
+                if (states.TryGetValue(from, out var fromStates) && states.TryGetValue(to, out var toStates)) {
+                    for (int i = 0; i < fromStates.Count; i++) {
+                        var transition = fromStates[i].AddTransition(toStates[i]);
+                        transition.hasExitTime = true;
+                        transition.exitTime = 1;
+                        transition.duration = 0;
+                    }
+                }
             };
         }
 #endif
