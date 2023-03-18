@@ -8,6 +8,8 @@ namespace FollowYourDreams.AI {
     sealed class EnemyBehavior : MonoBehaviour {
 
         [SerializeField]
+        GameManager gameManager = default;
+        [SerializeField]
         NavMeshAgent agent = default;
         [SerializeField]
         AvatarController target = default;
@@ -30,7 +32,8 @@ namespace FollowYourDreams.AI {
 
         void Update() {
             if (!targetAquired
-                && Vector3.Distance(transform.position, target.transform.position) < lineOfSightDistance) {
+                && Vector3.Distance(transform.position, target.transform.position) < lineOfSightDistance
+                && gameManager.currentDimension == Dimension.NightmareRealm) {
                 targetAquired = true;
             }
             if (targetAquired && !snacked) {
