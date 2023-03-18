@@ -15,7 +15,6 @@ namespace FollowYourDreams.Avatar {
         [Header("Configuration")]
         [SerializeField]
         Animator attachedAnimator;
-
         [SerializeField]
         SpriteRenderer attachedRenderer;
         [SerializeField]
@@ -24,8 +23,14 @@ namespace FollowYourDreams.Avatar {
         AvatarSettings settings;
         AvatarMovement movement => settings.movement;
         [SerializeField]
-        public BedState lastUsedBed;
-
+        BedState lastUsedBed;
+        readonly Stack<BedState> allUsedBeds = new();
+        public void AddBed(BedState bed) => allUsedBeds.Push(bed);
+        BedState PopBed() {
+            return allUsedBeds.Count > 0
+                ? allUsedBeds.Pop()
+                : lastUsedBed;
+        }
         [Header("Runtime")]
         [SerializeField, ReadOnly]
         float currentRotation = 0;
@@ -395,7 +400,7 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(Die))]
         public void Die() {
-            InteractWith(lastUsedBed.WakeUpIn_Co);
+            InteractWith(PopBed().WakeUpIn_Co);
         }
 
         void OnControllerColliderHit(ControllerColliderHit hit) {

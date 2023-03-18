@@ -152,9 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
   interactionSpot: {fileID: 7856977364736047996}
-  gotoSleepStart: 3.5
-  gotoSleepMiddle: 3
-  gotoSleepEnd: 3
+  gotoSleepStart: 2
+  gotoSleepMiddle: 1
+  gotoSleepEnd: 1.25
   goToSleepEvent:
     Guid:
       Data1: -83782113
@@ -164,7 +164,7 @@ MonoBehaviour:
     Path: event:/Avatar/GoToSleep
   dreamAbortStart: 1
   dreamAbortMiddle: 0.5
-  dreamAbortEnd: 3
+  dreamAbortEnd: 1.25
   wakeUpEvent:
     Guid:
       Data1: 676483901
