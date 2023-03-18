@@ -75,6 +75,13 @@ MonoBehaviour:
   highJumpCharge: 0
   isHighJumping: 0
   carryDistance: 0.25
+  deathAudio:
+    Guid:
+      Data1: 1108688765
+      Data2: 1321520679
+      Data3: 1820574627
+      Data4: -901165683
+    Path: event:/Avatar/Death
 --- !u!95 &-1088564663788547598
 Animator:
   serializedVersion: 5
