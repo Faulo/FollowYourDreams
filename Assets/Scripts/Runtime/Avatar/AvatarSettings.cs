@@ -40,9 +40,9 @@ namespace FollowYourDreams.Avatar {
 
         public bool HasPower(Power power) => powers[power];
         void TogglePower(Power power) => powers[power] = !powers[power];
-        public void ToggleClimb() => TogglePower(Power.Climb);
-        public void ToggleGlide() => TogglePower(Power.Glide);
-        public void ToggleHighJump() => TogglePower(Power.HighJump);
+        public void ToggleClimb() => powers[Power.Climb] = true;
+        public void ToggleGlide() => powers[Power.Glide] = true;
+        public void ToggleHighJump() => powers[Power.HighJump] = true;
 
 #if UNITY_EDITOR
         const int DIRECTION_COUNT = 5;
