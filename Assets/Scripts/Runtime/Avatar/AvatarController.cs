@@ -404,6 +404,8 @@ namespace FollowYourDreams.Avatar {
             isGliding = false;
             isJumping = false;
             isHighJumping = false;
+            currentInteractable?.Deselect();
+            interactablePool.Clear();
             deathAudio.PlayOnce();
             InteractWith(PopBed().WakeUpIn_Co);
         }
