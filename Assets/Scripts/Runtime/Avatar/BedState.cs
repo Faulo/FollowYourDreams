@@ -38,11 +38,11 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         bool isOccupied = false;
 
-        Dimension ownDimension => manager.currentDimension;
+        Dimension currentDimension => manager.currentDimension;
         int dimensionOffset => isOccupied
             ? -1
             : 1;
-        Dimension targetDimension => ownDimension + dimensionOffset;
+        Dimension targetDimension => currentDimension + dimensionOffset;
 
         public int priority => 0;
 
@@ -71,7 +71,7 @@ namespace FollowYourDreams.Avatar {
 
             manager.currentDimension = targetDimension;
             yield return Wait.forFixedUpdate;
-            avatar.lastUsedBed = this;
+            avatar.AddBed(this);
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = !isOccupied;
             yield return Wait.forSeconds[gotoSleep ? gotoSleepMiddle : dreamAbortMiddle];
@@ -83,8 +83,13 @@ namespace FollowYourDreams.Avatar {
             onSetAnimation?.Invoke(gotoSleep ? BedAnimation.DreamSleep : BedAnimation.BedEmpty);
         }
 
+        bool shouldSwitchDimensions =>
+            (currentDimension == Dimension.RealWorld && !isOccupied)
+         || currentDimension == Dimension.Dreamscape
+         || (currentDimension == Dimension.NightmareRealm && isOccupied);
+
         public IEnumerator WakeUpIn_Co(AvatarController avatar) {
-            if (ownDimension != Dimension.RealWorld) {
+            if (shouldSwitchDimensions) {
                 manager.currentDimension = targetDimension;
                 yield return Wait.forFixedUpdate;
             }
