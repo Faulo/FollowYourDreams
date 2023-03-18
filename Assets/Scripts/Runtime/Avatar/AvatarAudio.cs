@@ -32,6 +32,10 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         EventReference stumbleEvent = new();
 
+        [Header("Glide")]
+        [SerializeField]
+        EventReference glideEvent = new();
+
         Coroutine coroutine;
 
         void OnEnable() {
@@ -47,6 +51,9 @@ namespace FollowYourDreams.Avatar {
                 coroutine = null;
             }
             switch (animation) {
+                case AvatarAnimation.Glide:
+                    glideEvent.PlayOnce();
+                    break;
                 case AvatarAnimation.Jump:
                     jumpEvent.PlayOnce();
                     break;
