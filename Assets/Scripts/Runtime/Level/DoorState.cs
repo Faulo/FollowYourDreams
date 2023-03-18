@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using FMODUnity;
 using FollowYourDreams.Avatar;
 using MyBox;
 using Slothsoft.UnityExtensions;
@@ -18,11 +19,16 @@ namespace FollowYourDreams.Level {
         [SerializeField, Range(0, 10)]
         float interactDuration = 0.2f;
 
+        [Header("Audio")]
+        [SerializeField]
+        EventReference toggleEvent = new();
+
         bool isOpen {
             get => m_isOpen;
             set {
                 m_isOpen = value;
                 onChangeOpen?.Invoke(value);
+                toggleEvent.PlayOnce();
             }
         }
         [Header("Runtime")]

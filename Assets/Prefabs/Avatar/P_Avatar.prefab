@@ -116,7 +116,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 93a924ab21951744c9fe1c67206dc8bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: context
       value: 
       objectReference: {fileID: 4440936119859221609}
+    - target: {fileID: 2636676519027372579, guid: 61ec1b5318745db4cb9d9acdcbb60512, type: 3}
+      propertyPath: observedComponent
+      value: 
+      objectReference: {fileID: -9085380897754867873}
     - target: {fileID: 4657725804604475884, guid: 61ec1b5318745db4cb9d9acdcbb60512, type: 3}
       propertyPath: m_Name
       value: P_AvatarShadow

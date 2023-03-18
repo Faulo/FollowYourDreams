@@ -1,52 +1,128 @@
 using System;
 using System.Collections;
 using FollowYourDreams.Avatar;
+using MyBox;
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace FollowYourDreams.AI {
     sealed class EnemyBehavior : MonoBehaviour {
+        [Header("Setup")]
+        [SerializeField]
+        GameManager manager = default;
 
+        [Space]
         [SerializeField]
-        GameManager gameManager = default;
+        Animator attachedAnimator;
         [SerializeField]
-        NavMeshAgent agent = default;
+        SpriteRenderer attachedRenderer;
         [SerializeField]
-        AvatarController target = default;
+        NavMeshAgent attachedAgent = default;
+
+        [Header("Config")]
         [SerializeField, Range(0f, 50f)]
         float lineOfSightDistance = 10.0f;
         [SerializeField, Range(0f, 5f)]
         float snackRange = 1f;
 
+        AvatarController target = default;
         bool targetAquired = false;
         bool snacked = false;
 
         void OnValidate() {
-            if (!agent) {
-                TryGetComponent(out agent);
+            if (!attachedAnimator) {
+                TryGetComponent(out attachedAnimator);
             }
+            if (!attachedRenderer) {
+                TryGetComponent(out attachedRenderer);
+            }
+            if (!attachedAgent) {
+                TryGetComponent(out attachedAgent);
+            }
+        }
+
+        void FixedUpdate() {
+            if (manager.currentDimension != Dimension.NightmareRealm) {
+                return;
+            }
+
             if (!target) {
                 target = FindAnyObjectByType<AvatarController>();
             }
-        }
-
-        void Update() {
-            if (!targetAquired
-                && Vector3.Distance(transform.position, target.transform.position) < lineOfSightDistance
-                && gameManager.currentDimension == Dimension.NightmareRealm) {
-                targetAquired = true;
+            if (!targetAquired) {
+                targetAquired = Vector3.Distance(transform.position, target.transform.position) < lineOfSightDistance;
             }
             if (targetAquired && !snacked) {
-                agent.SetDestination(target.transform.position);
-            }
-            if (targetAquired && Vector3.Distance(transform.position, target.transform.position) < snackRange) {
-                EatAlice();
+                attachedAgent.SetDestination(target.transform.position);
+                if (Vector3.Distance(transform.position, target.transform.position) < snackRange) {
+                    Snack();
+                }
             }
         }
+        void Update() {
+            if (manager.currentDimension != Dimension.NightmareRealm) {
+                return;
+            }
 
-        void EatAlice() {
+            currentAnimation = (CalculateDirection(), CalculateAnimation());
+        }
+
+        [SerializeField, ReadOnly]
+        Direction currentDirection = Direction.Down;
+
+        (Direction direction, AvatarAnimation animation) currentAnimation {
+            set {
+                if (m_currentAnimation == value) {
+                    return;
+                }
+                m_currentAnimation = value;
+                var direction = value.direction switch {
+                    Direction.Up => AvatarDirection.Up,
+                    Direction.UpRight => AvatarDirection.UpLeft,
+                    Direction.Right => AvatarDirection.Left,
+                    Direction.DownRight => AvatarDirection.DownLeft,
+                    Direction.Down => AvatarDirection.Down,
+                    Direction.DownLeft => AvatarDirection.DownLeft,
+                    Direction.Left => AvatarDirection.Left,
+                    Direction.UpLeft => AvatarDirection.UpLeft,
+                    _ => throw new NotImplementedException(value.direction.ToString()),
+                };
+                attachedAnimator.Play(AvatarSettings.GetAnimationName(direction, value.animation));
+                switch (value.direction) {
+                    case Direction.UpLeft:
+                    case Direction.Left:
+                    case Direction.DownLeft:
+                        attachedRenderer.flipX = false;
+                        break;
+                    case Direction.UpRight:
+                    case Direction.Right:
+                    case Direction.DownRight:
+                        attachedRenderer.flipX = true;
+                        break;
+                }
+            }
+        }
+        (Direction direction, AvatarAnimation animation) m_currentAnimation;
+
+        Direction CalculateDirection() {
+            var movement = attachedAgent.desiredVelocity.SwizzleXZ();
+            if (movement.magnitude > 0.1f) {
+                float angle = Vector2.SignedAngle(movement, Vector2.up);
+                currentDirection.Set(angle);
+            }
+            return currentDirection;
+        }
+
+        AvatarAnimation CalculateAnimation() {
+            return targetAquired
+                ? AvatarAnimation.Walk
+                : AvatarAnimation.Idle;
+        }
+
+        void Snack() {
             snacked = true;
-            agent.SetDestination(transform.position);
+            attachedAgent.SetDestination(transform.position);
             // TODO: 1. Play eat animation
             // 2. Check again if in range
             // a) if not: snacked = false;
@@ -59,6 +135,8 @@ namespace FollowYourDreams.AI {
         IEnumerator WaitForAnimation() {
             yield return new WaitForSeconds(2f);
             transform.localPosition = Vector3.zero;
+            targetAquired = false;
+            snacked = false;
         }
     }
 }

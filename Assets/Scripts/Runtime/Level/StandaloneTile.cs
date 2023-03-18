@@ -5,12 +5,12 @@ using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class StandaloneTile : ScriptableTile, IImportable {
+    class StandaloneTile : ScriptableTile, IImportable {
         [Header("Standalone Tile")]
         [SerializeField]
         List<Sprite> sprites = new();
         [SerializeField]
-        int spriteIndex = 0;
+        protected int spriteIndex = 0;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
             base.GetTileData(position, tilemap, ref tileData);
@@ -26,7 +26,7 @@ namespace FollowYourDreams.Level {
         [SerializeField]
         Texture2D sheet = default;
         [SerializeField]
-        Vector2 pivot = new(0.5f, 0.5f);
+        Vector2 pivot = new(0.5f, 0f);
         public Vector2 spritePivot {
             get => pivot;
             set => pivot = value;

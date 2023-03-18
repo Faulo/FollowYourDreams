@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -269786897750787436, guid: 832d051121cd9e944b76ce15689aed7a, type: 2}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5377102495165730502, guid: 832d051121cd9e944b76ce15689aed7a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +126,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 0.5
+  m_BaseOffset: 0.4
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4396983365774573376
@@ -142,11 +142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca6cda61f7bfa94bad641de30b363e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
-  agent: {fileID: 149152833743684042}
-  target: {fileID: 0}
+  manager: {fileID: 11400000, guid: b56ad6213573ca749ab5c8f2fe41ddc4, type: 2}
+  attachedAnimator: {fileID: 6717517935500418839}
+  attachedRenderer: {fileID: -7313829922059949941}
+  attachedAgent: {fileID: 149152833743684042}
   lineOfSightDistance: 5
-  snackRange: 2
+  snackRange: 0.5
+  currentDirection: 4
 --- !u!213 &-6136202068351798340
 Sprite:
   m_ObjectHideFlags: 0
