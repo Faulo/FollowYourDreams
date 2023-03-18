@@ -309,7 +309,7 @@ namespace FollowYourDreams.Avatar {
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
             if (attachedCharacter.isGrounded) {
-                canClimb = true;
+                m_canClimb = true;
                 if (currentVerticalSpeed < 0) {
                     currentVerticalSpeed = 0;
                 }
@@ -409,12 +409,12 @@ namespace FollowYourDreams.Avatar {
                 collidable.OnCollide(hit, this);
             }
 
-            if (settings.HasPower(Power.Climb) && intendsToJump && !isInteracting && canClimb && !attachedCharacter.isGrounded) {
+            if (settings.HasPower(Power.Climb) && intendsToRun && !isInteracting && canClimb) {
                 if (Mathf.Abs(hit.normal.y) < 0.5f) {
                     var top = hit.collider.ClosestPointOnBounds(hit.point + new Vector3(0, 10, 0));
                     float height = top.y - hit.point.y;
                     if (height <= movement.maxClimbHeight) {
-                        canClimb = false;
+                        m_canClimb = false;
                         Physics.SyncTransforms();
                         climbPoint = transform.position + new Vector3(0, movement.maxClimbHeight, 0);
                         InteractWith(Climb_Co);
@@ -423,7 +423,8 @@ namespace FollowYourDreams.Avatar {
             }
         }
 
-        bool canClimb = true;
+        bool canClimb => m_canClimb && currentAnimation == AvatarAnimation.Fall;
+        bool m_canClimb = true;
         Vector3 climbPoint;
         static IEnumerator Climb_Co(AvatarController avatar) {
             avatar.currentAnimation = AvatarAnimation.Climb;

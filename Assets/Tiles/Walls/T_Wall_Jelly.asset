@@ -1,22 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!213 &-2154751096446112479
+--- !u!213 &-1877006261368680639
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_Wall_Jelly_Dream_Cube 0.aseprite
+  m_Name: S_Wall_Jelly_Dream_Cube 1.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 0
+    x: 32
     y: 0
     width: 32
     height: 32
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -16}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -103,18 +103,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf00000000000080320000803f0000003f0000803f00008032000000330000003f00000033
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 0
       width: 32
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -194,18 +194,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 0
       width: 32
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
@@ -223,16 +223,16 @@ MonoBehaviour:
   m_Name: T_Wall_Jelly
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  prefab: {fileID: 6485669815321698707, guid: 1d37db3447650814aae22b1388350eb0, type: 3}
+  prefab: {fileID: 6485669815321698707, guid: dab7851ac960a2a4b91a370fee898ee0, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
   m_isGround: 1
   sprites:
-  - {fileID: -2154751096446112479}
-  - {fileID: 7812364193366456723}
+  - {fileID: 6350506006876887366}
+  - {fileID: -1877006261368680639}
   spriteIndex: 0
   json: {fileID: 4900000, guid: ed7a9b4209595904e817e57c9dc496b0, type: 3}
   sheet: {fileID: 2800000, guid: 9e32df4bf7b7bfe4ea2f68a621b33ec1, type: 3}
-  pivot: {x: 0.5, y: 0.5}
+  pivot: {x: 0.5, y: 0}
   data:
     frames:
     - filename: S_Wall_Jelly_Dream_Cube 0.aseprite
@@ -286,23 +286,23 @@ MonoBehaviour:
       - name: Layer 1
         opacity: 170
         blendMode: normal
---- !u!213 &7812364193366456723
+--- !u!213 &6350506006876887366
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_Wall_Jelly_Dream_Cube 1.aseprite
+  m_Name: S_Wall_Jelly_Dream_Cube 0.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 32
+    x: 0
     y: 0
     width: 32
     height: 32
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -16}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -389,18 +389,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f000000000000000000008032ffff7f3f0000003fffff7f3f00008032000000000000003f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 0
       width: 32
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -480,18 +480,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 0
       width: 32
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
