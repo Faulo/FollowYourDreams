@@ -20,6 +20,9 @@ namespace FollowYourDreams.Level {
             if (asset != this) {
                 asset = this;
             }
+            if (!prefab) {
+                m_isGround = false;
+            }
         }
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData) {
