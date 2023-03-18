@@ -174,57 +174,55 @@ namespace FollowYourDreams.Avatar {
 
             currentHorizontalSpeed = Mathf.SmoothDampAngle(currentHorizontalSpeed, intendedSpeed * maxSpeed, ref acceleration, speedSmoothing);
 
-            if (!isCarrying) {
-                if (isGliding) {
-                    if (!intendsToJump && movement.canCancelGlide) {
-                        isGliding = false;
-                    }
-                    if (attachedCharacter.isGrounded) {
-                        isGliding = false;
+            if (isGliding) {
+                if (!intendsToJump && movement.canCancelGlide) {
+                    isGliding = false;
+                }
+                if (attachedCharacter.isGrounded) {
+                    isGliding = false;
+                    PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
+                    return;
+                }
+            } else if (isJumping) {
+                if (!intendsToJump || currentVerticalSpeed <= 0) {
+                    isJumping = false;
+                    currentVerticalSpeed *= movement.jumpStopMultiplier;
+                }
+            } else if (isHighJumping) {
+                if (currentVerticalSpeed <= 0) {
+                    isHighJumping = false;
+                }
+            } else if (intendsToJumpStart) {
+                if (attachedCharacter.isGrounded) {
+                    intendsToJumpStart = false;
+                    if (!movement.canJump) {
                         PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
                         return;
                     }
-                } else if (isJumping) {
-                    if (!intendsToJump || currentVerticalSpeed <= 0) {
-                        isJumping = false;
-                        currentVerticalSpeed *= movement.jumpStopMultiplier;
-                    }
-                } else if (isHighJumping) {
-                    if (currentVerticalSpeed <= 0) {
-                        isHighJumping = false;
-                    }
-                } else if (intendsToJumpStart) {
-                    if (attachedCharacter.isGrounded) {
-                        intendsToJumpStart = false;
-                        if (!movement.canJump) {
-                            PlayAnimation(movement.glideToLandAnimation, movement.glideToLandDuration);
-                            return;
-                        }
-                        currentVerticalSpeed = movement.jumpSpeed;
-                        isJumping = true;
-                    } else {
-                        intendsToJumpStart = false;
-                        if (settings.HasPower(Power.Glide)) {
-                            currentVerticalSpeed = movement.glideVerticalBoost;
-                            currentHorizontalSpeed += movement.glideHorizontalBoost;
-                            isGliding = true;
-                        }
+                    currentVerticalSpeed = movement.jumpSpeed;
+                    isJumping = true;
+                } else {
+                    intendsToJumpStart = false;
+                    if (settings.HasPower(Power.Glide) && !isCarrying) {
+                        currentVerticalSpeed = movement.glideVerticalBoost;
+                        currentHorizontalSpeed += movement.glideHorizontalBoost;
+                        isGliding = true;
                     }
                 }
+            }
 
-                if (attachedCharacter.isGrounded) {
-                    if (intendsToHighJumpStart && highJumpCharge > movement.highJumpChargeMinimum) {
-                        intendsToHighJumpStart = false;
-                        float multiplier = Mathf.InverseLerp(0, movement.highJumpChargeMaximum, highJumpCharge);
-                        currentVerticalSpeed = movement.highJumpSpeed * multiplier;
-                        isHighJumping = true;
-                        highJumpCharge = 0;
+            if (attachedCharacter.isGrounded) {
+                if (intendsToHighJumpStart && highJumpCharge > movement.highJumpChargeMinimum) {
+                    intendsToHighJumpStart = false;
+                    float multiplier = Mathf.InverseLerp(0, movement.highJumpChargeMaximum, highJumpCharge);
+                    currentVerticalSpeed = movement.highJumpSpeed * multiplier;
+                    isHighJumping = true;
+                    highJumpCharge = 0;
+                } else {
+                    if (intendsToHighJump) {
+                        highJumpCharge += Time.deltaTime;
                     } else {
-                        if (intendsToHighJump) {
-                            highJumpCharge += Time.deltaTime;
-                        } else {
-                            highJumpCharge = 0;
-                        }
+                        highJumpCharge = 0;
                     }
                 }
             }
@@ -400,6 +398,9 @@ namespace FollowYourDreams.Avatar {
 
         [ContextMenu(nameof(Die))]
         public void Die() {
+            isGliding = false;
+            isJumping = false;
+            isHighJumping = false;
             InteractWith(PopBed().WakeUpIn_Co);
         }
 
