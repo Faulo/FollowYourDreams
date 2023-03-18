@@ -1,4 +1,5 @@
 using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;

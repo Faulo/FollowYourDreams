@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace FollowYourDreams.Avatar {
+namespace FollowYourDreams.Graphics {
     [Serializable]
     class AsepriteData {
         public static AsepriteData FromJson(string text) {

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 using MyBox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class WallTile : ScriptableTile {
+    sealed class WallTile : ScriptableTile, IImportable {
         enum Segment {
             Grounded = 0,
             Top = 1,
@@ -49,6 +49,10 @@ namespace FollowYourDreams.Level {
         Texture2D sheet = default;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         AsepriteData data = new();
 

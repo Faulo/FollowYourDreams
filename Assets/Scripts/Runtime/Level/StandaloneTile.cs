@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class StandaloneTile : ScriptableTile {
+    sealed class StandaloneTile : ScriptableTile, IImportable {
         [Header("Standalone Tile")]
         [SerializeField]
         List<Sprite> sprites = new();
@@ -27,6 +27,10 @@ namespace FollowYourDreams.Level {
         Texture2D sheet = default;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         AsepriteData data = new();
 
