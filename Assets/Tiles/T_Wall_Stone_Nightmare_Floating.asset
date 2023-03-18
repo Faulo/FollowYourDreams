@@ -1,64 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
-  m_Name: T_Wall_Stone_Nightmare_Floating
-  m_EditorClassIdentifier: 
-  asset: {fileID: 11400000}
-  prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  m_isGround: 1
-  sprites:
-  - {fileID: 5801109759615205334}
-  spriteIndex: 0
-  json: {fileID: 4900000, guid: 1fcff16aa803e2b4db1b569531de41c8, type: 3}
-  sheet: {fileID: 2800000, guid: 689580dce80e7b245b16c60e8d4acc79, type: 3}
-  pivot: {x: 0.5, y: 0}
-  data:
-    frames:
-    - filename: S_Wall_Stone_Nightmare_Floating.aseprite
-      frame:
-        x: 0
-        y: 0
-        w: 32
-        h: 32
-      rotated: 0
-      trimmed: 0
-      spriteSourceSize:
-        x: 0
-        y: 0
-        w: 32
-        h: 32
-      sourceSize:
-        w: 32
-        h: 32
-      duration: 100
-    meta:
-      app: https://www.aseprite.org/
-      version: 1.2.40-x64
-      image: S_Wall_Stone_Nightmare_Floating.png
-      format: I8
-      size:
-        w: 32
-        h: 32
-      scale: 1
-      frameTags: []
-      layers:
-      - name: Dark Orange
-        opacity: 255
-        blendMode: normal
-      - name: Layer 1
-        opacity: 255
-        blendMode: normal
---- !u!213 &5801109759615205334
+--- !u!213 &-4170020585473043268
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,3 +210,61 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
+  m_Name: T_Wall_Stone_Nightmare_Floating
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  m_isGround: 1
+  sprites:
+  - {fileID: -4170020585473043268}
+  spriteIndex: 0
+  json: {fileID: 4900000, guid: 1fcff16aa803e2b4db1b569531de41c8, type: 3}
+  sheet: {fileID: 2800000, guid: 689580dce80e7b245b16c60e8d4acc79, type: 3}
+  pivot: {x: 0.5, y: 0}
+  data:
+    frames:
+    - filename: S_Wall_Stone_Nightmare_Floating.aseprite
+      frame:
+        x: 0
+        y: 0
+        w: 32
+        h: 32
+      rotated: 0
+      trimmed: 0
+      spriteSourceSize:
+        x: 0
+        y: 0
+        w: 32
+        h: 32
+      sourceSize:
+        w: 32
+        h: 32
+      duration: 100
+    meta:
+      app: https://www.aseprite.org/
+      version: 1.2.40-x64
+      image: S_Wall_Stone_Nightmare_Floating.png
+      format: I8
+      size:
+        w: 32
+        h: 32
+      scale: 1
+      frameTags: []
+      layers:
+      - name: Dark Orange
+        opacity: 255
+        blendMode: normal
+      - name: Layer 1
+        opacity: 255
+        blendMode: normal

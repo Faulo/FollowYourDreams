@@ -10,7 +10,7 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 3550053055219951415}
+    m_State: {fileID: 1154602924097663477}
     m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -21,8 +21,56 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 3550053055219951415}
---- !u!74 &-5349929447047475511
+  m_DefaultState: {fileID: 1154602924097663477}
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: R_Item_Totoro_Asleep
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: -8244255915941724214}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!1102 &1154602924097663477
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sleep
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 2744359294546830722}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!74 &2744359294546830722
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,17 +91,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -701301468805350790, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: 6578601227771380211, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     - time: 0.6
-      value: {fileID: 7087512133786759054, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: -6229093989433576818, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     - time: 1.2
-      value: {fileID: -7877406194694403173, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: 7672183547820874088, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     - time: 1.8000001
-      value: {fileID: -6488754048607425404, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: 8060212490088898363, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     - time: 2.4
-      value: {fileID: 982093379475055165, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: -4171973874828311608, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     - time: 3.0000002
-      value: {fileID: -701301468805350790, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+      value: {fileID: 6578601227771380211, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -76,12 +124,12 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -701301468805350790, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
-    - {fileID: 7087512133786759054, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
-    - {fileID: -7877406194694403173, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
-    - {fileID: -6488754048607425404, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
-    - {fileID: 982093379475055165, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
-    - {fileID: -701301468805350790, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: 6578601227771380211, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: -6229093989433576818, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: 7672183547820874088, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: 8060212490088898363, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: -4171973874828311608, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+    - {fileID: 6578601227771380211, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -107,51 +155,3 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!91 &9100000
-AnimatorController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: R_Item_Totoro_Asleep
-  serializedVersion: 5
-  m_AnimatorParameters: []
-  m_AnimatorLayers:
-  - serializedVersion: 5
-    m_Name: Base Layer
-    m_StateMachine: {fileID: -8244255915941724214}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
---- !u!1102 &3550053055219951415
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sleep
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -5349929447047475511}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
