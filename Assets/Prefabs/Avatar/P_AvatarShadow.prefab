@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 8603279190951094960}
   - component: {fileID: -7313829922059949941}
   - component: {fileID: -556856940903930971}
+  - component: {fileID: -6717434797957075440}
   m_Layer: 10
   m_Name: P_AvatarShadow
   m_TagString: Untagged
@@ -185,7 +186,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6879366180992438564}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -249,6 +250,21 @@ MonoBehaviour:
       - name: Layer
         opacity: 255
         blendMode: normal
+--- !u!114 &-6717434797957075440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657725804604475884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a1c1b1339d7dc4fb1ad77a13aa2a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 0}
+  castOffset: {x: 0, y: 0, z: 0}
+  groundOffset: {x: 0, y: 0.25, z: 0}
 --- !u!213 &6879366180992438564
 Sprite:
   m_ObjectHideFlags: 0

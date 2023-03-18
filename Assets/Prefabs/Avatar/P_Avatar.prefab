@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!143 &4332099688496705474
 CharacterController:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ CharacterController:
   m_StepOffset: 0.125
   m_SkinWidth: 0.0078125
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: -0.25, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8394062918357687654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4440936119859221609}
     m_Modifications:
+    - target: {fileID: -6717434797957075440, guid: 61ec1b5318745db4cb9d9acdcbb60512, type: 3}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 4440936119859221609}
     - target: {fileID: 4657725804604475884, guid: 61ec1b5318745db4cb9d9acdcbb60512, type: 3}
       propertyPath: m_Name
       value: P_AvatarShadow
