@@ -25,11 +25,11 @@ namespace FollowYourDreams.Level {
                 TryGetComponent(out attachedAnimator);
             }
         }
-        void OnEnable() {
+        void Start() {
             observedComponent.onChangeOpen += HandleOpen;
             observedComponent.onChangeSelect += HandleSelect;
         }
-        void OnDisable() {
+        void OnDestroy() {
             observedComponent.onChangeOpen -= HandleOpen;
             observedComponent.onChangeSelect -= HandleSelect;
         }
