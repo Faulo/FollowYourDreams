@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
 using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
@@ -396,11 +397,14 @@ namespace FollowYourDreams.Avatar {
             attachedCharacter.Move(Vector3.down);
         }
 
+        [SerializeField]
+        EventReference deathAudio = new();
         [ContextMenu(nameof(Die))]
         public void Die() {
             isGliding = false;
             isJumping = false;
             isHighJumping = false;
+            deathAudio.PlayOnce();
             InteractWith(PopBed().WakeUpIn_Co);
         }
 

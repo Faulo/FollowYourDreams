@@ -83,13 +83,8 @@ namespace FollowYourDreams.Avatar {
             onSetAnimation?.Invoke(gotoSleep ? BedAnimation.DreamSleep : BedAnimation.BedEmpty);
         }
 
-        bool shouldSwitchDimensions =>
-            (currentDimension == Dimension.RealWorld && !isOccupied)
-         || currentDimension == Dimension.Dreamscape
-         || (currentDimension == Dimension.NightmareRealm && isOccupied);
-
         public IEnumerator WakeUpIn_Co(AvatarController avatar) {
-            if (shouldSwitchDimensions) {
+            if (isOccupied) {
                 manager.currentDimension = targetDimension;
                 yield return Wait.forFixedUpdate;
             }
