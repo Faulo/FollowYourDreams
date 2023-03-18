@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 using UnityEngine;
 
 namespace FollowYourDreams {
-    sealed class AsepriteSprite : ComponentFeature<SpriteRenderer> {
+    sealed class AsepriteSprite : ComponentFeature<SpriteRenderer>, IImportable {
         [SerializeField]
         List<Sprite> sprites = new();
         [SerializeField]
@@ -23,6 +23,10 @@ namespace FollowYourDreams {
         Texture2D sheet = default;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         AsepriteData data = new();
 

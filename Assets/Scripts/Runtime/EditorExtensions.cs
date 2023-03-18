@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
-using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;

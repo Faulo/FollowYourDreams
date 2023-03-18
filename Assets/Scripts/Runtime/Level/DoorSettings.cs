@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using FollowYourDreams.Avatar;
+using FollowYourDreams.Graphics;
 using MyBox;
 using Slothsoft.UnityExtensions;
 #if UNITY_EDITOR
