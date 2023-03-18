@@ -1,22 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!213 &-7253291489095972702
+--- !u!213 &-7942298989781612268
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_INT_Door_WithWindow 1.aseprite
+  m_Name: S_INT_Door_WithWindow 0.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 32
+    x: 0
     y: 64
     width: 32
     height: 64
-  m_Offset: {x: 0, y: -16}
+  m_Offset: {x: 0, y: -32}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.25}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -103,18 +103,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f0000000000000000000080320000803f0000003f0000803f000080320000003f0000003f0000003f
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 64
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 80}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 64}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -194,39 +194,39 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 64
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 80}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 64}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!213 &-5711096189735804016
+--- !u!213 &-1349572412974192135
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_INT_Door_WithWindow 2.aseprite
+  m_Name: S_INT_Door_WithWindow 3.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 0
+    x: 32
     y: 0
     width: 32
     height: 64
-  m_Offset: {x: 0, y: -16}
+  m_Offset: {x: 0, y: -32}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.25}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -313,18 +313,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 0
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -404,18 +404,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 0
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
@@ -437,15 +437,15 @@ MonoBehaviour:
   controller: {fileID: 9100000, guid: 0bfdc8cd497a3764ca44bcbf336121ef, type: 2}
   json: {fileID: 4900000, guid: ed0b6f1d8dd3c6c46a719d9fd3d8424d, type: 3}
   sheet: {fileID: 2800000, guid: e83a7ae7e0ccd62438960d48cdb42574, type: 3}
-  pivot: {x: 0.5, y: 0.25}
+  pivot: {x: 0.5, y: 0}
   defaultAnimation: 7
   isLoopingOverride:
     items: []
   sprites:
-  - {fileID: 1367615645888733436}
-  - {fileID: -7253291489095972702}
-  - {fileID: -5711096189735804016}
-  - {fileID: 8794702450206258231}
+  - {fileID: -7942298989781612268}
+  - {fileID: 1856628070892105577}
+  - {fileID: 8784294876553233228}
+  - {fileID: -1349572412974192135}
   data:
     frames:
     - filename: S_INT_Door_WithWindow 0.aseprite
@@ -551,23 +551,23 @@ MonoBehaviour:
         blendMode: normal
   animatorPrefab: {fileID: 8194896035921522109, guid: 1f6df532b8e5f7c42841eea8cecf52f6, type: 3}
   rendererPrefab: {fileID: 4798746788273508174, guid: 1f6df532b8e5f7c42841eea8cecf52f6, type: 3}
---- !u!213 &1367615645888733436
+--- !u!213 &1856628070892105577
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_INT_Door_WithWindow 0.aseprite
+  m_Name: S_INT_Door_WithWindow 1.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 0
+    x: 32
     y: 64
     width: 32
     height: 64
-  m_Offset: {x: 0, y: -16}
+  m_Offset: {x: 0, y: -32}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.25}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -654,18 +654,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf00000000000080320000803f0000003f0000803f000080320000003f0000003f0000003f
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 64
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 80}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 64}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -745,39 +745,39 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 0
+      x: 32
       y: 64
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 80}
+    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 64}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!213 &8794702450206258231
+--- !u!213 &8784294876553233228
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_INT_Door_WithWindow 3.aseprite
+  m_Name: S_INT_Door_WithWindow 2.aseprite
   m_Rect:
     serializedVersion: 2
-    x: 32
+    x: 0
     y: 0
     width: 32
     height: 64
-  m_Offset: {x: 0, y: -16}
+  m_Offset: {x: 0, y: -32}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.25}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -864,18 +864,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 0
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -955,18 +955,18 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bfb7c3074000000000f304353fb7c3074000000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304354000000000f304353ff304354000000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 32
+      x: 0
       y: 0
       width: 32
       height: 64
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 48, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

@@ -15,12 +15,13 @@ MonoBehaviour:
   asset: {fileID: 11400000}
   prefab: {fileID: 6485669815321698707, guid: 6287b0563677ce9449a7a3a7e305c5d8, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
+  m_isGround: 1
   sprites:
-  - {fileID: 9120461855498736258}
+  - {fileID: 5801109759615205334}
   spriteIndex: 0
   json: {fileID: 4900000, guid: 1fcff16aa803e2b4db1b569531de41c8, type: 3}
   sheet: {fileID: 2800000, guid: 689580dce80e7b245b16c60e8d4acc79, type: 3}
-  pivot: {x: 0.5, y: 0.5}
+  pivot: {x: 0.5, y: 0}
   data:
     frames:
     - filename: S_Wall_Stone_Nightmare_Floating.aseprite
@@ -51,13 +52,13 @@ MonoBehaviour:
       scale: 1
       frameTags: []
       layers:
-      - name: Pink Copy
+      - name: Dark Orange
         opacity: 255
         blendMode: normal
       - name: Layer 1
         opacity: 255
         blendMode: normal
---- !u!213 &9120461855498736258
+--- !u!213 &5801109759615205334
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,10 +71,10 @@ Sprite:
     y: 0
     width: 32
     height: 32
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -16}
   m_Border: {x: 0, y: 0, z: 0, w: 0}
   m_PixelsToUnits: 22.627417
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
   m_Extrude: 0
   m_IsPolygon: 0
   m_AtlasName: 
@@ -160,7 +161,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -171,7 +172,7 @@ Sprite:
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -251,7 +252,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304353f00000000f304353ff304353f00000000f30435bff30435bf00000000f304353ff30435bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -262,7 +263,7 @@ Sprite:
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 16}
+    uvTransform: {x: 22.627417, y: 16, z: 22.627417, w: 0}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []
