@@ -64,6 +64,12 @@ namespace FollowYourDreams {
                 }
             }
         }
+        [ContextMenu(nameof(LoadAllSprites))]
+        public void LoadAllSprites() {
+            foreach (var importable in importables) {
+                importable.LoadAll();
+            }
+        }
 #endif
     }
 }
