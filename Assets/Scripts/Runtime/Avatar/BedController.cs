@@ -28,7 +28,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         void OnDisable() {
-            observedComponent.onSetAnimation += OnSetAnimation;
+            observedComponent.onSetAnimation -= OnSetAnimation;
         }
 
         void OnSetAnimation(BedAnimation animation) {
