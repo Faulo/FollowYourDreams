@@ -52,5 +52,15 @@ namespace FollowYourDreams.Avatar {
         public float highJumpSpeed = 5f;
         [SerializeField, Range(0, 10)]
         public float highJumpGravityMultiplier = 0.25f;
+
+        [Header("Climbing")]
+        [SerializeField, Range(0, 10)]
+        public float maxClimbHeight = 1;
+        [SerializeField, Range(0, 10)]
+        public float climbHorizontalSpeed = 1;
+        [SerializeField, Range(0, 10)]
+        public float climbVerticalSpeed = 1;
+        [SerializeField, Range(0, 10)]
+        public float climbDuration = 0.5f;
     }
 }

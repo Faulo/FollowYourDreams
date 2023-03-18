@@ -305,8 +305,11 @@ namespace FollowYourDreams.Avatar {
             var motion = currentHorizontalSpeed * Time.deltaTime * currentForward;
             motion.y += currentVerticalSpeed * Time.deltaTime;
             attachedCharacter.Move(motion);
-            if (attachedCharacter.isGrounded && currentVerticalSpeed < 0) {
-                currentVerticalSpeed = 0;
+            if (attachedCharacter.isGrounded) {
+                canClimb = true;
+                if (currentVerticalSpeed < 0) {
+                    currentVerticalSpeed = 0;
+                }
             }
         }
 
@@ -399,6 +402,30 @@ namespace FollowYourDreams.Avatar {
             if (hit.gameObject.TryGetComponent<ICollidable>(out var collidable)) {
                 collidable.OnCollide(hit, this);
             }
+
+            if (settings.HasPower(Power.Climb) && intendsToJump && !isInteracting && canClimb && !attachedCharacter.isGrounded) {
+                if (Mathf.Abs(hit.normal.y) < 0.5f) {
+                    var top = hit.collider.ClosestPointOnBounds(hit.point + new Vector3(0, 10, 0));
+                    float height = top.y - hit.point.y;
+                    if (height <= movement.maxClimbHeight) {
+                        canClimb = false;
+                        Physics.SyncTransforms();
+                        climbPoint = transform.position + new Vector3(0, movement.maxClimbHeight, 0);
+                        InteractWith(Climb_Co);
+                    }
+                }
+            }
+        }
+
+        bool canClimb = true;
+        Vector3 climbPoint;
+        static IEnumerator Climb_Co(AvatarController avatar) {
+            avatar.currentAnimation = AvatarAnimation.Climb;
+            yield return Wait.forSeconds[avatar.movement.climbDuration];
+            avatar.transform.position = avatar.climbPoint;
+            Physics.SyncTransforms();
+            avatar.currentHorizontalSpeed = avatar.movement.climbHorizontalSpeed;
+            avatar.currentVerticalSpeed = avatar.movement.climbVerticalSpeed;
         }
     }
 }

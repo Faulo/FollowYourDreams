@@ -19,7 +19,7 @@ MonoBehaviour:
   walkSpeed: 1.5
   runSpeed: 3
   canJump: 1
-  jumpSpeed: 4
+  jumpSpeed: 2
   jumpStopMultiplier: 0.25
   jumpGravityMultiplier: 0.75
   glideSpeed: 2
@@ -34,3 +34,8 @@ MonoBehaviour:
   highJumpChargeMaximum: 0.8
   highJumpSpeed: 4
   highJumpGravityMultiplier: 0.75
+  maxClimbHeight: 0.5
+  climbHorizontalSpeed: 1
+  climbVerticalSpeed: 2
+  climbDuration: 0.5
+  climbCooldown: 0.5
