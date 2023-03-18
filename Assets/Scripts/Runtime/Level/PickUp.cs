@@ -24,6 +24,7 @@ namespace FollowYourDreams.Level {
             Deselect();
         }
         void Start() {
+            position = GridManager.instance.RoundToTileCenter(position);
             Deselect();
         }
         public int priority => 1;
