@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FollowYourDreams.Graphics;
+#if UNITY_EDITOR
 using Slothsoft.UnityExtensions.Editor;
+#endif
 using UnityEngine;
 using UnityObject = UnityEngine.Object;
 
