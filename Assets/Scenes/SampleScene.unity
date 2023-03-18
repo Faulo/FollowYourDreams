@@ -348,6 +348,11 @@ MonoScript:
   m_ClassName: InputSystemUIInputModule
   m_Namespace: UnityEngine.InputSystem.UI
   m_AssemblyName: Unity.InputSystem
+--- !u!1 &45755802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6021280954852167498, guid: 4fceca97aac9f1d47ba2f42fa6d4fde2, type: 3}
+  m_PrefabInstance: {fileID: 1158650608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &53316185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2072,7 @@ MonoBehaviour:
   - {fileID: 999006998}
   hideInNightmare:
   - {fileID: 252496805}
+  - {fileID: 45755802}
 --- !u!1001 &1447209559
 PrefabInstance:
   m_ObjectHideFlags: 0
