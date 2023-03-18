@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace FollowYourDreams.Level {
     [CreateAssetMenu]
-    sealed class DoorSettings : ScriptableAsset {
+    sealed class DoorSettings : ScriptableAsset, IImportable {
         [Header("Setup")]
         [SerializeField]
         GameObject prefab;
@@ -25,6 +25,10 @@ namespace FollowYourDreams.Level {
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         DoorSprite defaultAnimation;
         [SerializeField]
@@ -44,18 +48,18 @@ namespace FollowYourDreams.Level {
         SpriteRenderer rendererPrefab;
 
         [ContextMenu(nameof(LoadPrefab))]
-        void LoadPrefab() {
+        public void LoadPrefab() {
             prefab.TryGetComponent(out animatorPrefab);
             prefab.TryGetComponent(out rendererPrefab);
         }
 
         [ContextMenu(nameof(LoadData))]
-        void LoadData() {
+        public void LoadData() {
             data = AsepriteData.FromJson(json.text);
         }
 
         [ContextMenu(nameof(LoadSprites))]
-        void LoadSprites() {
+        public void LoadSprites() {
             sheet.ExtractSprites(data, pivot, this, sprites);
 
             if (rendererPrefab) {
@@ -67,7 +71,7 @@ namespace FollowYourDreams.Level {
         }
 
         [ContextMenu(nameof(LoadController))]
-        void LoadController() {
+        public void LoadController() {
             var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, (defaultAnimation, 0));
 
             if (animatorPrefab) {
@@ -79,7 +83,7 @@ namespace FollowYourDreams.Level {
         }
 
         [ContextMenu(nameof(LoadAll))]
-        void LoadAll() {
+        public void LoadAll() {
             LoadPrefab();
             LoadData();
             LoadSprites();

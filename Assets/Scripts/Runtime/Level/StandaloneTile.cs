@@ -34,8 +34,8 @@ namespace FollowYourDreams.Level {
         [SerializeField]
         AsepriteData data = new();
 
-        [ContextMenu(nameof(LoadSprite))]
-        public void LoadSprite() {
+        [ContextMenu(nameof(LoadAll))]
+        public void LoadAll() {
             if (sheet && json) {
                 data = AsepriteData.FromJson(json.text);
                 sheet.ExtractSprites(data, pivot, this, sprites);

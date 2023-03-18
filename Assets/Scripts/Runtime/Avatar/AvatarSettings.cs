@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
     [CreateAssetMenu]
-    sealed class AvatarSettings : ScriptableAsset {
+    sealed class AvatarSettings : ScriptableAsset, IImportable {
         [Header("Setup")]
         [SerializeField]
         GameObject prefab;
@@ -55,6 +55,10 @@ namespace FollowYourDreams.Avatar {
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         SerializableKeyValuePairs<AvatarAnimation, bool> isLoopingOverride = new();
 
@@ -72,18 +76,18 @@ namespace FollowYourDreams.Avatar {
         SpriteRenderer rendererPrefab;
 
         [ContextMenu(nameof(LoadPrefab))]
-        void LoadPrefab() {
+        public void LoadPrefab() {
             prefab.TryGetComponent(out animatorPrefab);
             prefab.TryGetComponent(out rendererPrefab);
         }
 
         [ContextMenu(nameof(LoadData))]
-        void LoadData() {
+        public void LoadData() {
             data = AsepriteData.FromJson(json.text);
         }
 
         [ContextMenu(nameof(LoadSprites))]
-        void LoadSprites() {
+        public void LoadSprites() {
             sheet.ExtractSprites(data, pivot, this, sprites, DIRECTION_COUNT);
 
             if (rendererPrefab) {
@@ -95,7 +99,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         [ContextMenu(nameof(LoadController))]
-        void LoadController() {
+        public void LoadController() {
             var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, (AvatarAnimation.Idle, (int)AvatarDirection.Down), DIRECTION_COUNT);
 
             addTransition(AvatarAnimation.Land, AvatarAnimation.Idle);
@@ -109,7 +113,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         [ContextMenu(nameof(LoadAll))]
-        void LoadAll() {
+        public void LoadAll() {
             LoadPrefab();
             LoadData();
             LoadSprites();
