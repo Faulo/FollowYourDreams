@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!213 &-4706050903035989396
+--- !u!213 &-1152408564467970856
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_ENV_TableRealWorld1.aseprite
+  m_Name: S_ENV_Dream_DeskLeft.aseprite
   m_Rect:
     serializedVersion: 2
     x: 0
@@ -27,7 +27,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: ea21b5f90b4adf8469ac77d7f636214f, type: 3}
+    texture: {fileID: 2800000, guid: be2c76c7202a9e44b9d545145e7d0563, type: 3}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -103,7 +103,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: f30435bff304b53f00000000f304353ff304b53f00000000f30435bf0000000000000000f304353f000000000000000000000033ffff7f3f0000803fffff7f3f00000033000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -118,7 +118,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: ea21b5f90b4adf8469ac77d7f636214f, type: 3}
+    texture: {fileID: 2800000, guid: be2c76c7202a9e44b9d545145e7d0563, type: 3}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -220,21 +220,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbf94c239aa92fe42b3e1a20f0e83cd2, type: 3}
-  m_Name: T_Furniture_DeskLeft
+  m_Name: T_Furniture_Dream_DeskLeft
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
   prefab: {fileID: 6485669815321698707, guid: 1d37db3447650814aae22b1388350eb0, type: 3}
   tint: {r: 1, g: 1, b: 1, a: 1}
   m_isGround: 1
   sprites:
-  - {fileID: -4706050903035989396}
+  - {fileID: -1152408564467970856}
   spriteIndex: 0
-  json: {fileID: 4900000, guid: c0f5e4cc795afa44893430028aecc9f3, type: 3}
-  sheet: {fileID: 2800000, guid: ea21b5f90b4adf8469ac77d7f636214f, type: 3}
+  json: {fileID: 4900000, guid: 1bcb6b35b64f88641a0a460c5de01db3, type: 3}
+  sheet: {fileID: 2800000, guid: be2c76c7202a9e44b9d545145e7d0563, type: 3}
   pivot: {x: 0.5, y: 0}
   data:
     frames:
-    - filename: S_ENV_TableRealWorld1.aseprite
+    - filename: S_ENV_Dream_DeskLeft.aseprite
       frame:
         x: 0
         y: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
     meta:
       app: https://www.aseprite.org/
       version: 1.2.40-x64
-      image: S_ENV_TableRealworld1.png
+      image: S_ENV_Dream_DeskLeft.png
       format: I8
       size:
         w: 32
@@ -262,6 +262,6 @@ MonoBehaviour:
       scale: 1
       frameTags: []
       layers:
-      - name: Layer 6
+      - name: Layer 1
         opacity: 255
         blendMode: normal
