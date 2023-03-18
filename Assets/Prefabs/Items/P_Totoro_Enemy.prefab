@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -5377102495165730502, guid: 832d051121cd9e944b76ce15689aed7a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   attachedAnimator: {fileID: 6717517935500418839}
   attachedRenderer: {fileID: -7313829922059949941}
   attachedAgent: {fileID: 149152833743684042}
-  lineOfSightDistance: 5
+  lineOfSightDistance: 50
   snackRange: 0.5
   currentDirection: 4
 --- !u!213 &-6136202068351798340

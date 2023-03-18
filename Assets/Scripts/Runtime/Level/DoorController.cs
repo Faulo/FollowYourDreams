@@ -33,6 +33,9 @@ namespace FollowYourDreams.Level {
             observedComponent.onChangeOpen -= HandleOpen;
             observedComponent.onChangeSelect -= HandleSelect;
         }
+        void OnEnable() {
+            UpdateState();
+        }
 
         void HandleOpen(bool isOpen) {
             this.isOpen = isOpen;

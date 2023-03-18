@@ -39,10 +39,15 @@ namespace FollowYourDreams.Avatar {
         bool isOccupied = false;
 
         Dimension currentDimension => manager.currentDimension;
-        int dimensionOffset => isOccupied
-            ? -1
-            : 1;
-        Dimension targetDimension => currentDimension + dimensionOffset;
+        Dimension targetDimension => currentDimension switch {
+            Dimension.RealWorld when isOccupied => Dimension.RealWorld,
+            Dimension.RealWorld => Dimension.Dreamscape,
+            Dimension.Dreamscape when isOccupied => Dimension.RealWorld,
+            Dimension.Dreamscape => Dimension.NightmareRealm,
+            Dimension.NightmareRealm when isOccupied => Dimension.NightmareRealm,
+            Dimension.NightmareRealm => Dimension.Dreamscape,
+            _ => throw new NotImplementedException(),
+        };
 
         public int priority => 0;
 
@@ -71,6 +76,7 @@ namespace FollowYourDreams.Avatar {
 
             manager.currentDimension = targetDimension;
             yield return Wait.forFixedUpdate;
+
             avatar.AddBed(this);
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = !isOccupied;
