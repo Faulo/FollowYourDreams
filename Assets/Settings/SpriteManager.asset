@@ -10,10 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76431622b639eaf4a9f0afc7cdfa5d2f, type: 3}
-  m_Name: TileManager
+  m_Name: SpriteManager
   m_EditorClassIdentifier: 
-  asset: {fileID: 0}
-  tiles:
+  asset: {fileID: 11400000}
+  assets:
+  - {fileID: 11400000, guid: 01ea86260da6a2545a811f6f021c3f30, type: 2}
+  - {fileID: 11400000, guid: c743174e10f3ea146b7f7e79bc3632ba, type: 2}
+  - {fileID: 11400000, guid: 768ae68a434ec0849b66e25ae88ae895, type: 2}
+  - {fileID: 11400000, guid: 4a2b3517a8c641443bb5337aca6651c2, type: 2}
+  - {fileID: 11400000, guid: e83382091235dd24da0b87cbd8b3f5b5, type: 2}
+  - {fileID: 11400000, guid: d97d7d7bccc4dc940bceb36e993903a5, type: 2}
+  - {fileID: 11400000, guid: f73546f01840ed64abc1ecc17e035d6e, type: 2}
+  - {fileID: 11400000, guid: f3ec4c22df115f4419c43811ea7d8245, type: 2}
+  - {fileID: 11400000, guid: d890c0010ccb60d45941159749ae599d, type: 2}
+  - {fileID: 11400000, guid: 766926935183ee041be2fe788b4e5a2f, type: 2}
+  - {fileID: 11400000, guid: 832d051121cd9e944b76ce15689aed7a, type: 2}
   - {fileID: 11400000, guid: af3735d881a4c7c47a121d15adea808f, type: 2}
   - {fileID: 11400000, guid: 1719c09e5d3740d43a60e4f7c7cdd343, type: 2}
   - {fileID: 11400000, guid: 5b83b4ec29f054943a60f3cbbb3fb615, type: 2}
@@ -32,3 +43,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15f7d2882c2bea946b39c992b52064b8, type: 2}
   - {fileID: 11400000, guid: 14630033c9a3db7448c2121237d79f83, type: 2}
   - {fileID: 11400000, guid: 5c6be1f1b382d0e4080902c23c96e8b3, type: 2}
+  components:
+  - {fileID: -556856940903930971, guid: 60dafdea6780e604388920c1d1a151ba, type: 3}
+  - {fileID: -556856940903930971, guid: 41b0e7ab8860e8347ae66e1b5afc8994, type: 3}
+  pivot: {x: 0.5, y: 0}

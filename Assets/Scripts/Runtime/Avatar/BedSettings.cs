@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace FollowYourDreams.Avatar {
     [CreateAssetMenu]
-    sealed class BedSettings : ScriptableAsset {
+    sealed class BedSettings : ScriptableAsset, IImportable {
         [Header("Setup")]
         [SerializeField]
         GameObject prefab;
@@ -25,6 +25,10 @@ namespace FollowYourDreams.Avatar {
         Texture2D sheet;
         [SerializeField]
         Vector2 pivot = new(0.5f, 0.5f);
+        public Vector2 spritePivot {
+            get => pivot;
+            set => pivot = value;
+        }
         [SerializeField]
         SerializableKeyValuePairs<BedAnimation, bool> isLoopingOverride = new();
 
@@ -42,18 +46,18 @@ namespace FollowYourDreams.Avatar {
         SpriteRenderer rendererPrefab;
 
         [ContextMenu(nameof(LoadPrefab))]
-        void LoadPrefab() {
+        public void LoadPrefab() {
             prefab.TryGetComponent(out animatorPrefab);
             prefab.TryGetComponent(out rendererPrefab);
         }
 
         [ContextMenu(nameof(LoadData))]
-        void LoadData() {
+        public void LoadData() {
             data = AsepriteData.FromJson(json.text);
         }
 
         [ContextMenu(nameof(LoadSprites))]
-        void LoadSprites() {
+        public void LoadSprites() {
             sheet.ExtractSprites(data, pivot, this, sprites);
 
             if (rendererPrefab) {
@@ -65,7 +69,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         [ContextMenu(nameof(LoadController))]
-        void LoadController() {
+        public void LoadController() {
             var addTransition = controller.ImportAnimations(data, isLoopingOverride, sprites, GetAnimationName, (BedAnimation.BedEmpty, 0));
 
             addTransition(BedAnimation.GoToSleep, BedAnimation.Sleep);
@@ -81,7 +85,7 @@ namespace FollowYourDreams.Avatar {
         }
 
         [ContextMenu(nameof(LoadAll))]
-        void LoadAll() {
+        public void LoadAll() {
             LoadPrefab();
             LoadData();
             LoadSprites();
