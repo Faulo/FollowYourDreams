@@ -489,6 +489,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7514631176897819591, guid: 7aeac91218959cc49a8aced184eb63fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514631176897819591, guid: 7aeac91218959cc49a8aced184eb63fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bc71b7e164e4444c8823914cc75e722, type: 2}
+    - target: {fileID: 7514631176897819591, guid: 7aeac91218959cc49a8aced184eb63fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSceneSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514631176897819591, guid: 7aeac91218959cc49a8aced184eb63fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FollowYourDreams.UI.StartScene, FollowYourDreams
+      objectReference: {fileID: 0}
     - target: {fileID: 9083597284056019600, guid: 7aeac91218959cc49a8aced184eb63fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
