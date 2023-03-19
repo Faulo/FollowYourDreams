@@ -2733,6 +2733,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0bf658e4-924d-48bc-9545-4ebefae1d742
     m_ActionName: Debug/F12[/Keyboard/f12]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6bc71b7e164e4444c8823914cc75e722, type: 2}
+        m_TargetAssemblyTypeName: FollowYourDreams.UI.StartScene, FollowYourDreams
+        m_MethodName: OpenSceneSingle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d460199d-0e52-4cdc-bc8e-0a6f8c0690bb
+    m_ActionName: Debug/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Debug
