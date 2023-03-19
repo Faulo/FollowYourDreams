@@ -388,11 +388,11 @@ namespace FollowYourDreams.Avatar {
         public void WarpTo(Vector3 position, Direction direction) {
             transform.position = position;
             Physics.SyncTransforms();
+            ResetMovement();
+            ResetSpeed();
             currentRotation = Vector2.SignedAngle(direction.AsVector2(), Vector2.up);
             intendedDirection = direction;
             intendedMove = Vector2.zero;
-            currentHorizontalSpeed = 0;
-            currentVerticalSpeed = 0;
             ProcessIntendedDirection();
             attachedCharacter.Move(Vector3.down);
         }
@@ -401,13 +401,22 @@ namespace FollowYourDreams.Avatar {
         EventReference deathAudio = new();
         [ContextMenu(nameof(Die))]
         public void Die() {
-            isGliding = false;
-            isJumping = false;
-            isHighJumping = false;
+            ResetMovement();
+            ResetSpeed();
+            intendedMove = Vector2.zero;
             currentInteractable?.Deselect();
             interactablePool.Clear();
             deathAudio.PlayOnce();
             InteractWith(PopBed().WakeUpIn_Co);
+        }
+        void ResetMovement() {
+            isGliding = false;
+            isJumping = false;
+            isHighJumping = false;
+        }
+        void ResetSpeed() {
+            currentHorizontalSpeed = 0;
+            currentVerticalSpeed = 0;
         }
 
         void OnControllerColliderHit(ControllerColliderHit hit) {
@@ -421,24 +430,39 @@ namespace FollowYourDreams.Avatar {
                     float height = top.y - hit.point.y;
                     if (height <= movement.maxClimbHeight) {
                         m_canClimb = false;
-                        Physics.SyncTransforms();
-                        climbPoint = transform.position + new Vector3(0, movement.maxClimbHeight, 0);
-                        InteractWith(Climb_Co);
+                        ClimbNow();
                     }
                 }
             }
         }
 
-        bool canClimb => m_canClimb && currentAnimation == AvatarAnimation.Fall;
+        void ClimbNow() {
+            Physics.SyncTransforms();
+            climbPoint = transform.position + new Vector3(0, movement.climbStep, 0);
+            InteractWith(Climb_Co);
+        }
+
+        bool canClimb {
+            get {
+                if (!m_canClimb) {
+                    return false;
+                }
+                var animation = CalculateAnimation();
+                return animation == AvatarAnimation.Fall || animation == AvatarAnimation.Glide;
+            }
+        }
         bool m_canClimb = true;
         Vector3 climbPoint;
         static IEnumerator Climb_Co(AvatarController avatar) {
             avatar.currentAnimation = AvatarAnimation.Climb;
+            avatar.ResetMovement();
+            avatar.ResetSpeed();
             yield return Wait.forSeconds[avatar.movement.climbDuration];
             avatar.transform.position = avatar.climbPoint;
             Physics.SyncTransforms();
             avatar.currentHorizontalSpeed = avatar.movement.climbHorizontalSpeed;
             avatar.currentVerticalSpeed = avatar.movement.climbVerticalSpeed;
+            avatar.isJumping = true;
         }
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   glideVerticalBoost: 0.25
   glideHorizontalBoost: 2
   glideGravityMultiplier: 0.05
-  glideSmoothing: 1
+  glideSmoothing: 0.5
   canCancelGlide: 1
   glideToLandAnimation: 9
   glideToLandDuration: 0
@@ -35,6 +35,7 @@ MonoBehaviour:
   highJumpSpeed: 8
   highJumpGravityMultiplier: 0.5
   maxClimbHeight: 0.5
+  climbStep: 0.4
   climbHorizontalSpeed: 2
   climbVerticalSpeed: 3
   climbDuration: 0.4

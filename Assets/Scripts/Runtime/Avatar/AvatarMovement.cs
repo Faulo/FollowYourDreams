@@ -57,6 +57,8 @@ namespace FollowYourDreams.Avatar {
         [SerializeField, Range(0, 10)]
         public float maxClimbHeight = 1;
         [SerializeField, Range(0, 10)]
+        public float climbStep = 0.25f;
+        [SerializeField, Range(0, 10)]
         public float climbHorizontalSpeed = 1;
         [SerializeField, Range(0, 10)]
         public float climbVerticalSpeed = 1;
