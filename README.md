@@ -8,6 +8,6 @@ Game Dev Week 2023:
 - Theme: "Dream Logic" and "Dimensional Chaos"
 
 ## Credits
-- Katharina Broswik (environment art)
+- Katharina Broswik (2D art, UI, game design)
 - Daniel Schulz (programming, game design)
-- Fabian Nausner (character art, sound design)
+- Fabian Nausner (2d art, sound design)
