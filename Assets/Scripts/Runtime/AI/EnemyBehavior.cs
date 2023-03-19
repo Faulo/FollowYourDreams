@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using FollowYourDreams.Avatar;
 using MyBox;
 using Slothsoft.UnityExtensions;
@@ -44,6 +43,7 @@ namespace FollowYourDreams.AI {
 
         void FixedUpdate() {
             if (manager.currentDimension != Dimension.NightmareRealm) {
+                ResetEnemy();
                 return;
             }
 
@@ -125,19 +125,11 @@ namespace FollowYourDreams.AI {
 
         void Snack() {
             snacked = true;
-            attachedAgent.SetDestination(transform.position);
-            // TODO: 1. Play eat animation
-            // 2. Check again if in range
-            // a) if not: snacked = false;
-            // b) if yes, then: 
             target.Die();
-            // TODO: wait a bit
-            StartCoroutine(WaitForAnimation());
         }
 
-        IEnumerator WaitForAnimation() {
-            yield return Wait.forSeconds[1];
-            transform.localPosition = Vector3.zero;
+        void ResetEnemy() {
+            attachedAgent.SetDestination(transform.parent.position);
             targetAquired = false;
             snacked = false;
         }
