@@ -38,16 +38,10 @@ namespace FollowYourDreams.Avatar {
         [SerializeField]
         bool isOccupied = false;
 
-        Dimension currentDimension => manager.currentDimension;
-        Dimension targetDimension => currentDimension switch {
-            Dimension.RealWorld when isOccupied => Dimension.RealWorld,
-            Dimension.RealWorld => Dimension.Dreamscape,
-            Dimension.Dreamscape when isOccupied => Dimension.RealWorld,
-            Dimension.Dreamscape => Dimension.NightmareRealm,
-            Dimension.NightmareRealm when isOccupied => Dimension.NightmareRealm,
-            Dimension.NightmareRealm => Dimension.Dreamscape,
-            _ => throw new NotImplementedException(),
-        };
+        Dimension currentDimension {
+            get => manager.currentDimension;
+            set => manager.currentDimension = value;
+        }
 
         public int priority => 0;
 
@@ -74,7 +68,15 @@ namespace FollowYourDreams.Avatar {
                 wakeUpEvent.PlayOnce();
             }
 
-            manager.currentDimension = targetDimension;
+            currentDimension = currentDimension switch {
+                Dimension.RealWorld when isOccupied => Dimension.RealWorld,
+                Dimension.RealWorld => Dimension.Dreamscape,
+                Dimension.Dreamscape when isOccupied => Dimension.RealWorld,
+                Dimension.Dreamscape => Dimension.NightmareRealm,
+                Dimension.NightmareRealm when isOccupied => Dimension.NightmareRealm,
+                Dimension.NightmareRealm => Dimension.Dreamscape,
+                _ => throw new NotImplementedException(),
+            };
             yield return Wait.forFixedUpdate;
 
             avatar.AddBed(this);
@@ -90,10 +92,16 @@ namespace FollowYourDreams.Avatar {
         }
 
         public IEnumerator WakeUpIn_Co(AvatarController avatar) {
-            if (isOccupied) {
-                manager.currentDimension = targetDimension;
-                yield return Wait.forFixedUpdate;
-            }
+            currentDimension = currentDimension switch {
+                Dimension.RealWorld => Dimension.RealWorld,
+                Dimension.Dreamscape when isOccupied => Dimension.RealWorld,
+                Dimension.Dreamscape => Dimension.Dreamscape,
+                Dimension.NightmareRealm when isOccupied => Dimension.Dreamscape,
+                Dimension.NightmareRealm => Dimension.NightmareRealm,
+                _ => throw new NotImplementedException(),
+            };
+            yield return Wait.forFixedUpdate;
+
             avatar.currentAnimation = AvatarAnimation.None;
             avatar.WarpTo(interactionSpot.position, Direction.UpLeft);
             isOccupied = false;

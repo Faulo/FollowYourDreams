@@ -131,7 +131,7 @@ namespace FollowYourDreams.Avatar {
             }
         }
 
-        bool isInteracting => interactableRoutine != null;
+        public bool isInteracting => interactableRoutine != null;
 
         void OnValidate() {
             if (!attachedAnimator) {

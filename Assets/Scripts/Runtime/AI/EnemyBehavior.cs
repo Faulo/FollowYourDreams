@@ -50,6 +50,9 @@ namespace FollowYourDreams.AI {
             if (!target) {
                 target = FindAnyObjectByType<AvatarController>();
             }
+            if (!target || target.isInteracting) {
+                return;
+            }
             if (!targetAquired) {
                 targetAquired = Vector3.Distance(transform.position, target.transform.position) < lineOfSightDistance;
             }
@@ -133,7 +136,7 @@ namespace FollowYourDreams.AI {
         }
 
         IEnumerator WaitForAnimation() {
-            yield return new WaitForSeconds(2f);
+            yield return Wait.forSeconds[1];
             transform.localPosition = Vector3.zero;
             targetAquired = false;
             snacked = false;
